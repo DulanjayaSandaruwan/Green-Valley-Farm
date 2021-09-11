@@ -47,6 +47,8 @@ public class AddNewUserFormController {
     Pattern confirmPasswordPattern = Pattern.compile("^[A-z0-9]{8,}$");
     Pattern rolePattern = Pattern.compile("^(Manager|Reception)$");
 
+    ObservableList<UserTM> obList = FXCollections.observableArrayList();
+
     public void initialize() {
         lblPasswordNotMatch.setVisible(false);
         txtUserName.setDisable(true);
@@ -63,6 +65,7 @@ public class AddNewUserFormController {
             colUserEmail.setCellValueFactory(new PropertyValueFactory<>("userEmail"));
 
             loadAllUsers();
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -89,7 +92,6 @@ public class AddNewUserFormController {
     }
 
     private void setUsersToTable(ArrayList<User> users) {
-        ObservableList<UserTM> obList = FXCollections.observableArrayList();
         users.forEach(e -> {
             obList.add(
                     new UserTM(e.getUserID(), e.getUserName(), e.getUserEmail()));
@@ -122,6 +124,16 @@ public class AddNewUserFormController {
                 if (preparedStatement.executeUpdate() != 0) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Successfully Added...").showAndWait();
                     clearForms();
+
+                    User user = new User(
+                            lblID.getText(),
+                            txtUserName.getText(),
+                            txtEmail.getText()
+                    );
+
+                    obList.add(new UserTM(user.getUserID(), user.getUserName(), user.getUserEmail()));
+
+
                 } else {
                     new Alert(Alert.AlertType.CONFIRMATION, "Something went wrong...").showAndWait();
                 }
