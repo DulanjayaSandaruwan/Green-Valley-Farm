@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageProductsFormController">
+   <children>
+      <JFXButton layoutX="7.0" layoutY="11.0" onAction="#btnProductIdOnAction" prefHeight="29.0" prefWidth="141.0" style="-fx-background-color: #0099ff; -fx-background-radius: 2em;" text="Product ID" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="823.0" layoutY="12.0" onAction="#btnClearOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #ff4000; -fx-background-radius: 2em;" text="Clear" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="820.0" layoutY="229.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #ff0000; -fx-background-radius: 2em;" text="Delete" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="660.0" layoutY="230.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #0099ff; -fx-background-radius: 2em;" text="Update" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnSaveProducts" layoutX="502.0" layoutY="230.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #009933; -fx-background-radius: 2em;" text="Save" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblProductsDetails" layoutX="7.0" layoutY="279.0" onMouseClicked="#tblProductsDetailsOnMouseClicked" prefHeight="326.0" prefWidth="943.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;" stylesheets="@../assests/styles/TableStyles.css">
+         <columns>
+            <TableColumn fx:id="colProductId" prefWidth="160.0" text="Product ID" />
+            <TableColumn fx:id="colProductName" prefWidth="234.0" text="Product Name" />
+            <TableColumn fx:id="colProductType" prefWidth="218.0" text="Product Type" />
+            <TableColumn fx:id="colQtyOnHand" prefWidth="165.0" text="Qty On Hand" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="166.0" text="Unit Price" />
+         </columns>
+         <styleClass>
+            <String fx:value="table-view1" />
+            <String fx:value="table-row-cell" />
+         </styleClass>
+      </TableView>
+      <TextField fx:id="txtProductId" layoutX="188.0" layoutY="10.0" onAction="#txtGetProductId" prefHeight="26.0" prefWidth="100.0" promptText="P001" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtItemName" layoutX="11.0" layoutY="93.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" promptText="Cow Milk" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <Label layoutX="17.0" layoutY="66.0" prefHeight="26.0" prefWidth="241.0" text="Enter Product Name :" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtItemType" layoutX="494.0" layoutY="91.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="33.0" prefWidth="449.0" promptText="Plants / Animal" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <Label layoutX="502.0" layoutY="64.0" prefHeight="26.0" prefWidth="241.0" text="Enter Product Type :" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="142.0" prefHeight="26.0" prefWidth="241.0" text="Enter Quantity On Hand :" textFill="#fffefe">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtQtyOnHand" layoutX="10.0" layoutY="168.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" promptText="1000 L" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <Label layoutX="163.0" layoutY="13.0" text=":" textFill="#f8f4f4">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="501.0" layoutY="143.0" prefHeight="26.0" prefWidth="241.0" text="Enter Unit Price :" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtProductUnitPrice" layoutX="495.0" layoutY="168.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="33.0" prefWidth="449.0" promptText="1000.00" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

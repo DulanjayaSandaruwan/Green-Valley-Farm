@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageGardenDetailsFormController">
+   <children>
+      <JFXButton layoutX="9.0" layoutY="14.0" onAction="#btnGardenIdOnAction" prefHeight="29.0" prefWidth="141.0" style="-fx-background-color: #0099ff; -fx-background-radius: 2em;" text="Garden ID" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="828.0" layoutY="15.0" onAction="#btnClearOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #ff4000; -fx-background-radius: 2em;" text="Clear" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="827.0" layoutY="249.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #ff0000; -fx-background-radius: 2em;" text="Delete" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="673.0" layoutY="249.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #0099ff; -fx-background-radius: 2em;" text="Update" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnSaveGarden" layoutX="511.0" layoutY="249.0" onAction="#btnSaveOnAction" prefHeight="26.0" prefWidth="121.0" style="-fx-background-color: #009933; -fx-background-radius: 2em;" text="Save" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblGardenDetails" layoutX="9.0" layoutY="304.0" onMouseClicked="#tblGardenDetailsOnMouseClicked" prefHeight="302.0" prefWidth="940.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;" stylesheets="@../assests/styles/TableStyles.css">
+         <columns>
+            <TableColumn fx:id="colGardenId" prefWidth="144.0" text="Garden ID" />
+            <TableColumn fx:id="colGardenType" prefWidth="193.0" text="Garden Type" />
+            <TableColumn fx:id="colGardenLocation" prefWidth="247.0" text="Garden Location" />
+            <TableColumn fx:id="colExtendOfLand" prefWidth="197.0" text="Extend Of Land" />
+            <TableColumn fx:id="colDescription" prefWidth="159.0" text="Description" />
+         </columns>
+         <styleClass>
+            <String fx:value="table-view1" />
+            <String fx:value="table-row-cell" />
+         </styleClass>
+      </TableView>
+      <Text fill="WHITE" layoutX="165.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" wrappingWidth="15.7294921875">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtGardenId" layoutX="188.0" layoutY="13.0" onAction="#txtGetGardenId" prefHeight="26.0" prefWidth="100.0" promptText="G001" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtGardenType" layoutX="13.0" layoutY="113.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <Label layoutX="20.0" layoutY="83.0" prefHeight="26.0" prefWidth="241.0" text="Enter Garden Type :" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtGardenLocation" layoutX="496.0" layoutY="111.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <Label layoutX="499.0" layoutY="82.0" prefHeight="26.0" prefWidth="241.0" text="Enter Garden Location :" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="161.0" prefHeight="26.0" prefWidth="241.0" text="Enter Extend of Land :" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtExtendOfLand" layoutX="12.0" layoutY="188.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtDescription" layoutX="496.0" layoutY="187.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <Label layoutX="499.0" layoutY="162.0" prefHeight="26.0" prefWidth="241.0" text="Description :" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

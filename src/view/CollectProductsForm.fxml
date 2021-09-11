@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CollectProductFormController">
+   <children>
+      <Label layoutX="14.0" prefHeight="30.0" prefWidth="132.0" text="Collect ID :" textFill="#fcf0f0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCollectID" layoutX="157.0" layoutY="1.0" prefHeight="30.0" prefWidth="99.0" textFill="#fffbfb">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="475.0" layoutY="4.0" prefHeight="30.0" prefWidth="132.0" text="2019-01-17" textFill="#f2eaea">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="837.0" layoutY="3.0" prefHeight="30.0" prefWidth="117.0" text="01:45:18" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbGardenIds" layoutX="13.0" layoutY="54.0" prefHeight="30.0" prefWidth="152.0" promptText="Garden ID" style="-fx-background-color: #53c7f0; -fx-background-radius: 1em;" />
+      <Label layoutX="308.0" layoutY="3.0" prefHeight="30.0" prefWidth="164.0" text="Collect Date :" textFill="#fcf9f9">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="680.0" layoutY="1.0" prefHeight="30.0" prefWidth="175.0" text="Collect Time :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtGardenType" layoutX="174.0" layoutY="56.0" prefHeight="26.0" prefWidth="268.0" promptText="Garden Type" style="-fx-background-radius: 2em;" />
+      <TextField fx:id="txtPoductType" layoutX="454.0" layoutY="117.0" prefHeight="26.0" prefWidth="290.0" promptText="Product Type" style="-fx-background-radius: 2em;" />
+      <TextField fx:id="txtDescription" layoutX="753.0" layoutY="56.0" prefHeight="26.0" prefWidth="194.0" promptText="Description" style="-fx-background-radius: 2em;" />
+      <ComboBox fx:id="cmbProductIds" layoutX="13.0" layoutY="114.0" prefHeight="30.0" prefWidth="152.0" promptText="Product ID" style="-fx-background-color: #53c7f0; -fx-background-radius: 1em;" />
+      <TextField fx:id="txtProductName" layoutX="175.0" layoutY="118.0" prefHeight="26.0" prefWidth="268.0" promptText="Product Name" style="-fx-background-radius: 2em;" />
+      <TextField fx:id="txtGardenLocation" layoutX="452.0" layoutY="56.0" prefHeight="26.0" prefWidth="290.0" promptText="Garden Location" style="-fx-background-radius: 2em;" />
+      <TextField fx:id="txtQtyOnHand" layoutX="753.0" layoutY="116.0" prefHeight="26.0" prefWidth="194.0" promptText="Qty On Hand" style="-fx-background-radius: 2em;" />
+      <Label layoutX="14.0" layoutY="170.0" prefHeight="30.0" prefWidth="444.0" text="Enter The Quantity To Be Added To The Store  :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtQty" layoutX="449.0" layoutY="173.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="143.0" promptText="Qty" style="-fx-background-radius: 2em;" />
+      <JFXButton layoutX="638.0" layoutY="165.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="117.0" style="-fx-background-color: #ff0000; -fx-background-radius: 2em;" text="Clear" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="778.0" layoutY="164.0" onAction="#btnAddToCartOnAction" prefHeight="30.0" prefWidth="171.0" style="-fx-background-color: #008000; -fx-background-radius: 2em;" text="Add To Store" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblCollectDetails" layoutX="10.0" layoutY="215.0" prefHeight="337.0" prefWidth="937.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;" stylesheets="@../assests/styles/TableStyles.css">
+         <columns>
+            <TableColumn fx:id="colProductId" prefWidth="128.0" text="Product ID" />
+            <TableColumn fx:id="colProductName" prefWidth="276.0" text="Product Name" />
+            <TableColumn fx:id="colProductType" prefWidth="263.0" text="Product Type" />
+            <TableColumn fx:id="colQuantity" prefWidth="270.0" text="Quantity" />
+         </columns>
+         <styleClass>
+            <String fx:value="table-view1" />
+            <String fx:value="table-row-cell" />
+         </styleClass>
+      </TableView>
+      <JFXButton layoutX="814.0" layoutY="566.0" onAction="#btnCollectOnAction" prefHeight="38.0" prefWidth="132.0" style="-fx-background-color: #ff3300; -fx-background-radius: 2em;" text="Collect" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root2" prefHeight="689.0" prefWidth="1251.0" style="-fx-background-color: #f5f6fa;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManagerMainFormController">
+   <children>
+      <AnchorPane layoutY="-9.0" prefHeight="698.0" prefWidth="270.0" style="-fx-background-color: #002039;">
+         <children>
+            <Label layoutX="13.0" layoutY="102.0" prefHeight="55.0" prefWidth="250.0" text="Green Valley Farm" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="117.0" fitWidth="157.0" layoutX="60.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/farming-vector-illustration-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <JFXButton id="homeid" fx:id="btnHome" layoutX="20.0" layoutY="185.0" onAction="#btnHomeOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-radius: 2em; -fx-background-color: #002039; -fx-border-radius: 2em;" text="Home" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="19.0" layoutY="323.0" onAction="#btnSupplierOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039 #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Supplier" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="20.0" layoutY="397.0" onAction="#btnPurchasedItemOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Purchased Items" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="17.0" layoutY="467.0" onAction="#btnPurchaseOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Purchase" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="18.0" layoutY="543.0" onAction="#btnProductsOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Products " textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="13.0" layoutY="619.0" onAction="#btnReportsOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Reports" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Separator layoutX="17.0" layoutY="157.0" opacity="0.24" prefHeight="1.0" prefWidth="237.0" />
+            <JFXButton layoutX="20.0" layoutY="253.0" onAction="#btnAddNewUserOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Add New User" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="258.0" prefHeight="55.0" prefWidth="993.0" style="-fx-background-color: #002039;">
+         <children>
+            <Separator layoutX="8.0" layoutY="6.0" opacity="0.23" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+            <Label fx:id="lblTitle" layoutX="69.0" layoutY="12.0" prefHeight="33.0" prefWidth="415.0" text="Hi &lt;Name&gt; Welcome To The Farm !" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDate" layoutX="554.0" layoutY="8.0" prefHeight="42.0" prefWidth="120.0" text="2019.01.17" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTime" layoutX="749.0" layoutY="6.0" prefHeight="42.0" prefWidth="105.0" text="1:45:28" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Separator layoutX="856.0" layoutY="6.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="873.0" layoutY="6.0" onMouseClicked="#imgSettingOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8_settings_48px.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="22.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8_human_head_48px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="942.0" layoutY="6.0" onMouseClicked="#imgExitOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8_logout_rounded_up_64px_1.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Separator layoutX="926.0" layoutY="6.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+            <Separator layoutX="674.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+            <Separator layoutX="488.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="500.0" layoutY="6.0" onMouseClicked="#imgSettingOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8-2012-30.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="692.0" layoutY="6.0" onMouseClicked="#imgSettingOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8-clock-50.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="root3" layoutX="282.0" layoutY="64.0" prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;">
+         <children>
+            <Pane layoutX="21.0" layoutY="28.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #0652dd, #007cf1, #009ceb, #00b5d7, #12cbc4);; -fx-background-radius: 2em;" />
+            <Pane layoutX="211.0" layoutY="28.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #e60000, #ed1311, #f3201e, #f92a29, #ff3333);; -fx-background-radius: 2em;" />
+            <Pane layoutX="397.0" layoutY="27.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #008000, #059e04, #0cbd0a, #13de12, #1aff1a);; -fx-background-radius: 2em;" />
+            <Pane layoutX="587.0" layoutY="26.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #ff3300, #ff5500, #ff6f00, #ff8500, #ff9900);; -fx-background-radius: 2em;" />
+            <Pane layoutX="777.0" layoutY="25.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #660066, #8a0b8a, #af18af, #d726d6, #ff33ff);; -fx-background-radius: 2em;" />
+            <AnchorPane layoutX="650.0" layoutY="201.0" prefHeight="397.0" prefWidth="286.0" style="-fx-background-color: #004072; -fx-background-radius: 1em;" />
+            <TableView layoutX="22.0" layoutY="201.0" prefHeight="397.0" prefWidth="592.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

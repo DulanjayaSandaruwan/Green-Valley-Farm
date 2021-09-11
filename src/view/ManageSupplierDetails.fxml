@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageSupplierDetailsController">
+   <children>
+      <JFXButton layoutX="12.0" layoutY="9.0" onAction="#btnSupplierIdOnAction" prefHeight="29.0" prefWidth="141.0" style="-fx-background-color: #0099ff; -fx-background-radius: 2em;" text="Supplier ID" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="823.0" layoutY="11.0" onAction="#btnClearOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #ff4000; -fx-background-radius: 2em;" text="Clear" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="823.0" layoutY="193.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #ff0000; -fx-background-radius: 2em;" text="Delete" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdateSupplier" layoutX="664.0" layoutY="194.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #0099ff; -fx-background-radius: 2em;" text="Update" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnSaveSupplier" layoutX="504.0" layoutY="194.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #009933; -fx-background-radius: 2em;" text="Save" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblSupplierDetails" layoutX="13.0" layoutY="248.0" onMouseClicked="#tblSupplierDetailsOnMouseClicked" prefHeight="359.0" prefWidth="931.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;" stylesheets="@../assests/styles/TableStyles.css">
+        <columns>
+          <TableColumn fx:id="colSupID" prefWidth="182.0" text="Supplier ID" />
+          <TableColumn fx:id="colSupName" prefWidth="273.0" text="Name" />
+            <TableColumn fx:id="colSupAddress" prefWidth="257.0" text="Address" />
+            <TableColumn fx:id="colSupContact" prefWidth="219.0" text="Contact" />
+        </columns>
+         <styleClass>
+            <String fx:value="table-view1" />
+            <String fx:value="table-row-cell" />
+         </styleClass>
+      </TableView>
+      <Text fill="#c9bebe" layoutX="166.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" wrappingWidth="15.7294921875">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtSupID" layoutX="186.0" layoutY="9.0" onAction="#txtGetSupplierID" prefHeight="26.0" prefWidth="100.0" promptText="S001" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtSupplierName" layoutX="14.0" layoutY="108.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="431.0" promptText="Hasika Sandaruwan" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Label layoutX="18.0" layoutY="79.0" prefHeight="26.0" prefWidth="241.0" text="Enter Supplier Name :" textFill="#fff9f9">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSupAddress" layoutX="504.0" layoutY="107.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" promptText="Rathnapura 07" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Label layoutX="505.0" layoutY="79.0" prefHeight="26.0" prefWidth="241.0" text="Enter Supplier Address :" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSupContact" layoutX="14.0" layoutY="196.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="431.0" promptText="078-4956149" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Label layoutX="18.0" layoutY="166.0" prefHeight="26.0" prefWidth="241.0" text="Enter Supplier Contact :" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

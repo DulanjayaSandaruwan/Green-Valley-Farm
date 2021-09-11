@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-background-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddNewUserFormController">
+   <children>
+      <JFXButton fx:id="btnManager" layoutX="14.0" layoutY="14.0" onAction="#btnAddNewManagerOnAction" prefHeight="42.0" prefWidth="180.0" style="-fx-background-color: #0099ff; -fx-background-radius: 2em;" text="Manager ID" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnReception" layoutX="294.0" layoutY="14.0" onAction="#btnAddNewReceptionOnAction" prefHeight="42.0" prefWidth="180.0" style="-fx-background-color: #0099ff; -fx-background-radius: 2em;" text="Reception ID" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TextField fx:id="txtUserName" layoutX="20.0" layoutY="153.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="36.0" prefWidth="458.0" promptText="Dulanjaya Sandaruwan" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="17.0" />
+         </font></TextField>
+      <TextField fx:id="txtEmail" layoutX="20.0" layoutY="229.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="36.0" prefWidth="458.0" promptText="dulanjaya2001@gmail.com" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <PasswordField fx:id="txtNewPassword" layoutX="20.0" layoutY="311.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="36.0" prefWidth="458.0" promptText="Include Letters And Numbers" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="19.0" />
+         </font></PasswordField>
+      <PasswordField fx:id="txtConfirmPassword" layoutX="19.0" layoutY="393.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="36.0" prefWidth="458.0" promptText="Enter Above Password Ypu Entered" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="19.0" />
+         </font></PasswordField>
+      <TextField fx:id="txtRole" layoutX="16.0" layoutY="497.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="36.0" prefWidth="458.0" promptText="Manager / Reception" style="-fx-background-radius: 2em;">
+         <font>
+            <Font size="19.0" />
+         </font></TextField>
+      <JFXButton fx:id="btnRegister" layoutX="327.0" layoutY="562.0" onAction="#btnRegisterOnAction" prefHeight="36.0" prefWidth="146.0" style="-fx-background-color: #009432; -fx-background-radius: 2em;" text="Register" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="21.0" layoutY="126.0" prefHeight="27.0" prefWidth="195.0" text="Enter User Name :" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="22.0" layoutY="208.0" prefHeight="16.0" prefWidth="180.0" text="Enter E-Mail :" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="23.0" layoutY="290.0" prefHeight="20.0" prefWidth="195.0" text="Enter New Password :" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="21.0" layoutY="371.0" prefHeight="16.0" prefWidth="167.0" text="Confirm Password :" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="21.0" layoutY="475.0" prefHeight="16.0" prefWidth="167.0" text="Enter Role :" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="121.0" layoutY="79.0" prefHeight="36.0" prefWidth="104.0" text="User ID :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblID" layoutX="244.0" layoutY="79.0" prefHeight="36.0" prefWidth="104.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPasswordNotMatch" layoutX="21.0" layoutY="438.0" prefHeight="24.0" prefWidth="304.0" text="Password Does Not Match !" textFill="#ff6666">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <TableView fx:id="tblUserDetails" layoutX="507.0" layoutY="10.0" prefHeight="595.0" prefWidth="445.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em; -fx-border-radius: 1em; -fx-border-color: #ffffff;" stylesheets="@../assests/styles/TableStyles.css">
+        <columns>
+          <TableColumn fx:id="colUserID" prefWidth="89.0" text="User ID" />
+          <TableColumn fx:id="colUserName" prefWidth="158.0" text="User Name" />
+            <TableColumn fx:id="colUserEmail" prefWidth="197.0" text="User E-Mail" />
+        </columns>
+         <styleClass>
+            <String fx:value="table-view1" />
+            <String fx:value="table-row-cell" />
+         </styleClass>
+      </TableView>
+      <Separator layoutX="491.0" layoutY="2.0" opacity="0.15" orientation="VERTICAL" prefHeight="608.0" prefWidth="1.0" />
+   </children>
+</AnchorPane>

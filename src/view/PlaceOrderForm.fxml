@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderFormController">
+   <children>
+      <Label layoutX="12.0" prefHeight="30.0" prefWidth="132.0" text="Order ID :" textFill="#fcf0f0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrderID" layoutX="147.0" layoutY="1.0" prefHeight="30.0" prefWidth="99.0" textFill="#fffbfb">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="466.0" layoutY="2.0" prefHeight="30.0" prefWidth="132.0" text="2019-01-17" textFill="#f2eaea">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="835.0" layoutY="3.0" prefHeight="30.0" prefWidth="117.0" text="01:45:18" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbCustomerIds" layoutX="11.0" layoutY="54.0" prefHeight="30.0" prefWidth="152.0" promptText="Customer ID" style="-fx-background-color: #53c7f0; -fx-background-radius: 1em;" />
+      <Label layoutX="306.0" layoutY="1.0" prefHeight="30.0" prefWidth="164.0" text="Order Date :" textFill="#fcf9f9">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="678.0" layoutY="1.0" prefHeight="30.0" prefWidth="175.0" text="Order Time :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCustomerName" layoutX="172.0" layoutY="56.0" prefHeight="26.0" prefWidth="268.0" promptText="Customer Name" style="-fx-background-radius: 2em;" />
+      <TextField fx:id="txtUnitPrice" layoutX="452.0" layoutY="117.0" prefHeight="26.0" prefWidth="290.0" promptText="UnitPrice" style="-fx-background-radius: 2em;" />
+      <TextField fx:id="txtCustomerContact" layoutX="751.0" layoutY="56.0" prefHeight="26.0" prefWidth="194.0" promptText="Customer Contact" style="-fx-background-radius: 2em;" />
+      <ComboBox fx:id="cmbProductIds" layoutX="11.0" layoutY="114.0" prefHeight="30.0" prefWidth="152.0" promptText="Product ID" style="-fx-background-color: #53c7f0; -fx-background-radius: 1em;" />
+      <TextField fx:id="txtProductName" layoutX="173.0" layoutY="118.0" prefHeight="26.0" prefWidth="268.0" promptText="Product Name" style="-fx-background-radius: 2em;" />
+      <TextField fx:id="txtGardenLocation" layoutX="450.0" layoutY="56.0" prefHeight="26.0" prefWidth="290.0" promptText="Customer Address" style="-fx-background-radius: 2em;" />
+      <TextField fx:id="txtQtyOnHand" layoutX="751.0" layoutY="116.0" prefHeight="26.0" prefWidth="194.0" promptText="Qty On Hand" style="-fx-background-radius: 2em;" />
+      <Label layoutX="12.0" layoutY="170.0" prefHeight="30.0" prefWidth="183.0" text="Order Quantities :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtQty" layoutX="180.0" layoutY="172.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="99.0" promptText="Qty" style="-fx-background-radius: 2em;" />
+      <JFXButton layoutX="636.0" layoutY="165.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="117.0" style="-fx-background-color: #ff0000; -fx-background-radius: 2em;" text="Clear" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="776.0" layoutY="164.0" onAction="#btnAddToCartOnAction" prefHeight="30.0" prefWidth="171.0" style="-fx-background-color: #008000; -fx-background-radius: 2em;" text="Add To Store" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="txtOrderDetails" layoutX="8.0" layoutY="215.0" prefHeight="337.0" prefWidth="937.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;" stylesheets="@../assests/styles/TableStyles.css">
+         <columns>
+            <TableColumn fx:id="colProductId" prefWidth="100.0" text="Product ID" />
+            <TableColumn fx:id="colProductName" prefWidth="202.0" text="Product Name" />
+            <TableColumn fx:id="colQty" prefWidth="122.0" text="Quantity" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="159.0" text="Unit Price" />
+            <TableColumn fx:id="colDiscount" prefWidth="158.0" text="Discount" />
+            <TableColumn fx:id="colTotalPrice" prefWidth="196.0" text="Total Price" />
+         </columns>
+         <styleClass>
+            <String fx:value="table-view1" />
+            <String fx:value="table-row-cell" />
+         </styleClass>
+      </TableView>
+      <JFXButton layoutX="760.0" layoutY="561.0" onAction="#btnPlaceOrderOnAction" prefHeight="39.0" prefWidth="183.0" style="-fx-background-color: #ff3300; -fx-background-radius: 2em;" text="Place Order" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="10.0" layoutY="569.0" prefHeight="30.0" prefWidth="143.0" text="Net Price :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNetPrice" layoutX="150.0" layoutY="565.0" prefHeight="39.0" prefWidth="152.0" text="0.00" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="336.0" layoutY="170.0" prefHeight="30.0" prefWidth="110.0" text="Discount :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDiscount" layoutX="442.0" layoutY="172.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="99.0" promptText="Discount" style="-fx-background-radius: 2em;" />
+      <Text fill="WHITE" layoutX="544.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\%" wrappingWidth="41.7294921875">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

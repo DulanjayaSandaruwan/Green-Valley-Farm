@@ -1,0 +1,102 @@
+package controller;
+
+import com.jfoenix.controls.JFXButton;
+import db.DBConnection;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.util.Date;
+
+/**
+ * @author : D.D.Sandaruwan <dulanjayasandaruwan1998@gmail.com>
+ * @Since : 2021-09-02
+ **/
+public class LoginFormController {
+
+    public static String name;
+    public static String userID;
+    public static String role;
+    public TextField txtEnterUserName;
+    public PasswordField txtEnterPassword;
+    public JFXButton btnLogin;
+    public AnchorPane root1;
+    public Label lblDate;
+    public Label lblTime;
+
+    public void initialize() {
+
+
+    }
+
+    public void btnLoginOnAction(ActionEvent actionEvent) {
+        login();
+    }
+
+    public void login() {
+        String userName = txtEnterUserName.getText();
+        String password = txtEnterPassword.getText();
+
+        Connection connection = DBConnection.getInstance().getConnection();
+
+        PreparedStatement preparedStatement = null;
+
+        try {
+           preparedStatement = connection.prepareStatement("select * from login where userName = ? and password = ?");
+
+            preparedStatement.setObject(1, userName);
+            preparedStatement.setObject(2, password);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+
+                userID = resultSet.getString(1);
+                name = resultSet.getString(2);
+                role = resultSet.getString(5);
+
+                Parent parent = FXMLLoader.load(this.getClass().getResource(role.equals("Manager")
+                        ? "../view/ManagerMainForm.fxml" : "../view/ReceptionMainForm.fxml"));
+                Scene scene = new Scene(parent);
+                Stage primaryStage = (Stage) this.root1.getScene().getWindow();
+                primaryStage.setScene(scene);
+                primaryStage.setTitle("Main Form");
+                primaryStage.centerOnScreen();
+
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Invalid User Name or Password").showAndWait();
+                txtEnterUserName.clear();
+                txtEnterPassword.clear();
+                txtEnterUserName.requestFocus();
+            }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            Parent parent = FXMLLoader.load(this.getClass().getResource("../view/ManagerMainForm.fxml" ));
+//            Scene scene = new Scene(parent);
+//            Stage primaryStage = (Stage) this.root1.getScene().getWindow();
+//            primaryStage.setScene(scene);
+//            primaryStage.setTitle("Main Form");
+//            primaryStage.centerOnScreen();
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
