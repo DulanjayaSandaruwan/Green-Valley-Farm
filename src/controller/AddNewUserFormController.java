@@ -49,7 +49,6 @@ public class AddNewUserFormController {
 
     public void initialize() {
         lblPasswordNotMatch.setVisible(false);
-
         txtUserName.setDisable(true);
         txtEmail.setDisable(true);
         txtNewPassword.setDisable(true);
