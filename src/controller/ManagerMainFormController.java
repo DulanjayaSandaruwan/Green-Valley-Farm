@@ -7,13 +7,11 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -73,7 +71,6 @@ public class ManagerMainFormController {
         root3.getChildren().clear();
         root3.getChildren().add(load);
     }
-
 
 
     public void btnSupplierOnAction(ActionEvent actionEvent) throws IOException {
