@@ -5,11 +5,16 @@ import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.util.Duration;
 import model.User;
+import org.controlsfx.control.Notifications;
 import util.ValidationUtil;
 import view.tm.UserTM;
 
@@ -122,7 +127,9 @@ public class AddNewUserFormController {
                 preparedStatement.setObject(5, role);
 
                 if (preparedStatement.executeUpdate() != 0) {
-                    new Alert(Alert.AlertType.CONFIRMATION, "Successfully Added...").showAndWait();
+
+                    successNotification();
+
                     clearForms();
 
                     User user = new User(
@@ -136,7 +143,7 @@ public class AddNewUserFormController {
                     loadAllUsers();
 
                 } else {
-                    new Alert(Alert.AlertType.CONFIRMATION, "Something went wrong...").showAndWait();
+                    failedNotification();
                 }
 
             } catch (SQLException throwables) {
@@ -237,8 +244,32 @@ public class AddNewUserFormController {
                 TextField errorText = (TextField) response;
                 errorText.requestFocus();
             } else if (response instanceof Boolean) {
-                new Alert(Alert.AlertType.INFORMATION, "Added").showAndWait();
+                successNotification();
             }
         }
+    }
+
+    public void successNotification(){
+        Image image = new Image("/assests/images/pass.png");
+        Notifications notifications = Notifications.create();
+        notifications.graphic(new ImageView(image));
+        notifications.text("Successfully Added !");
+        notifications.title("Success Message");
+        notifications.hideAfter(Duration.seconds(10));
+        notifications.position(Pos.TOP_CENTER);
+        notifications.darkStyle();
+        notifications.show();
+    }
+
+    public void failedNotification(){
+        Image image = new Image("/assests/images/fail.png");
+        Notifications notifications = Notifications.create();
+        notifications.graphic(new ImageView(image));
+        notifications.text("Something Went Wrong , Try Again !");
+        notifications.title("Failed Message");
+        notifications.hideAfter(Duration.seconds(10));
+        notifications.position(Pos.TOP_CENTER);
+        notifications.darkStyle();
+        notifications.show();
     }
 }

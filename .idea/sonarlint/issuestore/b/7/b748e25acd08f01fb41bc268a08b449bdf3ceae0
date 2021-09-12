@@ -1,33 +1,0 @@
-
-£
-java:S1186m"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¡®úÿÿÿÿ8ÖÑ¼/
-£
-java:S1186q"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(æ”éàüÿÿÿÿ8İÑ¼/
-O
-java:S1172<"2Remove this unused method parameter "actionEvent".(Ïëƒ8ìï™¥¼/
-T
-java:S1172C"2Remove this unused method parameter "actionEvent".(°¿†¼şÿÿÿÿ8ê”…Ë¼/
-T
-java:S1172J"2Remove this unused method parameter "actionEvent".(Õ­¤¤ùÿÿÿÿ8®ÜªË¼/
-N
-java:S1172Q"2Remove this unused method parameter "actionEvent".(É•ÔE8ÚœÍÕ¼/
-T
-java:S1172X"2Remove this unused method parameter "actionEvent".(ª¿áÃùÿÿÿÿ8šåğŠ½/
-O
-java:S1172_"2Remove this unused method parameter "actionEvent".(äíğè8´–®‹½/
-O
-java:S1172f"2Remove this unused method parameter "actionEvent".(ö¾ÌÎ8òÿÒ¢½/
-L
-java:S1128	"/Remove this unused import 'javafx.scene.Scene'.(Õü²8®Ëôú¼/
-Q
-java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8¯Ëôú¼/
-s
-java:S1104"QMake root4 a static final constant or non-public and provide accessors if needed.(Í–øÿÿÿÿ8ø·Ò¼/
-v
-java:S1104"TMake lblTitle a static final constant or non-public and provide accessors if needed.(Óä¶ùûÿÿÿÿ8óãÓ¼/
-u
-java:S1104"SMake lblDate a static final constant or non-public and provide accessors if needed.(…“À„ÿÿÿÿÿ8©Ô¼/
-p
-java:S1104"SMake lblTime a static final constant or non-public and provide accessors if needed.(¿°×•8ù¹Ô¼/
-s
-java:S1104 "QMake root5 a static final constant or non-public and provide accessors if needed.(˜©“¼ûÿÿÿÿ8á²Ş¼/

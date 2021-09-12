@@ -7,15 +7,19 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -80,7 +84,17 @@ public class LoginFormController {
                 primaryStage.centerOnScreen();
 
             } else {
-                new Alert(Alert.AlertType.ERROR, "Invalid User Name or Password").showAndWait();
+
+                Image image = new Image("/assests/images/fail.png");
+                Notifications notifications = Notifications.create();
+                notifications.graphic(new ImageView(image));
+                notifications.text("Something Went Wrong , Wrong User Name Or Password , Try Again !");
+                notifications.title("Failed Message");
+                notifications.hideAfter(Duration.seconds(10));
+                notifications.position(Pos.TOP_CENTER);
+                notifications.darkStyle();
+                notifications.show();
+
                 txtEnterUserName.clear();
                 txtEnterPassword.clear();
                 txtEnterUserName.requestFocus();

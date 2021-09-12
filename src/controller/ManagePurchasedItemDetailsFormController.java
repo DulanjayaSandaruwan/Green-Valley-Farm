@@ -5,14 +5,19 @@ import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.util.Duration;
 import model.Item;
+import org.controlsfx.control.Notifications;
 import view.tm.ItemTM;
 
 import java.sql.Connection;
@@ -62,7 +67,15 @@ public class ManagePurchasedItemDetailsFormController {
 
         Item item1 = new ItemController().searchItem(itemCode);
         if (item1 == null) {
-            new Alert(Alert.AlertType.WARNING, "Empty Result Set").show();
+            Image image = new Image("/assests/images/fail.png");
+            Notifications notifications = Notifications.create();
+            notifications.graphic(new ImageView(image));
+            notifications.text("Something Went Wrong , Empty Results Set , Try Again !");
+            notifications.title("Failed Message");
+            notifications.hideAfter(Duration.seconds(10));
+            notifications.position(Pos.TOP_CENTER);
+            notifications.darkStyle();
+            notifications.show();
         } else {
             setData(item1);
         }
@@ -129,13 +142,29 @@ public class ManagePurchasedItemDetailsFormController {
 
     public void btnDeleteOnAction(ActionEvent actionEvent) throws SQLException {
         if (new ItemController().deleteItem(txtItemCode.getText())) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Deleted").show();
+            Image image = new Image("/assests/images/pass.png");
+            Notifications notifications = Notifications.create();
+            notifications.graphic(new ImageView(image));
+            notifications.text("Successfully Deleted !");
+            notifications.title("Success Message");
+            notifications.hideAfter(Duration.seconds(10));
+            notifications.position(Pos.TOP_CENTER);
+            notifications.darkStyle();
+            notifications.show();
 
             clearForms();
             tblItemDetails.getItems().clear();
             setItemValuesToTable(new ItemController().selectAllItems());
         } else {
-            new Alert(Alert.AlertType.WARNING, "Try Again").show();
+            Image image = new Image("/assests/images/fail.png");
+            Notifications notifications = Notifications.create();
+            notifications.graphic(new ImageView(image));
+            notifications.text("Something Went Wrong , Try Again !");
+            notifications.title("Failed Message");
+            notifications.position(Pos.TOP_CENTER);
+            notifications.hideAfter(Duration.seconds(10));
+            notifications.darkStyle();
+            notifications.show();
         }
     }
 
@@ -150,7 +179,17 @@ public class ManagePurchasedItemDetailsFormController {
         if (!item3.getItemCode().isEmpty()) {
             if (new ItemController().updateItem(item3)) {
                 try {
-                    new Alert(Alert.AlertType.CONFIRMATION, "Updated !").showAndWait();
+
+                    Image image = new Image("/assests/images/pass.png");
+                    Notifications notifications = Notifications.create();
+                    notifications.graphic(new ImageView(image));
+                    notifications.text("Successfully Updated !");
+                    notifications.title("Success Message");
+                    notifications.hideAfter(Duration.seconds(10));
+                    notifications.position(Pos.TOP_CENTER);
+                    notifications.darkStyle();
+                    notifications.show();
+
                     clearForms();
                     tblItemDetails.getItems().clear();
                     setItemValuesToTable(new ItemController().selectAllItems());
@@ -160,7 +199,15 @@ public class ManagePurchasedItemDetailsFormController {
 
             }
         } else {
-            new Alert(Alert.AlertType.WARNING, "Try Again").showAndWait();
+            Image image = new Image("/assests/images/fail.png");
+            Notifications notifications = Notifications.create();
+            notifications.graphic(new ImageView(image));
+            notifications.text("Something Went Wrong , Try Again !");
+            notifications.title("Failed Message");
+            notifications.hideAfter(Duration.seconds(10));
+            notifications.position(Pos.TOP_CENTER);
+            notifications.darkStyle();
+            notifications.show();
         }
     }
 
@@ -174,14 +221,32 @@ public class ManagePurchasedItemDetailsFormController {
         if (!item2.getItemCode().isEmpty() && !item2.getItemName().isEmpty() && !item2.getItemType().isEmpty() ) {
 
             if (new ItemController().saveItem(item2)) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Saved..").showAndWait();
+
+                Image image = new Image("/assests/images/pass.png");
+                Notifications notifications = Notifications.create();
+                notifications.graphic(new ImageView(image));
+                notifications.text("Successfully Saved !");
+                notifications.title("Success Message");
+                notifications.hideAfter(Duration.seconds(10));
+                notifications.position(Pos.TOP_CENTER);
+                notifications.darkStyle();
+                notifications.show();
+
                 clearForms();
                 tblItemDetails.getItems().clear();
                 setItemValuesToTable(new ItemController().selectAllItems());
             }
 
         } else {
-            new Alert(Alert.AlertType.WARNING, "Try Again..").showAndWait();
+            Image image = new Image("/assests/images/fail.png");
+            Notifications notifications = Notifications.create();
+            notifications.graphic(new ImageView(image));
+            notifications.text("Something Went Wrong , Try Again !");
+            notifications.title("Failed Message");
+            notifications.hideAfter(Duration.seconds(10));
+            notifications.position(Pos.TOP_CENTER);
+            notifications.darkStyle();
+            notifications.show();
         }
     }
 

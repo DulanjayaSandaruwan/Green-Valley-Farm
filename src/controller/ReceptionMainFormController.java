@@ -6,11 +6,9 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -31,11 +29,11 @@ public class ReceptionMainFormController {
     public Label lblTime;
     public AnchorPane root5;
 
-    public void initialize(){
+    public void initialize() {
         loadDateAndTime();
 
         String name = LoginFormController.name;
-        lblTitle.setText("Hi "+name+" Welcome To The Farm !");
+        lblTitle.setText("Hi " + name + " Welcome To The Farm !");
     }
 
     private void loadDateAndTime() {
@@ -43,12 +41,12 @@ public class ReceptionMainFormController {
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
         lblDate.setText(f.format(date));
 
-        Timeline time = new Timeline(new KeyFrame(Duration.ZERO, e->{
+        Timeline time = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             LocalTime currentTime = LocalTime.now();
             lblTime.setText(
-                    currentTime.getHour()+ " : "+currentTime.getMinute()+ " : "+currentTime.getSecond()
+                    currentTime.getHour() + " : " + currentTime.getMinute() + " : " + currentTime.getSecond()
             );
-        }) ,
+        }),
                 new KeyFrame(Duration.seconds(1))
         );
 
