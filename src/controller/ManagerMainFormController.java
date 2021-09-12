@@ -65,7 +65,7 @@ public class ManagerMainFormController {
         root2.getChildren().add(load);
     }
 
-    public void btnAddNewUserOnAction(ActionEvent actionEvent) throws IOException {
+    public void ImgAddNewUserOnMouseClicked(MouseEvent mouseEvent) throws IOException {
         URL resource = getClass().getResource("../view/AddNewUserForm.fxml");
         Parent load = FXMLLoader.load(resource);
         root3.getChildren().clear();
@@ -113,13 +113,38 @@ public class ManagerMainFormController {
 
     }
 
-    public void imgExitOnMouseClicked(MouseEvent mouseEvent) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do You Want Exit.", ButtonType.YES, ButtonType.NO);
-        Optional<ButtonType> buttonTypeOptional = alert.showAndWait();
-
-        if (buttonTypeOptional.get().equals(ButtonType.YES)) {
-            System.exit(0);
-        }
+    public void btnGardenOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/ManageGardenDetailsForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        root3.getChildren().clear();
+        root3.getChildren().add(load);
     }
 
+    public void btnFarmerOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/ManageFarmerDetailsForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        root3.getChildren().clear();
+        root3.getChildren().add(load);
+    }
+
+    public void btnCollectProductsOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/CollectProductsForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        root3.getChildren().clear();
+        root3.getChildren().add(load);
+    }
+
+    public void btnCustomerOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/ManageCustomerDetailsForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        root3.getChildren().clear();
+        root3.getChildren().add(load);
+    }
+
+    public void btnPlaceOrderOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/PlaceOrderForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        root3.getChildren().clear();
+        root3.getChildren().add(load);
+    }
 }

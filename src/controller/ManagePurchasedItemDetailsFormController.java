@@ -43,6 +43,10 @@ public class ManagePurchasedItemDetailsFormController {
 
     public void initialize() throws SQLException {
 
+        txtItemName.setDisable(true);
+        txtItemType.setDisable(true);
+        txtUnitPrice.setDisable(true);
+
         colItemCode.setCellValueFactory(new PropertyValueFactory<>("itemCode"));
         colItemName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
         colItemType.setCellValueFactory(new PropertyValueFactory<>("itemType"));
@@ -80,6 +84,11 @@ public class ManagePurchasedItemDetailsFormController {
     }
 
     public void btnItemCodeOnAction(ActionEvent actionEvent) {
+
+        txtItemName.setDisable(false);
+        txtItemType.setDisable(false);
+        txtUnitPrice.setDisable(false);
+
         Connection connection = DBConnection.getInstance().getConnection();
 
         try {
@@ -162,7 +171,7 @@ public class ManagePurchasedItemDetailsFormController {
                 txtItemType.getText(),
                 Double.parseDouble("".equals(txtUnitPrice.getText()) ? "0" : txtUnitPrice.getText())
         );
-        if (!item2.getItemCode().isEmpty()) {
+        if (!item2.getItemCode().isEmpty() && !item2.getItemName().isEmpty() && !item2.getItemType().isEmpty() ) {
 
             if (new ItemController().saveItem(item2)) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Saved..").showAndWait();

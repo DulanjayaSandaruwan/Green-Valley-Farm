@@ -132,7 +132,8 @@ public class AddNewUserFormController {
                     );
 
                     obList.add(new UserTM(user.getUserID(), user.getUserName(), user.getUserEmail()));
-
+                    clearForms();
+                    loadAllUsers();
 
                 } else {
                     new Alert(Alert.AlertType.CONFIRMATION, "Something went wrong...").showAndWait();
@@ -156,6 +157,7 @@ public class AddNewUserFormController {
         txtNewPassword.setText("");
         txtConfirmPassword.setText("");
         txtRole.setText("");
+        tblUserDetails.getItems().clear();
         lblPasswordNotMatch.setVisible(false);
 
     }
@@ -180,7 +182,6 @@ public class AddNewUserFormController {
         txtNewPassword.setDisable(false);
         txtConfirmPassword.setDisable(false);
         txtRole.setDisable(false);
-
 
         txtUserName.requestFocus();
     }
