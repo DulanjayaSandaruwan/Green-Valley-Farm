@@ -24,7 +24,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></JFXButton>
-            <Label layoutX="101.0" layoutY="14.0" prefHeight="43.0" prefWidth="226.0" text="Log In To Farm " textFill="#000000fa" underline="true">
+            <Label layoutX="101.0" layoutY="14.0" prefHeight="43.0" prefWidth="226.0" text="Log In To Farm " textFill="#070622fa" underline="true">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -56,12 +56,12 @@
                   </Label>
                </children>
             </Pane>
-            <Label layoutX="31.0" layoutY="397.0" prefHeight="43.0" prefWidth="262.0" text="Welcome" textFill="WHITE">
+            <Label layoutX="28.0" layoutY="368.0" prefHeight="43.0" prefWidth="262.0" text="Welcome" textFill="WHITE">
                <font>
-                  <Font name="Abyssinica SIL" size="34.0" />
+                  <Font name="Abyssinica SIL" size="47.0" />
                </font>
             </Label>
-            <Label layoutX="31.0" layoutY="452.0" prefHeight="44.0" prefWidth="245.0" text="To The Farm !" textFill="#f8f8f8">
+            <Label layoutX="31.0" layoutY="444.0" prefHeight="44.0" prefWidth="245.0" text="To The Farm !" textFill="#f8f8f8">
                <font>
                   <Font name="Abyssinica SIL" size="33.0" />
                </font>

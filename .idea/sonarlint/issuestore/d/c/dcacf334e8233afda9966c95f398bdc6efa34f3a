@@ -1,0 +1,70 @@
+
+Q
+java:S3740"/Provide the parametrized type for this generic.(ÛÄÃçüÿÿÿÿ8Å‚Å¢½/
+L
+java:S3740"/Provide the parametrized type for this generic.(¯€ğÊ8éÆ¢½/
+L
+java:S3740"/Provide the parametrized type for this generic.(ª·ğÍ8ÛÒÇ¢½/
+Q
+java:S3740"/Provide the parametrized type for this generic.(º°Çşûÿÿÿÿ8ÁşÇ¢½/
+L
+java:S3740"/Provide the parametrized type for this generic.(¾ú€8ÎûÈ¢½/
+Q
+java:S3740"/Provide the parametrized type for this generic.(‰å¾…úÿÿÿÿ8¨²É¢½/
+L
+java:S3740"/Provide the parametrized type for this generic.(Õ…¼í8ÎÑÉ¢½/
+L
+java:S3740"/Provide the parametrized type for this generic.(ÁÊšÖ8ÑïÉ¢½/
+L
+java:S3740 "/Provide the parametrized type for this generic.(Ü“âÂ8•Ê¢½/
+£
+java:S1186$"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Š²Ô¢úÿÿÿÿ8ñ–Ğ¢½/
+
+java:S1186'"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ŠÜÎ£8•¶Ğ¢½/
+£
+java:S1186*"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÃğƒËøÿÿÿÿ8ÔÕĞ¢½/
+£
+java:S1186-"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(—²Üğøÿÿÿÿ8ÍŒÑ¢½/
+o	java:S100*"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃğƒËøÿÿÿÿ8ÖÕĞ¢½/
+x
+java:S1104"VMake lblOrderID a static final constant or non-public and provide accessors if needed.(˜Ã—ùÿÿÿÿ8ª–Ä¢½/
+u
+java:S1104"SMake lblDate a static final constant or non-public and provide accessors if needed.(…“À„ÿÿÿÿÿ8¬·Ä¢½/
+p
+java:S1104"SMake lblTime a static final constant or non-public and provide accessors if needed.(¿°×•8”àÄ¢½/
+|
+java:S1104"ZMake cmbCustomerIds a static final constant or non-public and provide accessors if needed.(ÛÄÃçüÿÿÿÿ8Ç‚Å¢½/
+w
+java:S1104"[Make txtCustomerName a static final constant or non-public and provide accessors if needed.(ß©Ÿ	8®¹Å¢½/
+z
+java:S1104"XMake txtUnitPrice a static final constant or non-public and provide accessors if needed.(¿¯‘ïıÿÿÿÿ8³ÕÅ¢½/
+z
+java:S1104"^Make txtCustomerContact a static final constant or non-public and provide accessors if needed.(ŸÀ.8´îÅ¢½/
+v
+java:S1104"YMake cmbProductIds a static final constant or non-public and provide accessors if needed.(¯€ğÊ8ëÆ¢½/
+|
+java:S1104"ZMake txtProductName a static final constant or non-public and provide accessors if needed.(Òµö“üÿÿÿÿ8š³Æ¢½/
+
+java:S1104"]Make txtGardenLocation a static final constant or non-public and provide accessors if needed.(¬Î³¥ÿÿÿÿÿ8ÿĞÆ¢½/
+u
+java:S1104"XMake txtQtyOnHand a static final constant or non-public and provide accessors if needed.(Á‚¼8­óÆ¢½/
+o
+java:S1104"RMake txtQty a static final constant or non-public and provide accessors if needed.(ÅÈ8ó±Ç¢½/
+x
+java:S1104"[Make txtOrderDetails a static final constant or non-public and provide accessors if needed.(ª·ğÍ8ŞÒÇ¢½/
+z
+java:S1104"XMake colProductId a static final constant or non-public and provide accessors if needed.(º°Çşûÿÿÿÿ8ÄşÇ¢½/
+w
+java:S1104"ZMake colProductName a static final constant or non-public and provide accessors if needed.(¾ú€8ÑûÈ¢½/
+t
+java:S1104"RMake colQty a static final constant or non-public and provide accessors if needed.(‰å¾…úÿÿÿÿ8«²É¢½/
+u
+java:S1104"XMake colUnitPrice a static final constant or non-public and provide accessors if needed.(Õ…¼í8ÑÑÉ¢½/
+t
+java:S1104"WMake colDiscount a static final constant or non-public and provide accessors if needed.(ÁÊšÖ8ÔïÉ¢½/
+v
+java:S1104 "YMake colTotalPrice a static final constant or non-public and provide accessors if needed.(Ü“âÂ8’•Ê¢½/
+t
+java:S1104!"WMake lblNetPrice a static final constant or non-public and provide accessors if needed.(ÂÒˆ§8ŞÎ¢½/
+t
+java:S1104""WMake txtDiscount a static final constant or non-public and provide accessors if needed.(­ä‚š8Š›Ï¢½/
