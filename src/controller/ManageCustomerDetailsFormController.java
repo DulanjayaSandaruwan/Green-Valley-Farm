@@ -33,7 +33,7 @@ import java.util.ArrayList;
  **/
 public class ManageCustomerDetailsFormController {
     public JFXButton btnSaveProducts;
-    public TableView tblCustomerDetails;
+    public TableView <CustomerTM> tblCustomerDetails;
     public TableColumn colCustomerID;
     public TableColumn colCustomerName;
     public TableColumn colCustomerAddress;
@@ -243,7 +243,7 @@ public class ManageCustomerDetailsFormController {
 
     public void tblFarmerDetailsOnMouseClicked(MouseEvent mouseEvent) {
         if (tblCustomerDetails.getSelectionModel().getSelectedItem() != null) {
-            CustomerTM customerTM = (CustomerTM) tblCustomerDetails.getSelectionModel().getSelectedItem();
+            CustomerTM customerTM = tblCustomerDetails.getSelectionModel().getSelectedItem();
             txtCustomerID.setText(customerTM.getCustomerId());
             txtCustomerName.setText(customerTM.getCustomerName());
             txtCustomerAddress.setText(customerTM.getCustomerAddress());

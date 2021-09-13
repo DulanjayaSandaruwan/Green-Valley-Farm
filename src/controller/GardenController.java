@@ -3,7 +3,6 @@ package controller;
 import controller.common.GardenManage;
 import db.DBConnection;
 import model.Garden;
-import model.Supplier;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

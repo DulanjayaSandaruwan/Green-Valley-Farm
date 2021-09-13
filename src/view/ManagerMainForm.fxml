@@ -138,8 +138,31 @@
             <Pane layoutX="211.0" layoutY="24.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #e60000, #ed1311, #f3201e, #f92a29, #ff3333);; -fx-background-radius: 2em;" />
             <Pane layoutX="397.0" layoutY="23.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #008000, #059e04, #0cbd0a, #13de12, #1aff1a);; -fx-background-radius: 2em;" />
             <Pane layoutX="587.0" layoutY="22.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #ff3300, #ff5500, #ff6f00, #ff8500, #ff9900);; -fx-background-radius: 2em;" />
-            <Pane layoutX="777.0" layoutY="21.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #660066, #8a0b8a, #af18af, #d726d6, #ff33ff);; -fx-background-radius: 2em;" />
-            <AnchorPane layoutX="650.0" layoutY="200.0" prefHeight="397.0" prefWidth="286.0" style="-fx-background-color: #004072; -fx-background-radius: 1em;" />
+            <Pane layoutX="777.0" layoutY="21.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #660066, #8a0b8a, #af18af, #d726d6, #ff33ff);; -fx-background-radius: 2em;">
+               <children>
+                  <AnchorPane fx:id="paneSettingPanal" layoutX="49.0" layoutY="-30.0" prefHeight="95.0" prefWidth="142.0" style="-fx-background-color: #002039;">
+                     <children>
+                        <Label fx:id="lblLogOut" layoutX="5.0" layoutY="5.0" onMouseClicked="#lblChangePasswordOnMouseClicked" prefHeight="33.0" prefWidth="131.0" text="Change Password" textFill="WHITE">
+                           <font>
+                              <Font name="Ubuntu" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Label layoutX="7.0" layoutY="50.0" onMouseClicked="#lblLogOutOnMouseClicked" prefHeight="25.0" prefWidth="120.0" text="Log Out" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Pane layoutY="80.0" prefHeight="15.0" prefWidth="143.0" style="-fx-background-color: #000000;" />
+                     </children>
+                  </AnchorPane>
+               </children></Pane>
+            <AnchorPane layoutX="647.0" layoutY="200.0" prefHeight="397.0" prefWidth="286.0" style="-fx-background-color: #004072; -fx-background-radius: 1em;" />
             <TableView layoutX="21.0" layoutY="200.0" prefHeight="397.0" prefWidth="592.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;">
               <columns>
                 <TableColumn prefWidth="75.0" text="C1" />

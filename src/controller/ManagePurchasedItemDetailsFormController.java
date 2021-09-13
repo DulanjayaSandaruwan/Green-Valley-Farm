@@ -33,7 +33,7 @@ public class ManagePurchasedItemDetailsFormController {
 
     public JFXButton btnUpdateItem;
     public JFXButton btnSaveItem;
-    public TableView tblItemDetails;
+    public TableView <ItemTM> tblItemDetails;
     public TextField txtItemCode;
     public TextField txtItemName;
     public TextField txtItemType;
@@ -250,7 +250,7 @@ public class ManagePurchasedItemDetailsFormController {
 
     public void tblItemDetailsOnMouseClicked(MouseEvent mouseEvent) {
         if (tblItemDetails.getSelectionModel().getSelectedItem() != null) {
-            ItemTM itemTM = (ItemTM) tblItemDetails.getSelectionModel().getSelectedItem();
+            ItemTM itemTM = tblItemDetails.getSelectionModel().getSelectedItem();
             txtItemCode.setText(itemTM.getItemCode());
             txtItemName.setText(itemTM.getItemName());
             txtItemType.setText(itemTM.getItemType());

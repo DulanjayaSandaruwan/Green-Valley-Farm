@@ -1,17 +1,18 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -32,9 +33,15 @@ public class ManagerMainFormController {
     public AnchorPane root2;
     public AnchorPane root3;
     public JFXButton btnHome;
+    public AnchorPane paneSettingPanal;
+    public Label lblLogOut;
+    private boolean isSettingPanelVisible;
 
     public void initialize() {
         loadDateAndTime();
+
+        paneSettingPanal.setVisible(false);
+        isSettingPanelVisible = false;
 
         String name = LoginFormController.name;
         lblTitle.setText("Hi " + name + " Welcome To The Farm !");
@@ -110,7 +117,21 @@ public class ManagerMainFormController {
     }
 
     public void imgSettingOnMouseClicked(MouseEvent mouseEvent) {
-
+        FadeTransition fade = new FadeTransition();
+        if(!isSettingPanelVisible){
+            paneSettingPanal.setVisible(true);
+            fade.setNode(paneSettingPanal);
+            fade.setDuration(Duration.millis(500));
+            fade.setInterpolator(Interpolator.LINEAR);
+            fade.setFromValue(0);
+            fade.setToValue(1);
+            fade.play();
+            isSettingPanelVisible = true;
+        }else{
+            paneSettingPanal.setVisible(false);
+            isSettingPanelVisible = false;
+        }
+        
     }
 
     public void btnGardenOnAction(ActionEvent actionEvent) throws IOException {
@@ -146,5 +167,24 @@ public class ManagerMainFormController {
         Parent load = FXMLLoader.load(resource);
         root3.getChildren().clear();
         root3.getChildren().add(load);
+    }
+
+    public void lblChangePasswordOnMouseClicked(MouseEvent mouseEvent) {
+
+    }
+
+    public void lblLogOutOnMouseClicked(MouseEvent mouseEvent) throws IOException {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to log out", ButtonType.YES, ButtonType.NO);
+        Optional <ButtonType> buttonType = alert.showAndWait();
+
+        if(buttonType.get().equals(ButtonType.YES)) {
+            Parent parent = FXMLLoader.load(this.getClass().getResource("../view/LoginForm.fxml"));
+            Scene scene = new Scene(parent);
+            Stage primaryStage = (Stage) this.root2.getScene().getWindow();
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Login Form");
+            primaryStage.centerOnScreen();
+        }
     }
 }

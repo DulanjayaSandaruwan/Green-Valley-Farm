@@ -1,0 +1,60 @@
+
+J
+java:S3740("/Provide the parametrized type for this generic.(Í›¨åıÿÿÿÿ
+E
+java:S3740)"/Provide the parametrized type for this generic.(ÈÌ³¨
+J
+java:S3740*"/Provide the parametrized type for this generic.(¨–š‡ûÿÿÿÿ
+E
+java:S3740+"/Provide the parametrized type for this generic.(ù£²¼
+H
+java:S1172L"2Remove this unused method parameter "actionEvent".(¿ÅŒ‘
+G
+java:S1602g",Remove useless curly braces around statement(€¼ÔÛúÿÿÿÿ
+H
+java:S1172n"2Remove this unused method parameter "actionEvent".(ñ¨ş‰
+N
+java:S1172’"2Remove this unused method parameter "actionEvent".(°øÙ³úÿÿÿÿ
+I
+java:S1172·"2Remove this unused method parameter "actionEvent".(îÌÉ
+I
+java:S1172á"2Remove this unused method parameter "actionEvent".(’éûø
+I
+java:S1172ı"2Remove this unused method parameter "actionEvent".(ŠÜÎ£
+H
+java:S1172‰"1Remove this unused method parameter "mouseEvent".(»ÂÈğ
+i	java:S100›"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃğƒËøÿÿÿÿ
+e
+java:S1192U"ODefine a constant instead of duplicating this literal "Failed Message" 4 times.(ÆÄ± 
+o
+java:S1192Q"YDefine a constant instead of duplicating this literal "/assests/images/fail.png" 4 times.(Ò‚ÒÅ
+†
+java:S1192®"cDefine a constant instead of duplicating this literal "Something Went Wrong , Try Again !" 3 times.(šÙÌÉùÿÿÿÿ8™ÃÕá½/
+s
+java:S1192 "PDefine a constant instead of duplicating this literal "Success Message" 4 times.(ÂÜÙÍüÿÿÿÿ8ßÊÔá½/
+w
+java:S1192œ"YDefine a constant instead of duplicating this literal "/assests/images/pass.png" 4 times.(Â£¹8ßÊÔá½/
+y
+java:S1104'"^Make tblSupplierDetails a static final constant or non-public and provide accessors if needed.(ø¿å¹ûÿÿÿÿ
+o
+java:S1104("TMake colSupID a static final constant or non-public and provide accessors if needed.(Í›¨åıÿÿÿÿ
+l
+java:S1104)"VMake colSupName a static final constant or non-public and provide accessors if needed.(ÈÌ³¨
+t
+java:S1104*"YMake colSupAddress a static final constant or non-public and provide accessors if needed.(¨–š‡ûÿÿÿÿ
+o
+java:S1104+"YMake colSupContact a static final constant or non-public and provide accessors if needed.(ù£²¼
+j
+java:S1104,"TMake txtSupID a static final constant or non-public and provide accessors if needed.(ŞÆŠØ
+v
+java:S1104-"[Make txtSupplierName a static final constant or non-public and provide accessors if needed.(‰»‹üÿÿÿÿ
+t
+java:S1104."YMake txtSupAddress a static final constant or non-public and provide accessors if needed.(õŒ§®üÿÿÿÿ
+t
+java:S1104/"YMake txtSupContact a static final constant or non-public and provide accessors if needed.(úˆ‚¡ıÿÿÿÿ
+v
+java:S11040"[Make btnSaveSupplier a static final constant or non-public and provide accessors if needed.(…Ï´şÿÿÿÿ
+s
+java:S11041"]Make btnUpdateSupplier a static final constant or non-public and provide accessors if needed.(§î¼­
+b
+java:S2095s"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ

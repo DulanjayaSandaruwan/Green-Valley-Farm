@@ -61,4 +61,15 @@ public class Garden {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Garden{" +
+                "gardenId='" + gardenId + '\'' +
+                ", gardenType='" + gardenType + '\'' +
+                ", gardenLocation='" + gardenLocation + '\'' +
+                ", extendOfLand='" + extendOfLand + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

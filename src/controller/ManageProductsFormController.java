@@ -31,7 +31,7 @@ import java.util.ArrayList;
  **/
 public class ManageProductsFormController {
     public JFXButton btnSaveProducts;
-    public TableView tblProductsDetails;
+    public TableView <ProductsTM> tblProductsDetails;
     public TableColumn colProductId;
     public TableColumn colProductName;
     public TableColumn colProductType;
@@ -254,7 +254,7 @@ public class ManageProductsFormController {
 
     public void tblProductsDetailsOnMouseClicked(MouseEvent mouseEvent) {
         if (tblProductsDetails.getSelectionModel().getSelectedItem() != null) {
-            ProductsTM productsTM = (ProductsTM) tblProductsDetails.getSelectionModel().getSelectedItem();
+            ProductsTM productsTM = tblProductsDetails.getSelectionModel().getSelectedItem();
             txtProductId.setText(productsTM.getProductId());
             txtProductsName.setText(productsTM.getProductName());
             txtProductsType.setText(productsTM.getProductType());

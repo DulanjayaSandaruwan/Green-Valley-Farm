@@ -33,7 +33,7 @@ import java.util.ArrayList;
  **/
 public class ManageGardenDetailsFormController {
     public JFXButton btnSaveGarden;
-    public TableView tblGardenDetails;
+    public TableView <GardenTM> tblGardenDetails;
     public TableColumn colGardenId;
     public TableColumn colGardenType;
     public TableColumn colGardenLocation;
@@ -250,7 +250,7 @@ public class ManageGardenDetailsFormController {
 
     public void tblGardenDetailsOnMouseClicked(MouseEvent mouseEvent) {
         if (tblGardenDetails.getSelectionModel().getSelectedItem() != null) {
-            GardenTM gardenTM = (GardenTM) tblGardenDetails.getSelectionModel().getSelectedItem();
+            GardenTM gardenTM = tblGardenDetails.getSelectionModel().getSelectedItem();
             txtGardenId.setText(gardenTM.getGardenId());
             txtGardenType.setText(gardenTM.getGardenType());
             txtGardenLocation.setText(gardenTM.getGardenLocation());
