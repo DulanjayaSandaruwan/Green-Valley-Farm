@@ -8,18 +8,18 @@ public class Garden {
     private String gardenId;
     private String gardenType;
     private String gardenLocation;
-    private double extendOfLand;
+    private String extendOfLand;
     private String description;
 
     public Garden() {
     }
 
-    public Garden(String gardenId, String gardenType, String gardenLocation, double extendOfLand, String description) {
-        this.gardenId = gardenId;
-        this.gardenType = gardenType;
-        this.gardenLocation = gardenLocation;
-        this.extendOfLand = extendOfLand;
-        this.description = description;
+    public Garden(String gardenId, String gardenType, String gardenLocation, String extendOfLand, String description) {
+        this.setGardenId(gardenId);
+        this.setGardenType(gardenType);
+        this.setGardenLocation(gardenLocation);
+        this.setExtendOfLand(extendOfLand);
+        this.setDescription(description);
     }
 
     public String getGardenId() {
@@ -46,11 +46,11 @@ public class Garden {
         this.gardenLocation = gardenLocation;
     }
 
-    public double getExtendOfLand() {
+    public String getExtendOfLand() {
         return extendOfLand;
     }
 
-    public void setExtendOfLand(double extendOfLand) {
+    public void setExtendOfLand(String extendOfLand) {
         this.extendOfLand = extendOfLand;
     }
 
@@ -60,16 +60,5 @@ public class Garden {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return "Garden{" +
-                "gardenId='" + gardenId + '\'' +
-                ", gardenType='" + gardenType + '\'' +
-                ", gardenLocation='" + gardenLocation + '\'' +
-                ", extendOfLand=" + extendOfLand +
-                ", description='" + description + '\'' +
-                '}';
     }
 }

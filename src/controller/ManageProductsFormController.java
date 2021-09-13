@@ -6,7 +6,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -48,11 +47,6 @@ public class ManageProductsFormController {
 
     public void initialize() throws SQLException {
 
-        txtProductsName.setDisable(true);
-        txtProductsType.setDisable(true);
-        txtQtyOnHand.setDisable(true);
-        txtProductUnitPrice.setDisable(true);
-
         colProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
         colProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
         colProductType.setCellValueFactory(new PropertyValueFactory<>("productType"));
@@ -73,7 +67,7 @@ public class ManageProductsFormController {
             notifications.graphic(new ImageView(image));
             notifications.text("Something Went Wrong , Empty Results Set , Try Again !");
             notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(10));
+            notifications.hideAfter(Duration.seconds(5));
             notifications.position(Pos.TOP_CENTER);
             notifications.darkStyle();
             notifications.show();
@@ -99,11 +93,6 @@ public class ManageProductsFormController {
     }
 
     public void btnProductIdOnAction(ActionEvent actionEvent) {
-
-        txtProductsName.setDisable(false);
-        txtProductsType.setDisable(false);
-        txtQtyOnHand.setDisable(false);
-        txtProductUnitPrice.setDisable(false);
 
         Connection connection = DBConnection.getInstance().getConnection();
 
@@ -150,7 +139,7 @@ public class ManageProductsFormController {
             notifications.graphic(new ImageView(image));
             notifications.text("Successfully Deleted !");
             notifications.title("Success Message");
-            notifications.hideAfter(Duration.seconds(10));
+            notifications.hideAfter(Duration.seconds(5));
             notifications.position(Pos.TOP_CENTER);
             notifications.darkStyle();
             notifications.show();
@@ -164,7 +153,7 @@ public class ManageProductsFormController {
             notifications.graphic(new ImageView(image));
             notifications.text("Something Went Wrong , Try Again !");
             notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(10));
+            notifications.hideAfter(Duration.seconds(5));
             notifications.position(Pos.TOP_CENTER);
             notifications.darkStyle();
             notifications.show();
@@ -189,7 +178,7 @@ public class ManageProductsFormController {
                     notifications.graphic(new ImageView(image));
                     notifications.text("Successfully Updated !");
                     notifications.title("Success Message");
-                    notifications.hideAfter(Duration.seconds(10));
+                    notifications.hideAfter(Duration.seconds(5));
                     notifications.position(Pos.TOP_CENTER);
                     notifications.darkStyle();
                     notifications.show();
@@ -208,7 +197,7 @@ public class ManageProductsFormController {
             notifications.graphic(new ImageView(image));
             notifications.text("Something Went Wrong , Try Again !");
             notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(10));
+            notifications.hideAfter(Duration.seconds(5));
             notifications.position(Pos.TOP_CENTER);
             notifications.darkStyle();
             notifications.show();
@@ -232,7 +221,7 @@ public class ManageProductsFormController {
                 notifications.graphic(new ImageView(image));
                 notifications.text("Successfully Saved !");
                 notifications.title("Success Message");
-                notifications.hideAfter(Duration.seconds(10));
+                notifications.hideAfter(Duration.seconds(5));
                 notifications.position(Pos.TOP_CENTER);
                 notifications.darkStyle();
                 notifications.show();
@@ -248,7 +237,7 @@ public class ManageProductsFormController {
             notifications.graphic(new ImageView(image));
             notifications.text("Something Went Wrong , Try Again !");
             notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(10));
+            notifications.hideAfter(Duration.seconds(5));
             notifications.position(Pos.TOP_CENTER);
             notifications.darkStyle();
             notifications.show();

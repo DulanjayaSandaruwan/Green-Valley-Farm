@@ -8,13 +8,13 @@ public class GardenTM {
     private String gardenId;
     private String gardenType;
     private String gardenLocation;
-    private double extendOfLand;
+    private String extendOfLand;
     private String description;
 
     public GardenTM() {
     }
 
-    public GardenTM(String gardenId, String gardenType, String gardenLocation, double extendOfLand, String description) {
+    public GardenTM(String gardenId, String gardenType, String gardenLocation, String extendOfLand, String description) {
         this.gardenId = gardenId;
         this.gardenType = gardenType;
         this.gardenLocation = gardenLocation;
@@ -46,11 +46,11 @@ public class GardenTM {
         this.gardenLocation = gardenLocation;
     }
 
-    public double getExtendOfLand() {
+    public String getExtendOfLand() {
         return extendOfLand;
     }
 
-    public void setExtendOfLand(double extendOfLand) {
+    public void setExtendOfLand(String extendOfLand) {
         this.extendOfLand = extendOfLand;
     }
 
@@ -60,16 +60,5 @@ public class GardenTM {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return "GardenTM{" +
-                "gardenId='" + gardenId + '\'' +
-                ", gardenType='" + gardenType + '\'' +
-                ", gardenLocation='" + gardenLocation + '\'' +
-                ", extendOfLand=" + extendOfLand +
-                ", description='" + description + '\'' +
-                '}';
     }
 }

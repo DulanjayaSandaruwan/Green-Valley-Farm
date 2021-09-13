@@ -255,7 +255,7 @@ public class AddNewUserFormController {
         notifications.graphic(new ImageView(image));
         notifications.text("Successfully Added !");
         notifications.title("Success Message");
-        notifications.hideAfter(Duration.seconds(10));
+        notifications.hideAfter(Duration.seconds(5));
         notifications.position(Pos.TOP_CENTER);
         notifications.darkStyle();
         notifications.show();
@@ -267,7 +267,7 @@ public class AddNewUserFormController {
         notifications.graphic(new ImageView(image));
         notifications.text("Something Went Wrong , Try Again !");
         notifications.title("Failed Message");
-        notifications.hideAfter(Duration.seconds(10));
+        notifications.hideAfter(Duration.seconds(5));
         notifications.position(Pos.TOP_CENTER);
         notifications.darkStyle();
         notifications.show();

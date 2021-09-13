@@ -1,0 +1,52 @@
+
+œ
+java:S1186/"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·òşÿÿÿÿ
+M
+java:S11724"2Remove this unused method parameter "actionEvent".(Ùõášşÿÿÿÿ
+L
+java:S2696J"6Make the enclosing method "static" or remove this set.(“¯ñ™
+L
+java:S2696K"6Make the enclosing method "static" or remove this set.(ïüÍì
+L
+java:S2696L"6Make the enclosing method "static" or remove this set.(‹õåş
+Q	java:S125h"<This block of commented-out lines of code should be removed.(ÓÌ©œ
+M
+java:S1128"7Remove this unused import 'javafx.animation.Animation'.(Æ“ğò
+R
+java:S1128"6Remove this unused import 'javafx.animation.KeyFrame'.(æ™†v8×¯”á½/
+X
+java:S1128"6Remove this unused import 'javafx.animation.Timeline'.(˜‰ë÷øÿÿÿÿ8×¯”á½/
+S
+java:S1128"7Remove this unused import 'javafx.scene.control.Alert'.(ÊÇê:8ğİ•á½/
+T
+java:S1128"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8Ø¯”á½/
+R
+java:S1128"0Remove this unused import 'java.time.LocalTime'.(à®øÃùÿÿÿÿ8Ø¯”á½/
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8Ø¯”á½/
+f
+java:S1104%"PMake name a static final constant or non-public and provide accessors if needed.(Ã¼ê‚
+m
+java:S1104&"RMake userID a static final constant or non-public and provide accessors if needed.(¬œ°Øşÿÿÿÿ
+k
+java:S1104'"PMake role a static final constant or non-public and provide accessors if needed.(’“Çğıÿÿÿÿ
+w
+java:S1104("\Make txtEnterUserName a static final constant or non-public and provide accessors if needed.(¸ôÕëÿÿÿÿÿ
+w
+java:S1104)"\Make txtEnterPassword a static final constant or non-public and provide accessors if needed.(±”¨Ñşÿÿÿÿ
+j
+java:S1104*"TMake btnLogin a static final constant or non-public and provide accessors if needed.(Ş˜ÕÓ
+f
+java:S1104+"QMake root1 a static final constant or non-public and provide accessors if needed.(Ñ¨Y
+n
+java:S1104,"SMake lblDate a static final constant or non-public and provide accessors if needed.(…“À„ÿÿÿÿÿ
+i
+java:S1104-"SMake lblTime a static final constant or non-public and provide accessors if needed.(¿°×•
+@
+java:S1444%"*Make this "public static name" field final(Ã¼ê‚
+G
+java:S1444&",Make this "public static userID" field final(¬œ°Øşÿÿÿÿ
+E
+java:S1444'"*Make this "public static role" field final(’“Çğıÿÿÿÿ
+e
+java:S2095A"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ˆï—º

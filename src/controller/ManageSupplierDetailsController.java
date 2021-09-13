@@ -57,10 +57,6 @@ public class ManageSupplierDetailsController {
 
     public void initialize() {
 
-        txtSupplierName.setDisable(true);
-        txtSupAddress.setDisable(true);
-        txtSupContact.setDisable(true);
-
         colSupID.setCellValueFactory(new PropertyValueFactory<>("supID"));
         colSupName.setCellValueFactory(new PropertyValueFactory<>("supName"));
         colSupAddress.setCellValueFactory(new PropertyValueFactory<>("supAddress"));
@@ -87,7 +83,7 @@ public class ManageSupplierDetailsController {
             notifications.graphic(new ImageView(image));
             notifications.text("Something Went Wrong , Empty Results Set , Try Again !");
             notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(10));
+            notifications.hideAfter(Duration.seconds(5));
             notifications.position(Pos.TOP_CENTER);
             notifications.darkStyle();
             notifications.show();
@@ -112,10 +108,6 @@ public class ManageSupplierDetailsController {
     }
 
     public void btnSupplierIdOnAction(ActionEvent actionEvent) {
-
-        txtSupplierName.setDisable(false);
-        txtSupAddress.setDisable(false);
-        txtSupContact.setDisable(false);
 
         Connection connection = DBConnection.getInstance().getConnection();
 
@@ -166,7 +158,7 @@ public class ManageSupplierDetailsController {
                 notifications.graphic(new ImageView(image));
                 notifications.text("Successfully Saved !");
                 notifications.title("Success Message");
-                notifications.hideAfter(Duration.seconds(10));
+                notifications.hideAfter(Duration.seconds(5));
                 notifications.position(Pos.TOP_CENTER);
                 notifications.darkStyle();
                 notifications.show();
@@ -181,7 +173,7 @@ public class ManageSupplierDetailsController {
             notifications.graphic(new ImageView(image));
             notifications.text("Something Went Wrong , Try Again !");
             notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(10));
+            notifications.hideAfter(Duration.seconds(5));
             notifications.position(Pos.TOP_CENTER);
             notifications.darkStyle();
             notifications.show();
@@ -204,7 +196,7 @@ public class ManageSupplierDetailsController {
                     notifications.graphic(new ImageView(image));
                     notifications.text("Successfully Updated !");
                     notifications.title("Success Message");
-                    notifications.hideAfter(Duration.seconds(10));
+                    notifications.hideAfter(Duration.seconds(5));
                     notifications.position(Pos.TOP_CENTER);
                     notifications.darkStyle();
                     notifications.show();
@@ -223,7 +215,7 @@ public class ManageSupplierDetailsController {
             notifications.graphic(new ImageView(image));
             notifications.text("Something Went Wrong , Try Again !");
             notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(10));
+            notifications.hideAfter(Duration.seconds(5));
             notifications.position(Pos.TOP_CENTER);
             notifications.darkStyle();
             notifications.show();
@@ -237,7 +229,7 @@ public class ManageSupplierDetailsController {
             notifications.graphic(new ImageView(image));
             notifications.text("Successfully Deleted !");
             notifications.title("Success Message");
-            notifications.hideAfter(Duration.seconds(10));
+            notifications.hideAfter(Duration.seconds(5));
             notifications.position(Pos.TOP_CENTER);
             notifications.darkStyle();
             notifications.show();
@@ -251,7 +243,7 @@ public class ManageSupplierDetailsController {
             notifications.graphic(new ImageView(image));
             notifications.text("Something Went Wrong , Try Again !");
             notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(10));
+            notifications.hideAfter(Duration.seconds(5));
             notifications.position(Pos.TOP_CENTER);
             notifications.darkStyle();
             notifications.show();
@@ -301,7 +293,7 @@ public class ManageSupplierDetailsController {
                 notifications.graphic(new ImageView(image));
                 notifications.text("Successfully Saved !");
                 notifications.title("Success Message");
-                notifications.hideAfter(Duration.seconds(10));
+                notifications.hideAfter(Duration.seconds(5));
                 notifications.position(Pos.TOP_CENTER);
                 notifications.darkStyle();
                 notifications.show();

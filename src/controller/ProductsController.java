@@ -10,12 +10,25 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author : D.D.Sandaruwan <dulanjayasandaruwan1998@gmail.com>
  * @Since : 2021-09-09
  **/
 public class ProductsController implements ProductsManage {
+
+    public List<String> getProductID() throws SQLException {
+        ResultSet rst = DBConnection.getInstance().
+                getConnection().prepareStatement("select * from finalProduct").executeQuery();
+        List<String> productID = new ArrayList<>();
+        while (rst.next()) {
+            productID.add(
+                    rst.getString(1)
+            );
+        }
+        return productID;
+    }
 
     @Override
     public boolean saveProduct(Products products) throws SQLException {
