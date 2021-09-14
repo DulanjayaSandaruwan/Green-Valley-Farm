@@ -1,6 +1,6 @@
 .text-field1 {
     -fx-background-color: transparent;
-    -fx-border-color: blue;
+    -fx-border-color: #0000ff;
     -fx-border-radius: 50px 50px 50px 50px;
 }
 
@@ -14,11 +14,11 @@
 }
 
 .table-view1 .column-header .label {
-    -fx-text-fill: white;
+    -fx-text-fill: #ffffff;
 }
 
 .table-view1 .table-row-cell:empty {
-    -fx-background-color: white;
+    -fx-background-color: #ffffff;
 }
 
 .table-view1 .table-row-cell:selected {
@@ -34,3 +34,8 @@
     -fx-cursor: hand;
     -fx-text-fill: red;
 }
+
+.most-contacted-layout{
+    -fx-background-radius: 0 50 50 50 ;
+}
+

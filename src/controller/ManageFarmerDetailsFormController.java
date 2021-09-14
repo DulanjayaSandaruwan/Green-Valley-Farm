@@ -16,10 +16,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
-import model.Customer;
 import model.Farmer;
 import org.controlsfx.control.Notifications;
-import view.tm.CustomerTM;
 import view.tm.FarmerTM;
 
 import java.sql.Connection;
@@ -27,7 +25,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author : D.D.Sandaruwan <dulanjayasandaruwan1998@gmail.com>
@@ -41,7 +38,7 @@ public class ManageFarmerDetailsFormController {
     public TableColumn colFarmerAddress;
     public TableColumn colFarmerContact;
     public TableColumn colGardenId;
-    public TableView <FarmerTM> tblFarmerDetails;
+    public TableView<FarmerTM> tblFarmerDetails;
     public JFXButton btnSaveProducts;
     public TextField txtFarmerName;
     public TextField txtFarmerAddress;
@@ -49,7 +46,7 @@ public class ManageFarmerDetailsFormController {
 
     ObservableList<FarmerTM> observableList = FXCollections.observableArrayList();
 
-    public void initialize(){
+    public void initialize() {
 
         colFarmerId.setCellValueFactory(new PropertyValueFactory<>("farmerId"));
         colFarmerName.setCellValueFactory(new PropertyValueFactory<>("farmerName"));
@@ -118,6 +115,7 @@ public class ManageFarmerDetailsFormController {
             setData(farmer);
         }
     }
+
     void setData(Farmer farmer) {
         txtFarmerId.setText(farmer.getFarmerId());
         txtFarmerName.setText(farmer.getFarmerName());
@@ -128,12 +126,12 @@ public class ManageFarmerDetailsFormController {
 
     private void setFarmerValuesToTable(ArrayList<Farmer> farmers) {
         farmers.forEach(e -> {
-            observableList.add(new FarmerTM(
-                    e.getFarmerId(),
-                    e.getFarmerName(),
-                    e.getFarmerAddress(),
-                    e.getFarmerContact(),
-                    e.getGardenId()));
+                    observableList.add(new FarmerTM(
+                            e.getFarmerId(),
+                            e.getFarmerName(),
+                            e.getFarmerAddress(),
+                            e.getFarmerContact(),
+                            e.getGardenId()));
                 }
         );
         tblFarmerDetails.setItems(observableList);
@@ -264,9 +262,9 @@ public class ManageFarmerDetailsFormController {
         if (tblFarmerDetails.getSelectionModel().getSelectedItem() != null) {
             FarmerTM farmerTM = tblFarmerDetails.getSelectionModel().getSelectedItem();
             txtFarmerId.setText(farmerTM.getFarmerId());
-            txtFarmerName.setText(farmerTM .getFarmerName());
-            txtFarmerAddress.setText(farmerTM .getFarmerAddress());
-            txtFarmerContact.setText(farmerTM .getFarmerContact());
+            txtFarmerName.setText(farmerTM.getFarmerName());
+            txtFarmerAddress.setText(farmerTM.getFarmerAddress());
+            txtFarmerContact.setText(farmerTM.getFarmerContact());
             cmbGardenIds.setValue(farmerTM.getGardenId());
         }
     }

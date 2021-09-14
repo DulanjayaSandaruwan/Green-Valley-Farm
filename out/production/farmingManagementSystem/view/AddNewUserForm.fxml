@@ -92,7 +92,7 @@
          <font>
             <Font size="19.0" />
          </font></Label>
-      <TableView fx:id="tblUserDetails" layoutX="507.0" layoutY="53.0" prefHeight="552.0" prefWidth="445.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em; -fx-border-radius: 1em; -fx-border-color: #ffffff;" stylesheets="@../assests/styles/TableStyles.css">
+      <TableView fx:id="tblUserDetails" layoutX="507.0" layoutY="53.0" prefHeight="552.0" prefWidth="445.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em; -fx-border-radius: 1em; -fx-border-color: #ffffff;" stylesheets="@../assests/styles/Styles.css">
         <columns>
           <TableColumn fx:id="colUserID" prefWidth="89.0" text="User ID" />
           <TableColumn fx:id="colUserName" prefWidth="158.0" text="User Name" />

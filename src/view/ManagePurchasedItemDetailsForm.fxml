@@ -52,7 +52,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TableView fx:id="tblItemDetails" layoutX="8.0" layoutY="248.0" onMouseClicked="#tblItemDetailsOnMouseClicked" prefHeight="358.0" prefWidth="941.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;" stylesheets="@../assests/styles/TableStyles.css">
+      <TableView fx:id="tblItemDetails" layoutX="8.0" layoutY="248.0" onMouseClicked="#tblItemDetailsOnMouseClicked" prefHeight="358.0" prefWidth="941.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;" stylesheets="@../assests/styles/Styles.css">
          <columns>
             <TableColumn fx:id="colItemCode" prefWidth="182.0" text="Item Code" />
             <TableColumn fx:id="colItemName" prefWidth="261.0" text="Item Name" />

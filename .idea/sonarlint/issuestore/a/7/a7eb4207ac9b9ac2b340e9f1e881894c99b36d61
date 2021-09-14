@@ -1,0 +1,66 @@
+
+J
+java:S3740#"/Provide the parametrized type for this generic.(º°Çşûÿÿÿÿ
+E
+java:S3740$"/Provide the parametrized type for this generic.(¾ú€
+E
+java:S3740%"/Provide the parametrized type for this generic.(Òñ¡
+E
+java:S3740&"/Provide the parametrized type for this generic.(É’‰È
+E
+java:S3740("/Provide the parametrized type for this generic.(Õ…¼í
+
+java:S1186‹"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÃğƒËøÿÿÿÿ
+H
+java:S1172<"2Remove this unused method parameter "actionEvent".(À×Ø…
+G
+java:S1602X",Remove useless curly braces around statement(¼Ê¿¶ıÿÿÿÿ
+H
+java:S1172_"2Remove this unused method parameter "actionEvent".(Âñ¾¯
+I
+java:S1172ƒ"2Remove this unused method parameter "actionEvent".(ŠÜÎ£
+I
+java:S1172‡"2Remove this unused method parameter "actionEvent".(’éûø
+I
+java:S1172£"2Remove this unused method parameter "actionEvent".(îÌÉ
+N
+java:S1172Ï"2Remove this unused method parameter "actionEvent".(°øÙ³úÿÿÿÿ
+G
+java:S1172ÿ"1Remove this unused method parameter "mouseEvent".(ã¸¸-
+i	java:S100‹"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃğƒËøÿÿÿÿ
+l
+java:S1192E"ODefine a constant instead of duplicating this literal "Failed Message" 4 times.(ÆÄ± 8€€²á½/
+v
+java:S1192A"YDefine a constant instead of duplicating this literal "/assests/images/fail.png" 4 times.(Ò‚ÒÅ8€²á½/
+†
+java:S1192š"cDefine a constant instead of duplicating this literal "Something Went Wrong , Try Again !" 3 times.(šÙÌÉùÿÿÿÿ8»ˆµá½/
+s
+java:S1192"PDefine a constant instead of duplicating this literal "Success Message" 3 times.(ÂÜÙÍüÿÿÿÿ8çº¾á½/
+w
+java:S1192‰"YDefine a constant instead of duplicating this literal "/assests/images/pass.png" 3 times.(Â£¹8çº¾á½/
+q
+java:S1104!"[Make btnSaveProducts a static final constant or non-public and provide accessors if needed.(“ñƒ
+t
+java:S1104""^Make tblProductsDetails a static final constant or non-public and provide accessors if needed.(ø©éø
+s
+java:S1104#"XMake colProductId a static final constant or non-public and provide accessors if needed.(º°Çşûÿÿÿÿ
+p
+java:S1104$"ZMake colProductName a static final constant or non-public and provide accessors if needed.(¾ú€
+p
+java:S1104%"ZMake colProductType a static final constant or non-public and provide accessors if needed.(Òñ¡
+n
+java:S1104&"XMake colQtyOnHand a static final constant or non-public and provide accessors if needed.(É’‰È
+s
+java:S1104'"XMake txtProductId a static final constant or non-public and provide accessors if needed.(íäïÖşÿÿÿÿ
+n
+java:S1104("XMake colUnitPrice a static final constant or non-public and provide accessors if needed.(Õ…¼í
+z
+java:S1104)"_Make txtProductUnitPrice a static final constant or non-public and provide accessors if needed.(ãúüşÿÿÿÿ
+n
+java:S1104*"XMake txtQtyOnHand a static final constant or non-public and provide accessors if needed.(Á‚¼
+q
+java:S1104+"[Make txtProductsName a static final constant or non-public and provide accessors if needed.(ñë´ö
+q
+java:S1104,"[Make txtProductsType a static final constant or non-public and provide accessors if needed.(ï¬¨
+b
+java:S2095d"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ

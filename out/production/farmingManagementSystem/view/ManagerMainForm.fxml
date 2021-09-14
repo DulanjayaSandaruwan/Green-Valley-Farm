@@ -134,18 +134,39 @@
       </AnchorPane>
       <AnchorPane fx:id="root3" layoutX="282.0" layoutY="64.0" prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;">
          <children>
-            <Pane layoutX="21.0" layoutY="24.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #0652dd, #007cf1, #009ceb, #00b5d7, #12cbc4);; -fx-background-radius: 2em;" />
-            <Pane layoutX="211.0" layoutY="24.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #e60000, #ed1311, #f3201e, #f92a29, #ff3333);; -fx-background-radius: 2em;" />
-            <Pane layoutX="397.0" layoutY="23.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #008000, #059e04, #0cbd0a, #13de12, #1aff1a);; -fx-background-radius: 2em;" />
-            <Pane layoutX="587.0" layoutY="22.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #ff3300, #ff5500, #ff6f00, #ff8500, #ff9900);; -fx-background-radius: 2em;" />
-            <Pane layoutX="777.0" layoutY="21.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #660066, #8a0b8a, #af18af, #d726d6, #ff33ff);; -fx-background-radius: 2em;" />
-            <AnchorPane layoutX="650.0" layoutY="200.0" prefHeight="397.0" prefWidth="286.0" style="-fx-background-color: #004072; -fx-background-radius: 1em;" />
+            <AnchorPane layoutX="647.0" layoutY="200.0" prefHeight="397.0" prefWidth="287.0" style="-fx-background-color: #004072; -fx-background-radius: 1em;" />
             <TableView layoutX="21.0" layoutY="200.0" prefHeight="397.0" prefWidth="592.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;">
               <columns>
                 <TableColumn prefWidth="75.0" text="C1" />
                 <TableColumn prefWidth="75.0" text="C2" />
               </columns>
             </TableView>
+            <Label layoutX="20.0" layoutY="18.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #0652dd, #007cf1, #009ceb, #00b5d7, #12cbc4);" styleClass="most-contacted-layout" stylesheets="@../assests/styles/Styles.css" />
+            <Label layoutX="400.0" layoutY="18.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #e60000, #ed1311, #f3201e, #f92a29, #ff3333);" styleClass="most-contacted-layout" stylesheets="@../assests/styles/Styles.css" />
+            <Label layoutX="776.0" layoutY="18.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #ff3300, #ff5500, #ff6f00, #ff8500, #ff9900);" styleClass="most-contacted-layout" stylesheets="@../assests/styles/Styles.css" />
+            <Label layoutX="590.0" layoutY="18.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #008000, #059e04, #0cbd0a, #13de12, #1aff1a);" styleClass="most-contacted-layout" stylesheets="@../assests/styles/Styles.css" />
+            <Label layoutX="211.0" layoutY="18.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #660066, #8a0b8a, #af18af, #d726d6, #ff33ff);" styleClass="most-contacted-layout" stylesheets="@../assests/styles/Styles.css" />
+            <AnchorPane fx:id="paneSettingPanal" layoutX="815.0" layoutY="-13.0" prefHeight="95.0" prefWidth="142.0" style="-fx-background-color: #002039;">
+               <children>
+                  <Label fx:id="lblLogOut" layoutX="5.0" layoutY="5.0" onMouseClicked="#lblChangePasswordOnMouseClicked" prefHeight="33.0" prefWidth="131.0" text="Change Password" textFill="WHITE">
+                     <font>
+                        <Font name="Ubuntu" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label layoutX="7.0" layoutY="50.0" onMouseClicked="#lblLogOutOnMouseClicked" prefHeight="25.0" prefWidth="120.0" text="Log Out" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Pane layoutY="80.0" prefHeight="15.0" prefWidth="143.0" style="-fx-background-color: #000000;" />
+               </children>
+            </AnchorPane>
          </children></AnchorPane>
       <JFXButton layoutX="16.0" layoutY="186.0" onAction="#btnGardenOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Garden" textFill="WHITE">
          <font>

@@ -66,7 +66,7 @@
             <Font size="19.0" />
          </font>
       </JFXButton>
-      <TableView fx:id="tblCollectDetails" layoutX="10.0" layoutY="215.0" prefHeight="337.0" prefWidth="937.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;" stylesheets="@../assests/styles/TableStyles.css">
+      <TableView fx:id="tblCollectDetails" layoutX="10.0" layoutY="215.0" prefHeight="337.0" prefWidth="937.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;" stylesheets="@../assests/styles/Styles.css">
          <columns>
             <TableColumn fx:id="colProductId" prefWidth="128.0" text="Product ID" />
             <TableColumn fx:id="colProductName" prefWidth="276.0" text="Product Name" />
