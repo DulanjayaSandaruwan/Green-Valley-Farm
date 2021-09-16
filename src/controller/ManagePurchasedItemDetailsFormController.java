@@ -12,11 +12,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import model.Item;
 import org.controlsfx.control.Notifications;
+import util.ValidationUtil;
 import view.tm.ItemTM;
 
 import java.sql.Connection;
@@ -24,6 +26,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.regex.Pattern;
 
 /**
  * @author : D.D.Sandaruwan <dulanjayasandaruwan1998@gmail.com>
@@ -43,17 +47,27 @@ public class ManagePurchasedItemDetailsFormController {
     public TableColumn colUnitPrice;
     public TextField txtUnitPrice;
 
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap<>();
+    Pattern namePattern = Pattern.compile("^[A-z ]{5,}$");
+    Pattern itemTypePattern = Pattern.compile("^[A-z]{5,7}$");
+    Pattern unitPricePattern = Pattern.compile("^[0-9 ]{2,}[.][0-9]{2}$");
+
     ObservableList<ItemTM> observableList = FXCollections.observableArrayList();
 
-    public void initialize() throws SQLException {
+    public void initialize() {
 
         colItemCode.setCellValueFactory(new PropertyValueFactory<>("itemCode"));
         colItemName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
         colItemType.setCellValueFactory(new PropertyValueFactory<>("itemType"));
         colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
 
-        setItemValuesToTable(new ItemController().selectAllItems());
+        try {
+            setItemValuesToTable(new ItemController().selectAllItems());
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
 
+        storeValidations();
 
     }
 
@@ -269,7 +283,32 @@ public class ManagePurchasedItemDetailsFormController {
         }
     }
 
-    public void textFields_Key_Realeased(KeyEvent keyEvent) {
+    private void storeValidations() {
+        btnSaveItem.setDisable(true);
+        map.put(txtItemName, namePattern);
+        map.put(txtItemType, itemTypePattern);
+        map.put(txtUnitPrice, unitPricePattern);
 
+    }
+
+    public void textFields_Key_Released(KeyEvent keyEvent) {
+        Object response = ValidationUtil.validate(map, btnSaveItem);
+
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            if (response instanceof TextField) {
+                TextField errorText = (TextField) response;
+                errorText.requestFocus();
+            } else if (response instanceof Boolean) {
+                Image image = new Image("/assests/images/pass.png");
+                Notifications notifications = Notifications.create();
+                notifications.graphic(new ImageView(image));
+                notifications.text("Successfully Saved !");
+                notifications.title("Success Message");
+                notifications.hideAfter(Duration.seconds(5));
+                notifications.position(Pos.TOP_CENTER);
+                notifications.darkStyle();
+                notifications.show();
+            }
+        }
     }
 }

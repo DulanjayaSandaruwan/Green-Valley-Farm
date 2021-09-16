@@ -12,11 +12,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import model.Customer;
 import org.controlsfx.control.Notifications;
+import util.ValidationUtil;
 import view.tm.CustomerTM;
 
 import java.sql.Connection;
@@ -24,13 +26,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.regex.Pattern;
 
 /**
  * @author : D.D.Sandaruwan <dulanjayasandaruwan1998@gmail.com>
  * @Since : 2021-09-11
  **/
 public class ManageCustomerDetailsFormController {
-    public JFXButton btnSaveProducts;
+    public JFXButton btnSaveCustomer;
     public TableView<CustomerTM> tblCustomerDetails;
     public TableColumn colCustomerID;
     public TableColumn colCustomerName;
@@ -40,6 +44,11 @@ public class ManageCustomerDetailsFormController {
     public TextField txtCustomerName;
     public TextField txtCustomerAddress;
     public TextField txtCustomerContact;
+
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap<>();
+    Pattern namePattern = Pattern.compile("^[A-z ]{5,20}$");
+    Pattern addressPattern = Pattern.compile("^[A-z0-9/ ]{6,30}$");
+    Pattern contactPattern = Pattern.compile("^(070|071|075|076|077|078)[-]?[0-9]{7}$");
 
     ObservableList<CustomerTM> observableList = FXCollections.observableArrayList();
 
@@ -55,6 +64,8 @@ public class ManageCustomerDetailsFormController {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
+        storeValidations();
 
     }
 
@@ -264,8 +275,32 @@ public class ManageCustomerDetailsFormController {
         txtCustomerContact.setText("");
     }
 
-    public void textFields_Key_Realeased(KeyEvent keyEvent) {
+    private void storeValidations() {
+        btnSaveCustomer.setDisable(true);
+        map.put(txtCustomerName, namePattern);
+        map.put(txtCustomerAddress, addressPattern);
+        map.put(txtCustomerContact, contactPattern);
+    }
 
+    public void textFields_Key_Released(KeyEvent keyEvent) {
+        Object response = ValidationUtil.validate(map, btnSaveCustomer);
+
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            if (response instanceof TextField) {
+                TextField errorText = (TextField) response;
+                errorText.requestFocus();
+            } else if (response instanceof Boolean) {
+                Image image = new Image("/assests/images/pass.png");
+                Notifications notifications = Notifications.create();
+                notifications.graphic(new ImageView(image));
+                notifications.text("Successfully Saved !");
+                notifications.title("Success Message");
+                notifications.hideAfter(Duration.seconds(5));
+                notifications.position(Pos.TOP_CENTER);
+                notifications.darkStyle();
+                notifications.show();
+            }
+        }
     }
 
 }

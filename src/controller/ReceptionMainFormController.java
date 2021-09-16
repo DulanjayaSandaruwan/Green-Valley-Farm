@@ -6,9 +6,13 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -16,6 +20,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.Date;
+import java.util.Optional;
 
 /**
  * @author : D.D.Sandaruwan <dulanjayasandaruwan1998@gmail.com>
@@ -104,11 +109,17 @@ public class ReceptionMainFormController {
         root5.getChildren().add(load);
     }
 
-    public void imgSettingOnMouseClicked(MouseEvent mouseEvent) {
+    public void imgExitOnMouseClicked(MouseEvent mouseEvent) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to log out", ButtonType.YES, ButtonType.NO);
+        Optional<ButtonType> buttonType = alert.showAndWait();
 
-    }
-
-    public void imgExitOnMouseClicked(MouseEvent mouseEvent) {
-
+        if(buttonType.get().equals(ButtonType.YES)) {
+            Parent parent = FXMLLoader.load(this.getClass().getResource("../view/LoginForm.fxml"));
+            Scene scene = new Scene(parent);
+            Stage primaryStage = (Stage) this.root5.getScene().getWindow();
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Login Form");
+            primaryStage.centerOnScreen();
+        }
     }
 }

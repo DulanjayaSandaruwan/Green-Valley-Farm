@@ -69,7 +69,7 @@
             <Font size="19.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtItemName" layoutX="23.0" layoutY="115.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" promptText="Purchase Item" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtItemName" layoutX="23.0" layoutY="115.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="440.0" promptText="Purchase Item" style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font></TextField>
@@ -78,7 +78,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtItemType" layoutX="504.0" layoutY="113.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" promptText="Plants / Animal" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtItemType" layoutX="504.0" layoutY="113.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="440.0" promptText="Plants / Animal" style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font></TextField>
@@ -92,7 +92,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtUnitPrice" layoutX="23.0" layoutY="190.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" promptText="Unit Price" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtUnitPrice" layoutX="23.0" layoutY="190.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="440.0" promptText="Unit Price" style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font>

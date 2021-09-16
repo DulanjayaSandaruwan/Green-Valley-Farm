@@ -284,13 +284,14 @@ public class ManageSupplierDetailsController {
     }
 
     private void storeValidations() {
+        btnSaveSupplier.setDisable(true);
         map.put(txtSupplierName, namePattern);
         map.put(txtSupAddress, addressPattern);
         map.put(txtSupContact, contactPattern);
 
     }
 
-    public void textFields_Key_Realeased(KeyEvent keyEvent) {
+    public void textFields_Key_Released(KeyEvent keyEvent) {
         Object response = ValidationUtil.validate(map, btnSaveSupplier);
 
         if (keyEvent.getCode() == KeyCode.ENTER) {

@@ -70,7 +70,7 @@
             <Font size="19.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtProductsName" layoutX="11.0" layoutY="93.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" promptText="Product" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtProductsName" layoutX="11.0" layoutY="93.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="440.0" promptText="Product" style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font>
@@ -80,7 +80,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtProductsType" layoutX="494.0" layoutY="91.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="33.0" prefWidth="449.0" promptText="Plants / Animal" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtProductsType" layoutX="494.0" layoutY="91.0" onKeyReleased="#textFields_Key_Released" prefHeight="33.0" prefWidth="449.0" promptText="Plants / Animal" style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font>
@@ -90,12 +90,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="17.0" layoutY="142.0" prefHeight="26.0" prefWidth="241.0" text="Enter Quantity On Hand :" textFill="#fffefe">
+      <Label layoutX="17.0" layoutY="143.0" prefHeight="26.0" prefWidth="241.0" text="Enter Quantity On Hand :" textFill="#fffefe">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtQtyOnHand" layoutX="10.0" layoutY="168.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" promptText="Quantity" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtQtyOnHand" layoutX="10.0" layoutY="169.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="440.0" promptText="Quantity" style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font>
@@ -110,7 +110,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtProductUnitPrice" layoutX="495.0" layoutY="168.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="33.0" prefWidth="449.0" promptText="Unit Price" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtProductUnitPrice" layoutX="495.0" layoutY="168.0" onKeyReleased="#textFields_Key_Released" prefHeight="33.0" prefWidth="449.0" promptText="Unit Price" style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font>
