@@ -1,0 +1,30 @@
+
+
+java:S1186¢"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÃğƒËøÿÿÿÿ
+H
+java:S1172A"2Remove this unused method parameter "actionEvent".(«ÌÌ
+H
+java:S1172d"2Remove this unused method parameter "actionEvent".(ôÁ‹
+C
+java:S1602€",Remove useless curly braces around statement(Å¢Ú®
+N
+java:S1172"2Remove this unused method parameter "actionEvent".(°øÙ³úÿÿÿÿ
+I
+java:S1172Â"2Remove this unused method parameter "actionEvent".(îÌÉ
+I
+java:S1172î"2Remove this unused method parameter "actionEvent".(’éûø
+P
+java:S1172‹"2Remove this unused method parameter "actionEvent".(ŠÜÎ£8ÎÆÎ‡¾/
+H
+java:S1172"1Remove this unused method parameter "mouseEvent".(Ì¦Ÿæ
+i	java:S100¢"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃğƒËøÿÿÿÿ
+e
+java:S1192m"ODefine a constant instead of duplicating this literal "Failed Message" 5 times.(ÆÄ± 
+o
+java:S1192i"YDefine a constant instead of duplicating this literal "/assests/images/fail.png" 5 times.(Ò‚ÒÅ
+†
+java:S1192¹"cDefine a constant instead of duplicating this literal "Something Went Wrong , Try Again !" 3 times.(šÙÌÉùÿÿÿÿ8ĞÆÎ‡¾/
+s
+java:S1192Ÿ"PDefine a constant instead of duplicating this literal "Success Message" 3 times.(ÂÜÙÍüÿÿÿÿ8ÑÆÎ‡¾/
+w
+java:S1192›"YDefine a constant instead of duplicating this literal "/assests/images/pass.png" 3 times.(Â£¹8ÑÆÎ‡¾/

@@ -31,15 +31,24 @@ public class ItemController implements ItemManage {
 
     @Override
     public boolean saveItem(Item item) throws SQLException {
+        PreparedStatement stm;
         Connection con = DBConnection.getInstance().getConnection();
-        String query = "insert into supplyItem values(?,?,?,?)";
-        PreparedStatement stm = con.prepareStatement(query);
-        stm.setObject(1, item.getItemCode());
-        stm.setObject(2, item.getItemName());
-        stm.setObject(3, item.getItemType());
-        stm.setObject(4, item.getUnitPrice());
+        String findDuplicate ="select 1 from supplyItem where supItemCode = ? ";
+        stm = con.prepareStatement(findDuplicate);
+        stm.setString(1,item.getItemCode());
+        ResultSet rs = stm.executeQuery();
+        if(!rs.next()) {
+            String query = "insert into supplyItem values(?,?,?,?)";
+            stm = con.prepareStatement(query);
+            stm.setObject(1, item.getItemCode());
+            stm.setObject(2, item.getItemName());
+            stm.setObject(3, item.getItemType());
+            stm.setObject(4, item.getUnitPrice());
 
-        return stm.executeUpdate() > 0;
+            return stm.executeUpdate() > 0;
+        }else {
+            return false;
+        }
     }
 
     @Override

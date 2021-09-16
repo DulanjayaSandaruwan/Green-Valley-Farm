@@ -32,16 +32,25 @@ public class ProductsController implements ProductsManage {
 
     @Override
     public boolean saveProduct(Products products) throws SQLException {
+        PreparedStatement stm;
         Connection con = DBConnection.getInstance().getConnection();
-        String query = "insert into finalProduct values(?,?,?,?,?)";
-        PreparedStatement stm = con.prepareStatement(query);
-        stm.setObject(1, products.getProductId());
-        stm.setObject(2, products.getProductName());
-        stm.setObject(3, products.getProductType());
-        stm.setObject(4, products.getQtyOnHand());
-        stm.setObject(5, products.getUnitPrice());
+        String findDuplicate ="select 1 from finalProduct where finalProductId = ? ";
+        stm = con.prepareStatement(findDuplicate);
+        stm.setString(1,products.getProductId());
+        ResultSet rs = stm.executeQuery();
+        if(!rs.next()) {
+            String query = "insert into finalProduct values(?,?,?,?,?)";
+            stm = con.prepareStatement(query);
+            stm.setObject(1, products.getProductId());
+            stm.setObject(2, products.getProductName());
+            stm.setObject(3, products.getProductType());
+            stm.setObject(4, products.getQtyOnHand());
+            stm.setObject(5, products.getUnitPrice());
 
-        return stm.executeUpdate() > 0;
+            return stm.executeUpdate() > 0;
+        }else {
+            return false;
+        }
     }
 
     @Override

@@ -18,16 +18,25 @@ public class FarmerController implements FarmerManage {
 
     @Override
     public boolean saveFarmer(Farmer farmer) throws SQLException {
+        PreparedStatement stm;
         Connection con = DBConnection.getInstance().getConnection();
-        String query = "insert into farmer values(?,?,?,?,?)";
-        PreparedStatement stm = con.prepareStatement(query);
-        stm.setObject(1, farmer.getFarmerId());
-        stm.setObject(2, farmer.getFarmerName());
-        stm.setObject(3, farmer.getFarmerAddress());
-        stm.setObject(4, farmer.getFarmerContact());
-        stm.setObject(5, farmer.getGardenId());
+        String findDuplicate ="select 1 from farmer where farmerId = ? ";
+        stm = con.prepareStatement(findDuplicate);
+        stm.setString(1,farmer.getFarmerId());
+        ResultSet rs = stm.executeQuery();
+        if(!rs.next()) {
+            String query = "insert into farmer values(?,?,?,?,?)";
+            stm = con.prepareStatement(query);
+            stm.setObject(1, farmer.getFarmerId());
+            stm.setObject(2, farmer.getFarmerName());
+            stm.setObject(3, farmer.getFarmerAddress());
+            stm.setObject(4, farmer.getFarmerContact());
+            stm.setObject(5, farmer.getGardenId());
 
-        return stm.executeUpdate() > 0;
+            return stm.executeUpdate() > 0;
+        }else {
+            return false;
+        }
     }
 
     @Override

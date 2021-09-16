@@ -229,6 +229,16 @@ public class ManageProductsFormController {
                 clearForms();
                 tblProductsDetails.getItems().clear();
                 setItemValuesToTable(new ProductsController().selectAllProducts());
+            }else {
+                Image image = new Image("/assests/images/fail.png");
+                Notifications notifications = Notifications.create();
+                notifications.graphic(new ImageView(image));
+                notifications.text("Duplicate Entry, Try Again !");
+                notifications.title("Failed Message");
+                notifications.hideAfter(Duration.seconds(5));
+                notifications.position(Pos.TOP_CENTER);
+                notifications.darkStyle();
+                notifications.show();
             }
 
         } else {

@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageCustomerDetailsFormController">
    <children>
-      <JFXButton layoutX="9.0" layoutY="10.0" onAction="#btnCustomerIdOnAction" prefHeight="38.0" prefWidth="161.0" style="-fx-background-color: #0099ff; -fx-background-radius: 2em;" text="Customer ID" textFill="WHITE">
+      <JFXButton layoutX="9.0" layoutY="10.0" onAction="#btnCustomerIdOnAction" prefHeight="38.0" prefWidth="161.0" style="-fx-background-color: #27aa80#27aa80; -fx-background-radius: 2em;" text="Customer ID" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
@@ -75,7 +75,7 @@
             <Font size="19.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtCustomerName" layoutX="13.0" layoutY="92.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="33.0" prefWidth="451.0" promptText="Prageeth Eranda" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtCustomerName" layoutX="13.0" layoutY="92.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="33.0" prefWidth="451.0" promptText="Dulanjaya Sandaruwan" style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font>
@@ -85,7 +85,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCustomerAddress" layoutX="495.0" layoutY="92.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="33.0" prefWidth="451.0" promptText="Rathnapura 08" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtCustomerAddress" layoutX="495.0" layoutY="92.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="33.0" prefWidth="451.0" promptText="Rathnapura " style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font>

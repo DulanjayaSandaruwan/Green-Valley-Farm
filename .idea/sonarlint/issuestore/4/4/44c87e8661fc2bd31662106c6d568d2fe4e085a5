@@ -12,12 +12,12 @@ java:S59963"_Remove or replace this boundary that will never match because it a
 B
 java:S1602d",Remove useless curly braces around statement(‰‚Öé
 M
-java:S1172k"2Remove this unused method parameter "actionEvent".(Úó¥üøÿÿÿÿ
+java:S1172m"2Remove this unused method parameter "actionEvent".(Úó¥üøÿÿÿÿ
 N
-java:S1172¬"2Remove this unused method parameter "actionEvent".(”¨•ÿúÿÿÿÿ
+java:S1172®"2Remove this unused method parameter "actionEvent".(”¨•ÿúÿÿÿÿ
 N
-java:S1172¸"2Remove this unused method parameter "actionEvent".(³¥Îùÿÿÿÿ
-i	java:S100ï"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃğƒËøÿÿÿÿ
+java:S1172º"2Remove this unused method parameter "actionEvent".(³¥Îùÿÿÿÿ
+i	java:S100ñ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃğƒËøÿÿÿÿ
 m
 java:S1104!"WMake txtUserName a static final constant or non-public and provide accessors if needed.(Äù±Ú
 o
@@ -46,9 +46,9 @@ m
 java:S1104-"WMake colUserName a static final constant or non-public and provide accessors if needed.(ÖÁË·
 s
 java:S1104."XMake colUserEmail a static final constant or non-public and provide accessors if needed.(õÔ¥Ôúÿÿÿÿ
+c
+java:S2095Ê"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ
+e
+java:S2095{"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(çäü­
 j
 java:S2095S"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Äœƒúÿÿÿÿ
-e
-java:S2095y"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ç÷Äİ
-c
-java:S2095È"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ

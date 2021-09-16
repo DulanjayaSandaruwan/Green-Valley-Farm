@@ -26,55 +26,85 @@
                   <Image url="@../assests/images/farming-vector-illustration-removebg-preview.png" />
                </image>
             </ImageView>
-            <JFXButton id="homeid" fx:id="btnHome" layoutX="17.0" layoutY="146.0" onAction="#btnHomeOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-radius: 2em; -fx-background-color: #002039; -fx-border-radius: 2em;" text="Home" textAlignment="RIGHT" textFill="WHITE">
+            <JFXButton id="homeid" fx:id="btnHome" layoutX="11.0" layoutY="147.0" onAction="#btnHomeOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-radius: 2em; -fx-background-color: #002039; -fx-border-radius: 2em;" text="Home" textAlignment="RIGHT" textFill="WHITE">
                <font>
-                  <Font size="21.0" />
+                  <Font size="19.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="18.0" layoutY="300.0" onAction="#btnSupplierOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039 #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Supplier" textAlignment="RIGHT" textFill="WHITE">
+            <JFXButton layoutX="8.0" layoutY="301.0" onAction="#btnSupplierOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039 #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Supplier" textAlignment="RIGHT" textFill="WHITE">
                <font>
-                  <Font size="21.0" />
+                  <Font size="19.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="19.0" layoutY="354.0" onAction="#btnPurchasedItemOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Purchased Items" textAlignment="RIGHT" textFill="WHITE">
+            <JFXButton layoutX="10.0" layoutY="353.0" onAction="#btnPurchasedItemOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Purchased Items" textAlignment="RIGHT" textFill="WHITE">
                <font>
-                  <Font size="21.0" />
+                  <Font size="19.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="19.0" layoutY="403.0" onAction="#btnPurchaseOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Purchase" textAlignment="RIGHT" textFill="WHITE">
+            <JFXButton layoutX="8.0" layoutY="405.0" onAction="#btnPurchaseOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Purchase" textAlignment="RIGHT" textFill="WHITE">
                <font>
-                  <Font size="21.0" />
+                  <Font size="19.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="21.0" layoutY="453.0" onAction="#btnProductsOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Products " textAlignment="RIGHT" textFill="WHITE">
+            <JFXButton layoutX="10.0" layoutY="456.0" onAction="#btnProductsOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Products " textAlignment="RIGHT" textFill="WHITE">
                <font>
-                  <Font size="21.0" />
+                  <Font size="19.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="22.0" layoutY="653.0" onAction="#btnReportsOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Reports" textAlignment="RIGHT" textFill="WHITE">
+            <JFXButton layoutX="9.0" layoutY="656.0" onAction="#btnReportsOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Reports" textAlignment="RIGHT" textFill="WHITE">
                <font>
-                  <Font size="21.0" />
+                  <Font size="19.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
             <Separator layoutX="17.0" layoutY="140.0" opacity="0.24" prefHeight="1.0" prefWidth="237.0" />
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="73.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8-home-24.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="58.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8-supplier-30.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="56.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8-purchase-order-24.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="58.0" layoutY="460.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8-vegetables-bag-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="64.0" layoutY="662.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8-medical-history-30.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="22.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8_trolley_64px.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="258.0" prefHeight="55.0" prefWidth="993.0" style="-fx-background-color: #002039;">
@@ -146,67 +176,92 @@
             <Label layoutX="776.0" layoutY="18.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #ff3300, #ff5500, #ff6f00, #ff8500, #ff9900);" styleClass="most-contacted-layout" stylesheets="@../assests/styles/Styles.css" />
             <Label layoutX="590.0" layoutY="18.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #008000, #059e04, #0cbd0a, #13de12, #1aff1a);" styleClass="most-contacted-layout" stylesheets="@../assests/styles/Styles.css" />
             <Label layoutX="211.0" layoutY="18.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #660066, #8a0b8a, #af18af, #d726d6, #ff33ff);" styleClass="most-contacted-layout" stylesheets="@../assests/styles/Styles.css" />
-            <AnchorPane fx:id="paneSettingPanal" layoutX="815.0" layoutY="-13.0" prefHeight="95.0" prefWidth="142.0" style="-fx-background-color: #002039;">
+            <AnchorPane fx:id="paneSettingPanal" layoutX="815.0" layoutY="-9.0" prefHeight="95.0" prefWidth="142.0" style="-fx-background-color: #a7a9ac;">
                <children>
-                  <Label fx:id="lblLogOut" layoutX="5.0" layoutY="5.0" onMouseClicked="#lblChangePasswordOnMouseClicked" prefHeight="33.0" prefWidth="131.0" text="Change Password" textFill="WHITE">
+                  <Label fx:id="lblLogOut" layoutX="5.0" layoutY="5.0" onMouseClicked="#lblChangePasswordOnMouseClicked" prefHeight="33.0" prefWidth="131.0" text="Change Password">
                      <font>
-                        <Font name="Ubuntu" size="15.0" />
+                        <Font name="Ubuntu" size="16.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label layoutX="7.0" layoutY="50.0" onMouseClicked="#lblLogOutOnMouseClicked" prefHeight="25.0" prefWidth="120.0" text="Log Out" textFill="WHITE">
+                  <Label layoutX="7.0" layoutY="50.0" onMouseClicked="#lblLogOutOnMouseClicked" prefHeight="25.0" prefWidth="120.0" text="Log Out">
                      <font>
-                        <Font size="15.0" />
+                        <Font size="16.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Pane layoutY="80.0" prefHeight="15.0" prefWidth="143.0" style="-fx-background-color: #000000;" />
+                  <Pane layoutY="80.0" prefHeight="15.0" prefWidth="143.0" style="-fx-background-color: #59626a;" />
                </children>
             </AnchorPane>
          </children></AnchorPane>
-      <JFXButton layoutX="16.0" layoutY="186.0" onAction="#btnGardenOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Garden" textFill="WHITE">
+      <JFXButton layoutX="9.0" layoutY="185.0" onAction="#btnGardenOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Garden" textFill="WHITE">
          <font>
-            <Font size="21.0" />
+            <Font size="19.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="16.0" layoutY="239.0" onAction="#btnFarmerOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Farmer" textAlignment="RIGHT" textFill="WHITE">
+      <JFXButton layoutX="9.0" layoutY="239.0" onAction="#btnFarmerOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Farmer" textAlignment="RIGHT" textFill="WHITE">
          <font>
-            <Font size="21.0" />
+            <Font size="19.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="24.0" layoutY="496.0" onAction="#btnCollectProductsOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Collect Products" textAlignment="RIGHT" textFill="WHITE">
+      <JFXButton layoutX="11.0" layoutY="496.0" onAction="#btnCollectProductsOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Collect Products" textAlignment="RIGHT" textFill="WHITE">
          <font>
-            <Font size="21.0" />
+            <Font size="19.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="23.0" layoutY="546.0" onAction="#btnCustomerOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Customer" textAlignment="RIGHT" textFill="WHITE">
+      <JFXButton layoutX="12.0" layoutY="546.0" onAction="#btnCustomerOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Customer" textAlignment="RIGHT" textFill="WHITE">
          <font>
-            <Font size="21.0" />
+            <Font size="19.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="23.0" layoutY="596.0" onAction="#btnPlaceOrderOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Place Order" textAlignment="RIGHT" textFill="WHITE">
+      <JFXButton layoutX="11.0" layoutY="597.0" onAction="#btnPlaceOrderOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Place Order" textAlignment="RIGHT" textFill="WHITE">
          <font>
-            <Font size="21.0" />
+            <Font size="19.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="66.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/images/icons8-garden-30.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="64.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/images/icons8-farmer-50.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="57.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/images/icons8-customer-30.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="45.0" layoutY="603.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/images/sell_large_outlined_grey.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="29.0" layoutY="503.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/images/icons8_add_shopping_cart_48px_1.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

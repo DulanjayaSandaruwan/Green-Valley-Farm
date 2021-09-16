@@ -3,7 +3,6 @@ package controller;
 import controller.common.CustomerManage;
 import db.DBConnection;
 import model.Customer;
-import model.Supplier;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,15 +31,26 @@ public class CustomerController implements CustomerManage {
 
     @Override
     public boolean saveCustomer(Customer customer) throws SQLException {
+        PreparedStatement stm;
         Connection con = DBConnection.getInstance().getConnection();
-        String query = "insert into customer values(?,?,?,?)";
-        PreparedStatement stm = con.prepareStatement(query);
-        stm.setObject(1, customer.getCustomerId());
-        stm.setObject(2, customer.getCustomerName());
-        stm.setObject(3, customer.getCustomerAddress());
-        stm.setObject(4, customer.getCustomerContact());
 
-        return stm.executeUpdate() > 0;
+            String findDuplicate = "select 1 from customer where customerId = ?";
+            stm = con.prepareStatement(findDuplicate);
+            stm.setObject(1, customer.getCustomerId());
+            ResultSet rs = stm.executeQuery();
+            if (!rs.next()) {
+                String query = "insert into customer values(?,?,?,?)";
+                stm = con.prepareStatement(query);
+                stm.setObject(1, customer.getCustomerId());
+                stm.setObject(2, customer.getCustomerName());
+                stm.setObject(3, customer.getCustomerAddress());
+                stm.setObject(4, customer.getCustomerContact());
+
+
+                return stm.executeUpdate() > 0;
+
+            }
+                return false;
     }
 
     @Override
@@ -67,12 +77,12 @@ public class CustomerController implements CustomerManage {
     public boolean updateCustomer(Customer customer) throws SQLException {
         PreparedStatement stm = DBConnection.getInstance().getConnection().
                 prepareStatement("update customer set customerName=?, customerAddress=?, customerContact=? where customerId=?");
-        stm.setObject(1, customer.getCustomerName());
-        stm.setObject(2, customer.getCustomerAddress());
-        stm.setObject(3, customer.getCustomerContact());
-        stm.setObject(4, customer.getCustomerId());
+            stm.setObject(1, customer.getCustomerName());
+            stm.setObject(2, customer.getCustomerAddress());
+            stm.setObject(3, customer.getCustomerContact());
+            stm.setObject(4, customer.getCustomerId());
 
-        return stm.executeUpdate() > 0;
+            return stm.executeUpdate() > 0;
     }
 
     @Override

@@ -32,15 +32,24 @@ public class SupplierController implements SupplierManage {
 
     @Override
     public boolean saveSupplier(Supplier supplier) throws SQLException {
+        PreparedStatement stm;
         Connection con = DBConnection.getInstance().getConnection();
-        String query = "insert into supplier values(?,?,?,?)";
-        PreparedStatement stm = con.prepareStatement(query);
-        stm.setObject(1, supplier.getSupID());
-        stm.setObject(2, supplier.getSupName());
-        stm.setObject(3, supplier.getSupAddress());
-        stm.setObject(4, supplier.getSupContact());
+        String findDuplicate ="select 1 from supplier where supId = ? ";
+        stm = con.prepareStatement(findDuplicate);
+        stm.setString(1,supplier.getSupID());
+        ResultSet rs = stm.executeQuery();
+        if(!rs.next()) {
+            String query = "insert into supplier values(?,?,?,?)";
+            stm = con.prepareStatement(query);
+            stm.setObject(1, supplier.getSupID());
+            stm.setObject(2, supplier.getSupName());
+            stm.setObject(3, supplier.getSupAddress());
+            stm.setObject(4, supplier.getSupContact());
 
-        return stm.executeUpdate() > 0;
+            return stm.executeUpdate() > 0;
+        }else {
+            return false;
+        }
     }
 
     @Override

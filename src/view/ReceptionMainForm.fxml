@@ -50,7 +50,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="19.0" layoutY="460.0" onAction="#btnCollectProductsOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Collect Products" textAlignment="RIGHT" textFill="WHITE">
+            <JFXButton layoutX="21.0" layoutY="460.0" onAction="#btnCollectProductsOnAction" prefHeight="46.0" prefWidth="250.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Collect Products" textAlignment="RIGHT" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -83,6 +83,41 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
+            <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="58.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8-home-24.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="50.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8-garden-30.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="53.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8-farmer-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="45.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8-vegetables-bag-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="16.0" layoutY="463.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8_add_shopping_cart_48px_1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="41.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8-customer-30.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="27.0" layoutY="614.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/sell_large_outlined_grey.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="274.0" layoutY="-1.0" prefHeight="55.0" prefWidth="976.0" style="-fx-background-color: #002039;">

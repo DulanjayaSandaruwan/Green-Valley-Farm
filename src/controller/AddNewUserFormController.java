@@ -118,7 +118,7 @@ public class AddNewUserFormController {
 
             Connection connection = DBConnection.getInstance().getConnection();
             try {
-                PreparedStatement preparedStatement = connection.prepareStatement("insert into login values(?,?,?,?,?)");
+                PreparedStatement preparedStatement = connection.prepareStatement("insert into login values(?,?,md5(?),?,?)");
 
                 preparedStatement.setObject(1, id);
                 preparedStatement.setObject(2, userName);

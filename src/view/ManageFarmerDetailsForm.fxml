@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageFarmerDetailsFormController">
    <children>
-      <JFXButton layoutX="10.0" layoutY="12.0" onAction="#btnFarmerIdOnAction" prefHeight="29.0" prefWidth="141.0" style="-fx-background-color: #0099ff; -fx-background-radius: 2em;" text="Farmer ID" textFill="WHITE">
+      <JFXButton layoutX="12.0" layoutY="12.0" onAction="#btnFarmerIdOnAction" prefHeight="29.0" prefWidth="141.0" style="-fx-background-color: #27aa80#27aa80; -fx-background-radius: 2em;" text="Farmer ID" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
@@ -77,7 +77,7 @@
             <Font size="19.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtFarmerName" layoutX="498.0" layoutY="94.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" promptText="Prageeth Eranda" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtFarmerName" layoutX="498.0" layoutY="94.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" promptText="Dulanjaya Sandaruwan" style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font>
@@ -87,7 +87,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtFarmerAddress" layoutX="13.0" layoutY="171.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="33.0" prefWidth="451.0" promptText="Rathnapura 08" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtFarmerAddress" layoutX="13.0" layoutY="171.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="33.0" prefWidth="451.0" promptText="Rathnapura " style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font>
@@ -107,6 +107,9 @@
             <Font size="17.0" />
          </font>
       </TextField>
-      <ComboBox fx:id="cmbGardenIds" layoutX="11.0" layoutY="91.0" prefHeight="38.0" prefWidth="451.0" promptText="Select Garden ID" style="-fx-background-color: #53c7f0; -fx-background-radius: 2em;" />
+      <ComboBox fx:id="cmbGardenIds" layoutX="11.0" layoutY="91.0" prefHeight="38.0" prefWidth="451.0" promptText="Select Garden ID" style="-fx-background-color: #53c7f0; -fx-background-radius: 2em;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
    </children>
 </AnchorPane>

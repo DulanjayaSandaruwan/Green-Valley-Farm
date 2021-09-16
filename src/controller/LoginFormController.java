@@ -2,15 +2,11 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import db.DBConnection;
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -24,9 +20,7 @@ import org.controlsfx.control.Notifications;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.text.SimpleDateFormat;
-import java.time.LocalTime;
-import java.util.Date;
+import java.sql.SQLException;
 
 /**
  * @author : D.D.Sandaruwan <dulanjayasandaruwan1998@gmail.com>
@@ -62,52 +56,42 @@ public class LoginFormController {
         PreparedStatement preparedStatement = null;
 
         try {
-           preparedStatement = connection.prepareStatement("select * from login where userName = ? and password = ?");
+            preparedStatement = connection.prepareStatement("select * from login where userName = ? and password = md5(?) ");
 
             preparedStatement.setObject(1, userName);
             preparedStatement.setObject(2, password);
 
             ResultSet resultSet = preparedStatement.executeQuery();
+                if (resultSet.next()) {
 
-            if (resultSet.next()) {
+                    userID = resultSet.getString(1);
+                    name = resultSet.getString(2);
+                    role = resultSet.getString(5);
 
-                userID = resultSet.getString(1);
-                name = resultSet.getString(2);
-                role = resultSet.getString(5);
+                    Parent parent = FXMLLoader.load(this.getClass().getResource(role.equals("Manager")
+                            ? "../view/ManagerMainForm.fxml" : "../view/ReceptionMainForm.fxml"));
+                    Scene scene = new Scene(parent);
+                    Stage primaryStage = (Stage) this.root1.getScene().getWindow();
+                    primaryStage.setScene(scene);
+                    primaryStage.setTitle("Main Form");
+                    primaryStage.centerOnScreen();
 
-                Parent parent = FXMLLoader.load(this.getClass().getResource(role.equals("Manager")
-                        ? "../view/ManagerMainForm.fxml" : "../view/ReceptionMainForm.fxml"));
-                Scene scene = new Scene(parent);
-                Stage primaryStage = (Stage) this.root1.getScene().getWindow();
-                primaryStage.setScene(scene);
-                primaryStage.setTitle("Main Form");
-                primaryStage.centerOnScreen();
+                } else {
 
-            } else {
+                    Image image = new Image("/assests/images/fail.png");
+                    Notifications notifications = Notifications.create();
+                    notifications.graphic(new ImageView(image));
+                    notifications.text("Something Went Wrong , Wrong User Name Or Password , Try Again !");
+                    notifications.title("Failed Message");
+                    notifications.hideAfter(Duration.seconds(10));
+                    notifications.position(Pos.TOP_CENTER);
+                    notifications.darkStyle();
+                    notifications.show();
 
-                Image image = new Image("/assests/images/fail.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Something Went Wrong , Wrong User Name Or Password , Try Again !");
-                notifications.title("Failed Message");
-                notifications.hideAfter(Duration.seconds(10));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
-
-                txtEnterUserName.clear();
-                txtEnterPassword.clear();
-                txtEnterUserName.requestFocus();
-            }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-//            Parent parent = FXMLLoader.load(this.getClass().getResource("../view/ManagerMainForm.fxml" ));
-//            Scene scene = new Scene(parent);
-//            Stage primaryStage = (Stage) this.root1.getScene().getWindow();
-//            primaryStage.setScene(scene);
-//            primaryStage.setTitle("Main Form");
-//            primaryStage.centerOnScreen();
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    txtEnterUserName.clear();
+                    txtEnterPassword.clear();
+                    txtEnterUserName.requestFocus();
+                }
 
         } catch (Exception e) {
             e.printStackTrace();

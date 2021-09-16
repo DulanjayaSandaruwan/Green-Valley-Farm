@@ -30,17 +30,26 @@ public class GardenController implements GardenManage {
     }
 
     @Override
-    public boolean saveGarden(Garden garden) throws SQLException {
+    public boolean saveGarden(Garden garden) throws SQLException{
+        PreparedStatement stm;
         Connection con = DBConnection.getInstance().getConnection();
-        String query = "insert into garden values(?,?,?,?,?)";
-        PreparedStatement stm = con.prepareStatement(query);
-        stm.setObject(1, garden.getGardenId());
-        stm.setObject(2, garden.getGardenType());
-        stm.setObject(3, garden.getGardenLocation());
-        stm.setObject(4, garden.getExtendOfLand());
-        stm.setObject(5, garden.getDescription());
+        String findDuplicate ="select 1 from garden where gardenId = ? ";
+        stm = con.prepareStatement(findDuplicate);
+        stm.setString(1,garden.getGardenId());
+        ResultSet rs = stm.executeQuery();
+        if(!rs.next()) {
+            String query = "insert into garden values(?,?,?,?,?)";
+            stm = con.prepareStatement(query);
+            stm.setObject(1, garden.getGardenId());
+            stm.setObject(2, garden.getGardenType());
+            stm.setObject(3, garden.getGardenLocation());
+            stm.setObject(4, garden.getExtendOfLand());
+            stm.setObject(5, garden.getDescription());
 
-        return stm.executeUpdate() > 0;
+            return stm.executeUpdate() > 0;
+        }else{
+            return false;
+        }
     }
 
     @Override

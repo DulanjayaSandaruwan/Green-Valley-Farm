@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import java.lang.String?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -33,7 +34,10 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cmbCustomerIds" layoutX="11.0" layoutY="54.0" prefHeight="30.0" prefWidth="152.0" promptText="Customer ID" style="-fx-background-color: #53c7f0; -fx-background-radius: 1em;" />
+      <ComboBox fx:id="cmbCustomerIds" layoutX="11.0" layoutY="54.0" prefHeight="30.0" prefWidth="152.0" promptText="Customer ID" style="-fx-background-color: #53c7f0; -fx-background-radius: 1em;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
       <Label layoutX="306.0" layoutY="1.0" prefHeight="30.0" prefWidth="164.0" text="Order Date :" textFill="#fcf9f9">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -47,7 +51,10 @@
       <TextField fx:id="txtCustomerName" layoutX="172.0" layoutY="56.0" prefHeight="26.0" prefWidth="268.0" promptText="Customer Name" style="-fx-background-radius: 2em;" />
       <TextField fx:id="txtUnitPrice" layoutX="452.0" layoutY="117.0" prefHeight="26.0" prefWidth="290.0" promptText="UnitPrice" style="-fx-background-radius: 2em;" />
       <TextField fx:id="txtCustomerContact" layoutX="751.0" layoutY="56.0" prefHeight="26.0" prefWidth="194.0" promptText="Customer Contact" style="-fx-background-radius: 2em;" />
-      <ComboBox fx:id="cmbProductIds" layoutX="11.0" layoutY="114.0" prefHeight="30.0" prefWidth="152.0" promptText="Product ID" style="-fx-background-color: #53c7f0; -fx-background-radius: 1em;" />
+      <ComboBox fx:id="cmbProductIds" layoutX="11.0" layoutY="114.0" prefHeight="30.0" prefWidth="152.0" promptText="Product ID" style="-fx-background-color: #53c7f0; -fx-background-radius: 1em;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
       <TextField fx:id="txtProductName" layoutX="173.0" layoutY="118.0" prefHeight="26.0" prefWidth="268.0" promptText="Product Name" style="-fx-background-radius: 2em;" />
       <TextField fx:id="txtGardenLocation" layoutX="450.0" layoutY="56.0" prefHeight="26.0" prefWidth="290.0" promptText="Customer Address" style="-fx-background-radius: 2em;" />
       <TextField fx:id="txtQtyOnHand" layoutX="751.0" layoutY="116.0" prefHeight="26.0" prefWidth="194.0" promptText="Qty On Hand" style="-fx-background-radius: 2em;" />
@@ -61,11 +68,17 @@
          <font>
             <Font size="19.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
-      <JFXButton layoutX="776.0" layoutY="164.0" onAction="#btnAddToCartOnAction" prefHeight="30.0" prefWidth="171.0" style="-fx-background-color: #008000; -fx-background-radius: 2em;" text="Add To Store" textFill="WHITE">
+      <JFXButton layoutX="776.0" layoutY="164.0" onAction="#btnAddToCartOnAction" prefHeight="30.0" prefWidth="171.0" style="-fx-background-color: #008000; -fx-background-radius: 2em;" text="Add To Cart" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <TableView fx:id="txtOrderDetails" layoutX="8.0" layoutY="215.0" prefHeight="337.0" prefWidth="937.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;" stylesheets="@../assests/styles/Styles.css">
          <columns>
@@ -85,6 +98,9 @@
          <font>
             <Font size="20.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <Label layoutX="10.0" layoutY="569.0" prefHeight="30.0" prefWidth="143.0" text="Net Price :" textFill="WHITE">
          <font>
