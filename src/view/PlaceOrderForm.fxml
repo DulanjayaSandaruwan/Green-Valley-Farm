@@ -24,12 +24,12 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblDate" layoutX="466.0" layoutY="2.0" prefHeight="30.0" prefWidth="132.0" text="2019-01-17" textFill="#f2eaea">
+      <Label fx:id="lblDate" layoutX="442.0" layoutY="2.0" prefHeight="30.0" prefWidth="132.0" text="2019-01-17" textFill="#f2eaea">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblTime" layoutX="835.0" layoutY="3.0" prefHeight="30.0" prefWidth="117.0" text="01:45:18" textFill="WHITE">
+      <Label fx:id="lblTime" layoutX="797.0" layoutY="3.0" prefHeight="30.0" prefWidth="152.0" text="01:45:22" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -38,12 +38,12 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ComboBox>
-      <Label layoutX="306.0" layoutY="1.0" prefHeight="30.0" prefWidth="164.0" text="Order Date :" textFill="#fcf9f9">
+      <Label layoutX="296.0" layoutY="1.0" prefHeight="30.0" prefWidth="164.0" text="Order Date :" textFill="#fcf9f9">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="678.0" layoutY="1.0" prefHeight="30.0" prefWidth="175.0" text="Order Time :" textFill="WHITE">
+      <Label layoutX="644.0" layoutY="1.0" prefHeight="30.0" prefWidth="175.0" text="Order Time :" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -56,14 +56,14 @@
             <Cursor fx:constant="HAND" />
          </cursor></ComboBox>
       <TextField fx:id="txtProductName" layoutX="173.0" layoutY="118.0" prefHeight="26.0" prefWidth="268.0" promptText="Product Name" style="-fx-background-radius: 2em;" />
-      <TextField fx:id="txtGardenLocation" layoutX="450.0" layoutY="56.0" prefHeight="26.0" prefWidth="290.0" promptText="Customer Address" style="-fx-background-radius: 2em;" />
+      <TextField fx:id="txtCustomerAddress" layoutX="450.0" layoutY="56.0" prefHeight="26.0" prefWidth="290.0" promptText="Customer Address" style="-fx-background-radius: 2em;" />
       <TextField fx:id="txtQtyOnHand" layoutX="751.0" layoutY="116.0" prefHeight="26.0" prefWidth="194.0" promptText="Qty On Hand" style="-fx-background-radius: 2em;" />
       <Label layoutX="12.0" layoutY="170.0" prefHeight="30.0" prefWidth="183.0" text="Order Quantities :" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="txtQty" layoutX="180.0" layoutY="172.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="99.0" promptText="Qty" style="-fx-background-radius: 2em;" />
+      <TextField fx:id="txtQty" layoutX="180.0" layoutY="172.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="99.0" promptText="Qty" style="-fx-background-radius: 2em;" />
       <JFXButton layoutX="636.0" layoutY="165.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="117.0" style="-fx-background-color: #ff0000; -fx-background-radius: 2em;" text="Clear" textFill="WHITE">
          <font>
             <Font size="19.0" />
@@ -80,7 +80,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TableView fx:id="txtOrderDetails" layoutX="8.0" layoutY="215.0" prefHeight="337.0" prefWidth="937.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;" stylesheets="@../assests/styles/Styles.css">
+      <TableView fx:id="tblOrderDetailsCart" layoutX="8.0" layoutY="215.0" prefHeight="337.0" prefWidth="937.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;" stylesheets="@../assests/styles/Styles.css">
          <columns>
             <TableColumn fx:id="colProductId" prefWidth="100.0" text="Product ID" />
             <TableColumn fx:id="colProductName" prefWidth="202.0" text="Product Name" />
@@ -107,9 +107,9 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="lblNetPrice" layoutX="150.0" layoutY="565.0" prefHeight="39.0" prefWidth="152.0" text="0.00" textFill="WHITE">
+      <Label fx:id="lblNetPrice" layoutX="150.0" layoutY="565.0" prefHeight="39.0" prefWidth="280.0" text="0.00" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="31.0" />
+            <Font name="System Bold" size="25.0" />
          </font>
       </Label>
       <Label layoutX="336.0" layoutY="170.0" prefHeight="30.0" prefWidth="110.0" text="Discount :" textFill="WHITE">
@@ -117,7 +117,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDiscount" layoutX="442.0" layoutY="172.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="99.0" promptText="Discount" style="-fx-background-radius: 2em;" />
+      <TextField fx:id="txtDiscount" layoutX="442.0" layoutY="172.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="99.0" promptText="Discount" style="-fx-background-radius: 2em;" />
       <Text fill="WHITE" layoutX="544.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\%" wrappingWidth="41.7294921875">
          <font>
             <Font name="System Bold" size="27.0" />

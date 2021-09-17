@@ -206,6 +206,16 @@ public class ManageProductsFormController {
                     throwables.printStackTrace();
                 }
 
+            }else {
+                Image image = new Image("/assests/images/fail.png");
+                Notifications notifications = Notifications.create();
+                notifications.graphic(new ImageView(image));
+                notifications.text("Something Went Wrong , Try Again !");
+                notifications.title("Failed Message");
+                notifications.hideAfter(Duration.seconds(5));
+                notifications.position(Pos.TOP_CENTER);
+                notifications.darkStyle();
+                notifications.show();
             }
         } else {
             Image image = new Image("/assests/images/fail.png");

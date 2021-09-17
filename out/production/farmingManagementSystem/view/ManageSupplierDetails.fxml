@@ -75,7 +75,7 @@
             <Font size="19.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSupplierName" layoutX="14.0" layoutY="108.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="431.0" promptText="Dulanjaya Sandaruwan" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtSupplierName" layoutX="14.0" layoutY="108.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="431.0" promptText="Dulanjaya Sandaruwan" style="-fx-background-radius: 2em;">
          <font>
             <Font size="18.0" />
          </font></TextField>
@@ -84,7 +84,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSupAddress" layoutX="504.0" layoutY="107.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" promptText="Rathnapura " style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtSupAddress" layoutX="504.0" layoutY="107.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="440.0" promptText="Rathnapura " style="-fx-background-radius: 2em;">
          <font>
             <Font size="18.0" />
          </font></TextField>
@@ -93,7 +93,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSupContact" layoutX="14.0" layoutY="196.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="431.0" promptText="078-4956149" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtSupContact" layoutX="14.0" layoutY="196.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="431.0" promptText="078-4956149" style="-fx-background-radius: 2em;">
          <font>
             <Font size="18.0" />
          </font></TextField>

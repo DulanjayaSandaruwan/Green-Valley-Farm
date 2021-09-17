@@ -76,7 +76,7 @@
             <Font size="19.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtGardenType" layoutX="13.0" layoutY="113.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="33.0" prefWidth="440.0" promptText="Animal / Plants" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtGardenType" layoutX="13.0" layoutY="113.0" onKeyReleased="#textFields_Key_Released" prefHeight="33.0" prefWidth="440.0" promptText="Animal / Plants" style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font>
@@ -86,7 +86,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtGardenLocation" layoutX="496.0" layoutY="111.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" promptText="Location" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtGardenLocation" layoutX="496.0" layoutY="111.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="440.0" promptText="Location" style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font>
@@ -101,12 +101,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtExtendOfLand" layoutX="12.0" layoutY="188.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" promptText="Perches" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtExtendOfLand" layoutX="12.0" layoutY="188.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="440.0" promptText="Perches" style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtDescription" layoutX="496.0" layoutY="187.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="440.0" promptText="Description" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtDescription" layoutX="496.0" layoutY="187.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="440.0" promptText="Description" style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font>

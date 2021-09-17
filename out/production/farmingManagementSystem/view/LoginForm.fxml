@@ -8,7 +8,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="root1" prefHeight="500.0" prefWidth="700.0" style="-fx-border-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
@@ -47,25 +46,21 @@
       </AnchorPane>
       <AnchorPane layoutX="-1.0" prefHeight="500.0" prefWidth="296.0" style="-fx-background-color: linear-gradient(to right top, #001319, #07212b, #06303e, #043f52, #004f67);;">
          <children>
-            <Pane layoutX="48.0" layoutY="116.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
-               <children>
-                  <Label layoutX="39.0" layoutY="77.0" prefHeight="33.0" prefWidth="138.0" text="&lt;LOGO COMMING SOON&gt;">
-                     <font>
-                        <Font size="9.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Label layoutX="28.0" layoutY="368.0" prefHeight="43.0" prefWidth="262.0" text="Welcome" textFill="WHITE">
+            <Label layoutX="28.0" layoutY="362.0" prefHeight="43.0" prefWidth="262.0" text="Welcome" textFill="WHITE">
                <font>
                   <Font name="Abyssinica SIL" size="47.0" />
                </font>
             </Label>
-            <Label layoutX="31.0" layoutY="444.0" prefHeight="44.0" prefWidth="245.0" text="To The Farm !" textFill="#f8f8f8">
+            <Label layoutX="31.0" layoutY="436.0" prefHeight="44.0" prefWidth="245.0" text="To The Farm !" textFill="#f8f8f8">
                <font>
                   <Font name="Abyssinica SIL" size="33.0" />
                </font>
             </Label>
+            <ImageView fitHeight="243.0" fitWidth="256.0" layoutX="25.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/WhatsApp_Image_2021-09-17_at_00.48.55-removebg-preview.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
