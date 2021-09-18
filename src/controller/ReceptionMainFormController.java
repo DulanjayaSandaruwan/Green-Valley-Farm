@@ -122,4 +122,11 @@ public class ReceptionMainFormController {
             primaryStage.centerOnScreen();
         }
     }
+
+    public void imgNotification(MouseEvent mouseEvent) throws IOException {
+        URL resource = getClass().getResource("../view/NotificationForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        root5.getChildren().clear();
+        root5.getChildren().add(load);
+    }
 }

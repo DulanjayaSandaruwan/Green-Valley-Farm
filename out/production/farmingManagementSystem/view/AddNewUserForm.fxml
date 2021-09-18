@@ -30,23 +30,23 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TextField fx:id="txtUserName" layoutX="20.0" layoutY="153.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="36.0" prefWidth="458.0" promptText="Dulanjaya Sandaruwan" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtUserName" layoutX="20.0" layoutY="153.0" onKeyReleased="#textFields_Key_Released" prefHeight="36.0" prefWidth="458.0" promptText="Dulanjaya Sandaruwan" style="-fx-background-radius: 2em;">
          <font>
             <Font size="17.0" />
          </font></TextField>
-      <TextField fx:id="txtEmail" layoutX="20.0" layoutY="229.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="36.0" prefWidth="458.0" promptText="dulanjaya2001@gmail.com" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtEmail" layoutX="20.0" layoutY="229.0" onKeyReleased="#textFields_Key_Released" prefHeight="36.0" prefWidth="458.0" promptText="dulanjaya2001@gmail.com" style="-fx-background-radius: 2em;">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <PasswordField fx:id="txtNewPassword" layoutX="20.0" layoutY="311.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="36.0" prefWidth="458.0" promptText="Include Letters And Numbers" style="-fx-background-radius: 2em;">
+      <PasswordField fx:id="txtNewPassword" layoutX="20.0" layoutY="311.0" onKeyReleased="#textFields_Key_Released" prefHeight="36.0" prefWidth="458.0" promptText="Include Letters And Numbers" style="-fx-background-radius: 2em;">
          <font>
             <Font size="19.0" />
          </font></PasswordField>
-      <PasswordField fx:id="txtConfirmPassword" layoutX="19.0" layoutY="393.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="36.0" prefWidth="458.0" promptText="Enter Above Password Ypu Entered" style="-fx-background-radius: 2em;">
+      <PasswordField fx:id="txtConfirmPassword" layoutX="19.0" layoutY="393.0" onKeyReleased="#textFields_Key_Released" prefHeight="36.0" prefWidth="458.0" promptText="Enter Above Password Ypu Entered" style="-fx-background-radius: 2em;">
          <font>
             <Font size="19.0" />
          </font></PasswordField>
-      <TextField fx:id="txtRole" layoutX="16.0" layoutY="497.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="36.0" prefWidth="458.0" promptText="Manager / Reception" style="-fx-background-radius: 2em;">
+      <TextField fx:id="txtRole" layoutX="16.0" layoutY="497.0" onKeyReleased="#textFields_Key_Released" prefHeight="36.0" prefWidth="458.0" promptText="Manager / Reception" style="-fx-background-radius: 2em;">
          <font>
             <Font size="19.0" />
          </font></TextField>

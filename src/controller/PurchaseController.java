@@ -101,8 +101,10 @@ public class PurchaseController {
             preparedStatement.setObject(2, temp.getSupItemCode());
             preparedStatement.setObject(3, temp.getBuyingQty());
 
+            if(preparedStatement.executeUpdate() > 0){
+                return true;
+            }
         }
-        return true;
+        return false;
     }
-
 }

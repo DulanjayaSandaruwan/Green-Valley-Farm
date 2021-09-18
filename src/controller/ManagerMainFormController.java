@@ -15,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -131,7 +132,7 @@ public class ManagerMainFormController {
             paneSettingPanal.setVisible(false);
             isSettingPanelVisible = false;
         }
-        
+
     }
 
     public void btnGardenOnAction(ActionEvent actionEvent) throws IOException {
@@ -186,5 +187,12 @@ public class ManagerMainFormController {
             primaryStage.setTitle("Login Form");
             primaryStage.centerOnScreen();
         }
+    }
+
+    public void imgNotification(MouseEvent mouseEvent) throws IOException {
+        URL resource = getClass().getResource("../view/NotificationForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        root3.getChildren().clear();
+        root3.getChildren().add(load);
     }
 }

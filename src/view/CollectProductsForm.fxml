@@ -48,7 +48,7 @@
          </font>
       </Label>
       <TextField fx:id="txtGardenType" layoutX="174.0" layoutY="56.0" prefHeight="26.0" prefWidth="268.0" promptText="Garden Type" style="-fx-background-radius: 2em;" />
-      <TextField fx:id="txtPoductType" layoutX="454.0" layoutY="117.0" prefHeight="26.0" prefWidth="290.0" promptText="Product Type" style="-fx-background-radius: 2em;" />
+      <TextField fx:id="txtProductType" layoutX="454.0" layoutY="117.0" prefHeight="26.0" prefWidth="290.0" promptText="Product Type" style="-fx-background-radius: 2em;" />
       <TextField fx:id="txtDescription" layoutX="753.0" layoutY="56.0" prefHeight="26.0" prefWidth="194.0" promptText="Description" style="-fx-background-radius: 2em;" />
       <ComboBox fx:id="cmbProductIds" layoutX="13.0" layoutY="114.0" prefHeight="30.0" prefWidth="152.0" promptText="Product ID" style="-fx-background-color: #53c7f0; -fx-background-radius: 1em;">
          <cursor>
@@ -62,7 +62,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="txtQty" layoutX="449.0" layoutY="173.0" onKeyReleased="#textFields_Key_Realeased" prefHeight="26.0" prefWidth="143.0" promptText="Qty" style="-fx-background-radius: 2em;" />
+      <TextField fx:id="txtQty" layoutX="449.0" layoutY="173.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="143.0" promptText="Qty" style="-fx-background-radius: 2em;" />
       <JFXButton layoutX="638.0" layoutY="165.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="117.0" style="-fx-background-color: #ff0000; -fx-background-radius: 2em;" text="Clear" textFill="WHITE">
          <font>
             <Font size="19.0" />

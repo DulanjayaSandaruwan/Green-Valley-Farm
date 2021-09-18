@@ -138,13 +138,13 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <Separator layoutX="845.0" layoutY="6.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+            <Separator layoutX="919.0" layoutY="6.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
             <ImageView fitHeight="42.0" fitWidth="44.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assests/images/icons8_human_head_48px.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="865.0" layoutY="10.0" onMouseClicked="#imgExitOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="938.0" layoutY="10.0" onMouseClicked="#imgExitOnMouseClicked" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assests/images/icons8_logout_rounded_up_64px_1.png" />
                </image>
@@ -154,21 +154,22 @@
             </ImageView>
             <Separator layoutX="657.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
             <Separator layoutX="465.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
-            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="479.0" layoutY="6.0"  pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="479.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assests/images/icons8-2012-30.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="680.0" layoutY="6.0"  pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="680.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assests/images/icons8-clock-50.png" />
                </image>
             </ImageView>
-            <Label layoutX="907.0" layoutY="10.0" prefHeight="33.0" prefWidth="55.0" text="LogOut" textFill="#f8f8f8">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
+            <Separator layoutX="859.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="874.0" layoutY="13.0" onMouseClicked="#imgNotification" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8-notification-50.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="root5" layoutX="283.0" layoutY="61.0" prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;">

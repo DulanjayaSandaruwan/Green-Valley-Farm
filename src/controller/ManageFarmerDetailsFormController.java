@@ -50,7 +50,7 @@ public class ManageFarmerDetailsFormController {
 
     LinkedHashMap<TextField, Pattern> map = new LinkedHashMap<>();
     Pattern namePattern = Pattern.compile("^[A-z ]{5,20}$");
-    Pattern addressPattern = Pattern.compile("^[A-z0-9/ ]{6,30}$");
+    Pattern addressPattern = Pattern.compile("^[A-z0-9/ ]{3,30}$");
     Pattern contactPattern = Pattern.compile("^(070|071|075|076|077|078)[-]?[0-9]{7}$");
 
     ObservableList<FarmerTM> observableList = FXCollections.observableArrayList();

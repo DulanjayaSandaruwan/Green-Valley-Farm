@@ -115,17 +115,12 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="lblDate" layoutX="554.0" layoutY="8.0" prefHeight="42.0" prefWidth="120.0" text="2019.01.17" textFill="WHITE">
+            <Label fx:id="lblDate" layoutX="536.0" layoutY="8.0" prefHeight="42.0" prefWidth="120.0" text="2019.01.17" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <Label fx:id="lblTime" layoutX="749.0" layoutY="6.0" prefHeight="42.0" prefWidth="105.0" text="1:45:28" textFill="WHITE">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-            <Separator layoutX="856.0" layoutY="6.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+            <Separator layoutX="803.0" layoutY="6.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
             <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="937.0" layoutY="8.0" onMouseClicked="#imgSettingOnMouseClicked" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assests/images/icons8_settings_48px.png" />
@@ -140,19 +135,19 @@
                </image>
             </ImageView>
             <Separator layoutX="926.0" layoutY="6.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
-            <Separator layoutX="674.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
-            <Separator layoutX="488.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
-            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="500.0" layoutY="6.0" onMouseClicked="#imgSettingOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+            <Separator layoutX="648.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+            <Separator layoutX="473.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="484.0" layoutY="6.0" onMouseClicked="#imgSettingOnMouseClicked" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assests/images/icons8-2012-30.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="692.0" layoutY="6.0" onMouseClicked="#imgSettingOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="662.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assests/images/icons8-clock-50.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="872.0" layoutY="6.0" onMouseClicked="#ImgAddNewUserOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="817.0" layoutY="6.0" onMouseClicked="#ImgAddNewUserOnMouseClicked" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assests/images/icons8_add_user_male_48px.png" />
                </image>
@@ -160,6 +155,20 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
+            <Separator layoutX="864.0" layoutY="8.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+            <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="878.0" layoutY="12.0" onMouseClicked="#imgNotification" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/icons8-notification-50.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label fx:id="lblTime" layoutX="711.0" layoutY="6.0" prefHeight="42.0" prefWidth="105.0" text="1:45:28" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="root3" layoutX="282.0" layoutY="64.0" prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;">
