@@ -5,6 +5,6 @@
 
 <AnchorPane fx:id="root7" prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NotificationFormController">
    <children>
-      <VBox fx:id="vBoxNotification" layoutX="20.0" layoutY="21.0" prefHeight="578.0" prefWidth="630.0" style="-fx-background-color: #ffffff;" />
+      <VBox fx:id="vBoxNotification" layoutX="14.0" layoutY="14.0" prefHeight="587.0" prefWidth="928.0" style="-fx-background-color: #004072; -fx-background-radius: 1em;" />
    </children>
 </AnchorPane>
