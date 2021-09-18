@@ -55,7 +55,6 @@ public class PlaceOrderFormController {
     public TextField txtDiscount;
     public TextField txtCustomerAddress;
     public int selectedRowInCartRemove = -1;
-    public double netPrice = 0;
 
     ObservableList<OrderCartTM> observableList = FXCollections.observableArrayList();
 
@@ -237,12 +236,13 @@ public class PlaceOrderFormController {
     }
 
     public void calculateNetPrice() {
+        double netPrice = 0;
 
         for (OrderCartTM orderCartTM : observableList
         ) {
             netPrice += orderCartTM.getTotal();
         }
-        lblNetPrice.setText(netPrice + " /=");
+        lblNetPrice.setText(String.valueOf(netPrice));
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
@@ -280,7 +280,7 @@ public class PlaceOrderFormController {
                 lblOrderID.getText(),
                 lblDate.getText(),
                 cmbCustomerIds.getValue(),
-                netPrice,
+                Double.parseDouble(lblNetPrice.getText()),
                 orderDetails
         );
 
@@ -297,7 +297,7 @@ public class PlaceOrderFormController {
                 notifications.show();
 
                 setOrderId();
-                tblOrderDetailsCart.getItems().clear();
+                clearForms();
 
             } else {
                 Image image = new Image("/assests/images/fail.png");
@@ -331,6 +331,13 @@ public class PlaceOrderFormController {
 
         time.setCycleCount(Animation.INDEFINITE);
         time.play();
+    }
+
+    public void clearForms(){
+        txtQty.setText("");
+        txtDiscount.setText("");
+        lblNetPrice.setText("0");
+        tblOrderDetailsCart.getItems().clear();
     }
 
     public void textFields_Key_Released(KeyEvent keyEvent) {

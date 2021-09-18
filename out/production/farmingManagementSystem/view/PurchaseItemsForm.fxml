@@ -18,11 +18,6 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblBuyId" layoutX="115.0" layoutY="8.0" prefHeight="30.0" prefWidth="99.0" textFill="#fffbfb">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Label>
       <Label fx:id="lblDate" layoutX="449.0" layoutY="11.0" prefHeight="30.0" prefWidth="132.0" text="2019-01-17" textFill="#f2eaea">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -97,9 +92,9 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="lblNetPrice" layoutX="155.0" layoutY="570.0" prefHeight="39.0" prefWidth="152.0" text="0.00" textFill="WHITE">
+      <Label fx:id="lblNetPrice" layoutX="155.0" layoutY="570.0" prefHeight="39.0" prefWidth="302.0" text="0.00" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="31.0" />
+            <Font name="System Bold" size="25.0" />
          </font>
       </Label>
       <JFXButton layoutX="813.0" layoutY="568.0" onAction="#btnPurchaseOnAction" prefHeight="38.0" prefWidth="132.0" style="-fx-background-color: #ff3300; -fx-background-radius: 2em;" text="Purchase" textFill="WHITE">
@@ -110,5 +105,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <Label fx:id="lblBuyId" layoutX="109.0" layoutY="5.0" prefHeight="38.0" prefWidth="110.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -236,7 +236,7 @@ public class AddNewUserFormController {
         map.put(txtRole, rolePattern);
     }
 
-    public void textFields_Key_Realeased(KeyEvent keyEvent) {
+    public void textFields_Key_Released(KeyEvent keyEvent) {
         Object response = ValidationUtil.validate(map, btnRegister);
 
         if (keyEvent.getCode() == KeyCode.ENTER) {
