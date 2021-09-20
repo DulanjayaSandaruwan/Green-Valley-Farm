@@ -14,7 +14,6 @@ import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import model.*;
 import org.controlsfx.control.Notifications;
-import view.tm.OrderCartTM;
 import view.tm.PurchaseCartTM;
 
 import java.sql.SQLException;
@@ -98,6 +97,7 @@ public class PurchaseItemsFormController {
 
     private void loadSupplierIds() throws SQLException {
         cmbSupplierIds.getItems().addAll(new SupplierController().getSupplierID());
+
     }
 
     private void loadItemCodes() throws SQLException {

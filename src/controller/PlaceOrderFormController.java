@@ -171,12 +171,13 @@ public class PlaceOrderFormController {
             Image image = new Image("/assests/images/fail.png");
             Notifications notifications = Notifications.create();
             notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
+            notifications.text("Item count has exceed limit of "+qtyOnHand+" Plz select correct one");
             notifications.title("Failed Message");
             notifications.hideAfter(Duration.seconds(5));
             notifications.position(Pos.TOP_CENTER);
             notifications.darkStyle();
             notifications.show();
+            return;
         }
 
         OrderCartTM orderCartTM = new OrderCartTM(
@@ -272,7 +273,10 @@ public class PlaceOrderFormController {
                             tempTm.getProductId(),
                             lblOrderID.getText(),
                             tempTm.getQty(),
-                            tempTm.getDiscount()
+                            tempTm.getDiscount(),
+                            "",
+                            "",
+                            0.0
                     )
             );
         }

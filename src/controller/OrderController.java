@@ -112,8 +112,8 @@ public class OrderController {
     }
 
     private boolean updateQty(String finalProductId, int qty) throws SQLException {
-        PreparedStatement preparedStatement = DBConnection.getInstance().getConnection().prepareStatement(
-                "update finalProduct set qtyOnHand =(qtyOnHand - ?) where finalProductId = ?");
+        PreparedStatement preparedStatement = DBConnection.getInstance().getConnection()
+                .prepareStatement("update finalProduct set qtyOnHand = (qtyOnHand - ?) where finalProductId = ?");
         preparedStatement.setInt(1, qty);
         preparedStatement.setString(2, finalProductId);
         return preparedStatement.executeUpdate() > 0;

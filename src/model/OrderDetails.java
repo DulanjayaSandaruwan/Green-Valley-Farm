@@ -9,15 +9,21 @@ public class OrderDetails {
     private String orderId;
     private int orderQty;
     private double discount;
+    private String finalProductName;
+    private String finalProductType;
+    private double unitPrice;
 
     public OrderDetails() {
     }
 
-    public OrderDetails(String finalProductId, String orderId, int orderQty, double discount) {
+    public OrderDetails(String finalProductId, String orderId, int orderQty, double discount, String finalProductName, String finalProductType, double unitPrice) {
         this.finalProductId = finalProductId;
         this.orderId = orderId;
         this.orderQty = orderQty;
         this.discount = discount;
+        this.finalProductName = finalProductName;
+        this.finalProductType = finalProductType;
+        this.unitPrice = unitPrice;
     }
 
     public String getFinalProductId() {
@@ -52,13 +58,27 @@ public class OrderDetails {
         this.discount = discount;
     }
 
-    @Override
-    public String toString() {
-        return "OrderDetails{" +
-                "finalProductId='" + finalProductId + '\'' +
-                ", orderId='" + orderId + '\'' +
-                ", orderQty=" + orderQty +
-                ", discount=" + discount +
-                '}';
+    public String getFinalProductName() {
+        return finalProductName;
+    }
+
+    public void setFinalProductName(String finalProductName) {
+        this.finalProductName = finalProductName;
+    }
+
+    public String getFinalProductType() {
+        return finalProductType;
+    }
+
+    public void setFinalProductType(String finalProductType) {
+        this.finalProductType = finalProductType;
+    }
+
+    public double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 }

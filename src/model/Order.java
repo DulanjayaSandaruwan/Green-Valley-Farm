@@ -16,6 +16,14 @@ public class Order {
     public Order() {
     }
 
+    public Order(String orderId, String orderDate, String customerId, double orderCost){
+        this.orderId = orderId;
+        this.orderDate = orderDate;
+        this.customerId = customerId;
+        this.orderCost = orderCost;
+    }
+
+
     public Order(String orderId, String orderDate, String customerId, double orderCost, ArrayList<OrderDetails> orderDetails) {
         this.orderId = orderId;
         this.orderDate = orderDate;

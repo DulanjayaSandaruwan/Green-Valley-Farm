@@ -16,6 +16,7 @@ import java.util.ArrayList;
  * @author : D.D.Sandaruwan <dulanjayasandaruwan1998@gmail.com>
  * @Since : 2021-09-18
  **/
+
 public class NotificationFormController {
 
     public static ArrayList<Products> products = new ArrayList<>();
@@ -25,11 +26,12 @@ public class NotificationFormController {
     public void initialize() {
         showNotifications();
         loadNotification();
+        notificationCount();
+
     }
 
     public void loadNotification() {
         int index = 0;
-
         int row = 0;
 
         for (Products productsDetail : products) {
@@ -69,7 +71,8 @@ public class NotificationFormController {
             products.clear();
 
             PreparedStatement preparedStatement
-                    = DBConnection.getInstance().getConnection().prepareStatement("select * from finalProduct where qtyOnHand < 5000");
+                    = DBConnection.getInstance().getConnection()
+                    .prepareStatement("select * from finalProduct where qtyOnHand <= 100");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Products productsDetail = new Products(resultSet.getString("finalProductId"),
@@ -79,9 +82,13 @@ public class NotificationFormController {
                         resultSet.getDouble("unitPrice"));
 
                 products.add(productsDetail);
+
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+    public int notificationCount(){
+        return products.size();
     }
 }

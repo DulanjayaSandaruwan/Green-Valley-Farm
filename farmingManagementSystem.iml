@@ -10,5 +10,6 @@
     <orderEntry type="library" name="jfoenix-8.0.8" level="project" />
     <orderEntry type="library" name="mysql-connector-java-8.0.25" level="project" />
     <orderEntry type="library" name="controlsfx-8.40.14" level="project" />
+    <orderEntry type="library" name="castor-core-1.4.1" level="project" />
   </component>
 </module>
