@@ -129,9 +129,8 @@ public class OrderDetailsFormController {
     }
 
     public void txtOrderIdsOnAction(ActionEvent actionEvent) throws SQLException {
-
-        String ord = txtOrderId.getText();
-        String concatSql = "where o.orderId = '" + ord + "'";
+        String order = txtOrderId.getText();
+        String concatSql = "where o.orderId = '" + order + "'";
         OderDetailsJoinModel oderDetailsJoinModel = searchOrderDetails(concatSql);
         setOrderData(oderDetailsJoinModel.getOrder(), oderDetailsJoinModel.getCustomer());
         setDataToGrid();
@@ -149,10 +148,10 @@ public class OrderDetailsFormController {
 
 
     public void btnSearchOnAction(ActionEvent actionEvent) {
-        String ord = txtOrderId.getText();
+        String orderId = txtOrderId.getText();
         OderDetailsJoinModel oderDetailsJoinModel = null;
         try {
-            oderDetailsJoinModel = searchOrderDetails(ord);
+            oderDetailsJoinModel = searchOrderDetails(orderId);
             setOrderData(oderDetailsJoinModel.getOrder(), oderDetailsJoinModel.getCustomer());
             setDataToGrid();
         } catch (SQLException throwables) {
@@ -181,8 +180,8 @@ public class OrderDetailsFormController {
     }
 
     public void txtCustomerIdOnAction(ActionEvent actionEvent) {
-        String text = txtCustomerId.getText();
-        String concatSql = "where c.customerId = '" + text + "'";
+        String customerId = txtCustomerId.getText();
+        String concatSql = "where c.customerId = '" + customerId + "'";
         OderDetailsJoinModel oderDetailsJoinModel = null;
         try {
             oderDetailsJoinModel = searchOrderDetails(concatSql);
@@ -195,8 +194,8 @@ public class OrderDetailsFormController {
     }
 
     public void txtCustomerContactOnAction(ActionEvent actionEvent) {
-        String text = txtCustomerContact.getText();
-        String concatSql = "where c.customerContact = '" + text + "'";
+        String customerContact = txtCustomerContact.getText();
+        String concatSql = "where c.customerContact = '" + customerContact + "'";
         OderDetailsJoinModel oderDetailsJoinModel = null;
         try {
             oderDetailsJoinModel = searchOrderDetails(concatSql);
@@ -205,6 +204,15 @@ public class OrderDetailsFormController {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
 
+    public void btnClearOnAction(ActionEvent actionEvent) {
+        txtOrderId.setText("");
+        txtCustomerId.setText("");
+        txtCustomerContact.setText("");
+        txtCustomerAddress.setText("");
+        txtOrderDate.setText("");
+        txtOrderCost.setText("");
+        tblOrderDetails.getItems().clear();
     }
 }

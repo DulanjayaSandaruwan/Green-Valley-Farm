@@ -18,6 +18,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import model.Products;
+import util.NotificationMessageUtil;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,6 +28,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Optional;
 
@@ -58,6 +61,9 @@ public class ManagerMainFormController {
     public int animal = 0;
 
     public void initialize() {
+
+        checkLowestRemainingItem();
+
         loadDateAndTime();
 
         try {
@@ -320,4 +326,35 @@ public class ManagerMainFormController {
         pieChrtProductDetails.getData().addAll(pieChartData);
         pieChrtProductDetails.setStyle("-fx-font-weight:bolder");
     }
+
+    private void checkLowestRemainingItem() {
+        try {
+            PreparedStatement preparedStatement
+                    = DBConnection.getInstance().getConnection()
+                    .prepareStatement("select * from finalProduct where qtyOnHand <= 50");
+            int qtyOnHand = 0;
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            ArrayList <Products> products = new ArrayList<>();
+
+            while (resultSet.next()) {
+                products.add(new Products(
+                        resultSet.getString("finalProductId"),
+                        resultSet.getString("finalProductName"),
+                        resultSet.getString("finalProductType"),
+                        resultSet.getInt("qtyOnHand"),
+                        resultSet.getDouble("unitPrice")));
+
+            }
+
+            for (int i = 0; i < products.size() ; i++) {
+                new NotificationMessageUtil().errorMassage("The production" + " volume of " +products.get(i).getProductName()+
+                        " is declining in the warehouses.Be aware of that.");
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
 }

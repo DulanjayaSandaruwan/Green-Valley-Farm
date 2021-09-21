@@ -13,7 +13,7 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="18.0" layoutY="551.0" onAction="#btnOrderDetailsOnAction" prefHeight="38.0" prefWidth="300.0" style="-fx-background-color: #c0392b; -fx-background-radius: 2em;" text="Order Priducts Details" textFill="#f5f4f4">
+      <JFXButton layoutX="18.0" layoutY="551.0" onAction="#btnOrderDetailsOnAction" prefHeight="38.0" prefWidth="300.0" style="-fx-background-color: #c0392b; -fx-background-radius: 2em;" text="Order Products Details" textFill="#f5f4f4">
          <font>
             <Font name="System Bold" size="19.0" />
          </font></JFXButton>
@@ -39,9 +39,9 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </JFXButton>
-      <Label layoutX="72.0" layoutY="12.0" prefHeight="49.0" prefWidth="205.0" text="Reports" textFill="#fffefe" underline="true">
+      <Label layoutX="91.0" layoutY="14.0" prefHeight="49.0" prefWidth="154.0" text="Reports" textFill="#fffefe" underline="true">
          <font>
-            <Font name="System Bold" size="40.0" />
+            <Font name="System Bold" size="31.0" />
          </font>
       </Label>
       <JFXButton layoutX="18.0" layoutY="485.0" onAction="#btnOrderDetailsOnAction" prefHeight="38.0" prefWidth="300.0" style="-fx-background-color: #c0392b; -fx-background-radius: 2em;" text="Collect Products Details" textFill="#f5f4f4">

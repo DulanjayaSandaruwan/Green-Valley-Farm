@@ -266,14 +266,14 @@
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <Label fx:id="lblMostMovableItem" layoutX="407.0" layoutY="45.0" prefHeight="91.0" prefWidth="143.0" style="-fx-background-radius: 1em;" styleClass="most-contacted-layout" stylesheets="@../assests/styles/Styles.css" text="&lt;O-001&gt;" textFill="WHITE">
+            <Label fx:id="lblMostMovableItem" layoutX="407.0" layoutY="52.0" prefHeight="91.0" prefWidth="143.0" style="-fx-background-radius: 1em;" styleClass="most-contacted-layout" stylesheets="@../assests/styles/Styles.css" text="&lt;O-001&gt;" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="27.0" />
                </font>
             </Label>
             <Label layoutX="398.0" layoutY="45.0" prefHeight="16.0" prefWidth="112.0" text="Item :" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
             </Label>
             <AnchorPane layoutX="577.0" layoutY="183.0" prefHeight="418.0" prefWidth="358.0" style="-fx-background-color: #004072; -fx-background-radius: 1em;">
@@ -283,24 +283,44 @@
                         <Font name="System Bold" size="30.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblUserId" layoutX="13.0" layoutY="111.0" prefHeight="33.0" prefWidth="323.0" text="&lt;UserID&gt;" textFill="WHITE">
+                  <Label fx:id="lblUserId" layoutX="79.0" layoutY="115.0" prefHeight="33.0" prefWidth="270.0" text="&lt;UserID&gt;" textFill="WHITE">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblUserNameText" layoutX="11.0" layoutY="190.0" prefHeight="33.0" prefWidth="323.0" text="&lt;UserName&gt;" textFill="WHITE">
+                  <Label fx:id="lblUserNameText" layoutX="74.0" layoutY="191.0" prefHeight="33.0" prefWidth="280.0" text="&lt;UserName&gt;" textFill="WHITE">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblUserEmail" layoutX="11.0" layoutY="271.0" prefHeight="33.0" prefWidth="323.0" text="&lt;UserEmail&gt;" textFill="WHITE">
+                  <Label fx:id="lblUserEmail" layoutX="74.0" layoutY="271.0" prefHeight="33.0" prefWidth="280.0" text="&lt;UserEmail&gt;" textFill="WHITE">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblUserRole" layoutX="9.0" layoutY="351.0" prefHeight="33.0" prefWidth="323.0" text="&lt;UserRole&gt;" textFill="WHITE">
+                  <Label fx:id="lblUserRole" layoutX="63.0" layoutY="353.0" prefHeight="33.0" prefWidth="291.0" text="&lt;UserRole&gt;" textFill="WHITE">
                      <font>
                         <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="2.0" layoutY="117.0" prefHeight="25.0" prefWidth="83.0" text="Use ID :" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="3.0" layoutY="193.0" prefHeight="25.0" prefWidth="83.0" text="Name :" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="4.0" layoutY="274.0" prefHeight="25.0" prefWidth="83.0" text="E-Mail :" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="356.0" prefHeight="25.0" prefWidth="59.0" text="Role :" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
                      </font>
                   </Label>
                </children>

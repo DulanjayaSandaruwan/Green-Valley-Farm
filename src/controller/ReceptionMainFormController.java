@@ -49,7 +49,11 @@ public class ReceptionMainFormController {
     public Label lblMostMovableItem;
     public Label lblCustomerCount;
     public Label lblOrderCount;
-
+    public Label lblUserNameText;
+    public Label lblUserEmail;
+    public Label lblUserRole;
+    public Label lblUserId;
+    public Label lblNotificationCount;
 
     public void initialize() {
         loadDateAndTime();
@@ -66,8 +70,15 @@ public class ReceptionMainFormController {
         }
         pieChart();
 
+        lblNotificationCount.setText(String.valueOf(new NotificationFormController().notificationCount()));
+
         String name = LoginFormController.name;
         lblTitle.setText("Hi " + name + " Welcome To The Farm !");
+        lblUserId.setText(LoginFormController.userID);
+        lblUserNameText.setText(LoginFormController.name);
+        lblUserEmail.setText(LoginFormController.eMail);
+        lblUserRole.setText(LoginFormController.role);
+
     }
 
     private void loadDateAndTime() {
