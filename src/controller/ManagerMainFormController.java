@@ -14,13 +14,11 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.PreparedStatement;
@@ -50,7 +48,11 @@ public class ManagerMainFormController {
     public Label lblCustomerCount;
     public Label lblProductCount;
     public Label lblFarmerCount;
-    public Label lblMostMovebleItem;
+    public Label lblMostMovableItem;
+    public Label lblUserId;
+    public Label lblUserNameText;
+    public Label lblUserEmail;
+    public Label lblUserRole;
     private boolean isSettingPanelVisible;
     public int plants = 0;
     public int animal = 0;
@@ -68,13 +70,20 @@ public class ManagerMainFormController {
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
+
         pieChart();
 
         paneSettingPanal.setVisible(false);
         isSettingPanelVisible = false;
 
+        lblNotificationCount.setText(String.valueOf(new NotificationFormController().notificationCount()));
+
         String name = LoginFormController.name;
         lblTitle.setText("Hi " + name + " Welcome To The Farm !");
+        lblUserId.setText(LoginFormController.userID);
+        lblUserNameText.setText(LoginFormController.name);
+        lblUserEmail.setText(LoginFormController.eMail);
+        lblUserRole.setText(LoginFormController.role);
 
 }
     private void loadDateAndTime() {
@@ -259,7 +268,7 @@ public class ManagerMainFormController {
         ResultSet resultSet = preparedStatement.executeQuery();
 
         while (resultSet.next()){
-            lblMostMovebleItem.setText(resultSet.getString(1));
+            lblMostMovableItem.setText(resultSet.getString(1));
         }
 
     }

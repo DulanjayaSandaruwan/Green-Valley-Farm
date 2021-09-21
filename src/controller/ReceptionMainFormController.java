@@ -1,12 +1,17 @@
 package controller;
 
+import db.DBConnection;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.binding.Bindings;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
@@ -17,6 +22,9 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.Date;
@@ -33,9 +41,30 @@ public class ReceptionMainFormController {
     public Label lblDate;
     public Label lblTime;
     public AnchorPane root5;
+    public PieChart pieChrtProductDetails;
+    public int plants = 0;
+    public int animal = 0;
+    public Label lblProductCount;
+    public Label lblFarmerCount;
+    public Label lblMostMovableItem;
+    public Label lblCustomerCount;
+    public Label lblOrderCount;
+
 
     public void initialize() {
         loadDateAndTime();
+
+        try {
+            productsCount();
+            productCountLabel();
+            farmerCount();
+            mostMovebleItem();
+            customerCount();
+            orderCount();
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        pieChart();
 
         String name = LoginFormController.name;
         lblTitle.setText("Hi " + name + " Welcome To The Farm !");
@@ -129,4 +158,92 @@ public class ReceptionMainFormController {
         root5.getChildren().clear();
         root5.getChildren().add(load);
     }
+
+    public void productCountLabel() throws SQLException, ClassNotFoundException {
+        PreparedStatement stm= DBConnection.getInstance().getConnection().prepareStatement("select * from finalProduct");
+        ResultSet rst=stm.executeQuery();
+        int a=0;
+        while (rst.next()){
+            a++;
+            lblProductCount.setText(String.valueOf(a));
+        }
+    }
+
+    public void farmerCount() throws SQLException, ClassNotFoundException {
+        PreparedStatement stm= DBConnection.getInstance().getConnection().prepareStatement("select * from farmer");
+        ResultSet rst=stm.executeQuery();
+        int a=0;
+        while (rst.next()){
+            a++;
+            lblFarmerCount.setText(String.valueOf(a));
+        }
+    }
+
+    public void mostMovebleItem() throws SQLException, ClassNotFoundException {
+        PreparedStatement stm= DBConnection.getInstance().getConnection().
+                prepareStatement("select finalProductId,sum(orderQty) as orderQty from orderDetails group by finalProductId order by orderQty desc limit 1;");
+        ResultSet rst=stm.executeQuery();
+        String productId = null;
+        while (rst.next()){
+            productId = rst.getString(1);
+        }
+
+        PreparedStatement preparedStatement= DBConnection.getInstance().getConnection().
+                prepareStatement("select finalProductName from finalProduct where finalProductId = '"+productId+"'");
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        while (resultSet.next()){
+            lblMostMovableItem.setText(resultSet.getString(1));
+        }
+
+    }
+
+    public void orderCount() throws SQLException, ClassNotFoundException {
+        PreparedStatement stm= DBConnection.getInstance().getConnection().prepareStatement("select * from `order`");
+        ResultSet rst=stm.executeQuery();
+        int a=0;
+        while (rst.next()){
+            a++;
+            lblOrderCount.setText(String.valueOf(a));
+        }
+    }
+
+    public void customerCount() throws SQLException, ClassNotFoundException {
+        PreparedStatement stm= DBConnection.getInstance().getConnection().prepareStatement("select * from customer");
+        ResultSet rst=stm.executeQuery();
+        int a=0;
+        while (rst.next()){
+            a++;
+            lblCustomerCount.setText(String.valueOf(a));
+        }
+    }
+
+    public void productsCount() throws SQLException {
+        PreparedStatement preparedStatement = DBConnection.getInstance().getConnection()
+                .prepareStatement("select * from finalProduct");
+        ResultSet resultSet = preparedStatement.executeQuery();
+        int count = 0;
+        while (resultSet.next()){
+            count++;
+
+            if (resultSet.getString(3).equals("Plants")){
+                plants++;
+            }else {
+                animal++;
+            }
+        }
+    }
+
+    public void pieChart(){
+        ObservableList<PieChart.Data> pieChartData= FXCollections.observableArrayList(
+                new PieChart.Data("Plants",plants),
+                new PieChart.Data("Animal",animal)
+        );
+
+        pieChartData.forEach(data -> {data.nameProperty().bind(Bindings.concat(data.getName()," Amount ",
+                data.pieValueProperty()));});
+        pieChrtProductDetails.getData().addAll(pieChartData);
+        pieChrtProductDetails.setStyle("-fx-font-weight:bolder");
+    }
+
 }

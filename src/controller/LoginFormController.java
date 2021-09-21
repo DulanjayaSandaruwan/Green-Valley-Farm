@@ -31,6 +31,7 @@ public class LoginFormController {
     public static String name;
     public static String userID;
     public static String role;
+    public static String eMail;
     public TextField txtEnterUserName;
     public PasswordField txtEnterPassword;
     public JFXButton btnLogin;
@@ -66,6 +67,7 @@ public class LoginFormController {
 
                     userID = resultSet.getString(1);
                     name = resultSet.getString(2);
+                    eMail = resultSet.getString(4);
                     role = resultSet.getString(5);
 
                     Parent parent = FXMLLoader.load(this.getClass().getResource(role.equals("Manager")

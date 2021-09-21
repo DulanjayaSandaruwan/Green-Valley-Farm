@@ -90,12 +90,13 @@ public class OrderController {
         for (OrderDetails temp : orderDetails
         ) {
             PreparedStatement preparedStatement = DBConnection.getInstance().getConnection().prepareStatement(
-                    "insert into orderDetails values (?, ?, ? ,?)");
+                    "insert into orderDetails values (?, ?, ? ,?,?)");
 
             preparedStatement.setObject(1, temp.getFinalProductId());
             preparedStatement.setObject(2, temp.getOrderId());
             preparedStatement.setObject(3, temp.getOrderQty());
             preparedStatement.setObject(4, temp.getDiscount());
+            preparedStatement.setObject(5, temp.getItemTotal());
 
             if (preparedStatement.executeUpdate() > 0) {
                 if (updateQty(temp.getFinalProductId(), temp.getOrderQty())) {

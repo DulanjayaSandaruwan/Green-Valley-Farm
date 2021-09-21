@@ -11,17 +11,19 @@ public class OrderDetailsTM {
     private String finalProductName;
     private String  finalProductType;
     private double unitPrice;
+    private double itemTotal;
 
     public OrderDetailsTM() {
     }
 
-    public OrderDetailsTM(String finalProductId, int orderQty, double discount, String finalProductName, String finalProductType, double unitPrice) {
+    public OrderDetailsTM(String finalProductId, int orderQty, double discount, String finalProductName, String finalProductType, double unitPrice, double itemTotal) {
         this.finalProductId = finalProductId;
         this.orderQty = orderQty;
         this.discount = discount;
         this.finalProductName = finalProductName;
         this.finalProductType = finalProductType;
         this.unitPrice = unitPrice;
+        this.itemTotal = itemTotal;
     }
 
     public String getFinalProductId() {
@@ -70,5 +72,13 @@ public class OrderDetailsTM {
 
     public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
+    }
+
+    public double getItemTotal() {
+        return itemTotal;
+    }
+
+    public void setItemTotal(double itemTotal) {
+        this.itemTotal = itemTotal;
     }
 }

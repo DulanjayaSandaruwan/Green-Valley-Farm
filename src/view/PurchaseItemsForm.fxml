@@ -23,7 +23,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblTime" layoutX="837.0" layoutY="10.0" prefHeight="30.0" prefWidth="117.0" text="01:45:18" textFill="WHITE">
+      <Label fx:id="lblTime" layoutX="811.0" layoutY="10.0" prefHeight="30.0" prefWidth="143.0" text="01:45:18" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -37,7 +37,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="652.0" layoutY="8.0" prefHeight="30.0" prefWidth="194.0" text="Purchase Time :" textFill="WHITE">
+      <Label layoutX="630.0" layoutY="8.0" prefHeight="30.0" prefWidth="194.0" text="Purchase Time :" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

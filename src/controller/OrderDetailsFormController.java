@@ -4,15 +4,11 @@ import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.geometry.Pos;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.util.Duration;
+import javafx.scene.control.cell.PropertyValueFactory;
 import model.*;
-import org.controlsfx.control.Notifications;
 import view.tm.OrderDetailsTM;
 
 import java.sql.PreparedStatement;
@@ -34,22 +30,30 @@ public class OrderDetailsFormController {
     public TextField txtCustomerAddress;
     public TextField txtOrderDate;
     public TextField txtOrderCost;
-    public TableView tblOrderDetails;
+    public TableView <OrderDetailsTM> tblOrderDetails;
     public TableColumn colProductId;
     public TableColumn colProductName;
     public TableColumn colProductType;
     public TableColumn colUnitPrice;
     public TableColumn colQuantity;
     public TableColumn colDiscount;
-
+    public TableColumn colTotal;
+    ArrayList<OrderDetails> orderDetails = new ArrayList<>();
     ObservableList<OrderDetailsTM> observableList = FXCollections.observableArrayList();
 
     public void initialize() {
 
+        colProductId.setCellValueFactory(new PropertyValueFactory<>("finalProductId"));
+        colProductName.setCellValueFactory(new PropertyValueFactory<>("finalProductName"));
+        colProductType.setCellValueFactory(new PropertyValueFactory<>("finalProductType"));
+        colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+        colQuantity.setCellValueFactory(new PropertyValueFactory<>("orderQty"));
+        colDiscount.setCellValueFactory(new PropertyValueFactory<>("discount"));
+        colTotal.setCellValueFactory(new PropertyValueFactory<>("itemTotal"));
+
     }
 
-    public OderDetailsJoinModel searchOrderDetails(String id) throws SQLException {
-        ArrayList<OrderDetails> orderDetails = new ArrayList<>();
+    public OderDetailsJoinModel searchOrderDetails(String concatQuery) throws SQLException {
 
         PreparedStatement preparedStatement = DBConnection.getInstance().getConnection().prepareStatement("\tSELECT \n" +
                 "\tc.customerName,\n" +
@@ -62,6 +66,7 @@ public class OrderDetailsFormController {
                 "\tod.finalProductId,\n" +
                 "\tod.orderQty,\n" +
                 "\tod.discount,\n" +
+                "\tod.itemTotal,\n" +
                 "\tf.finalProductName,\n" +
                 "\tf.finalProductType,\n" +
                 "\tf.unitPrice\n" +
@@ -70,10 +75,9 @@ public class OrderDetailsFormController {
                 "\tINNER JOIN  customer AS c ON o.customerId = c.customerId\n" +
                 "\tINNER JOIN  orderDetails AS od ON od.orderId = o.orderId\n" +
                 "\tINNER JOIN  finalProduct AS f ON f.finalProductId = od.finalProductId\n" +
-                "\tWHERE o.orderId = ? ;\n" +
+                "\t" + concatQuery + "\n" +
                 "\t");
 
-        preparedStatement.setString(1, "O-005");
         ResultSet resultSet = preparedStatement.executeQuery();
         while (resultSet.next()) {
             orderDetails.add(new OrderDetails(
@@ -83,7 +87,8 @@ public class OrderDetailsFormController {
                     resultSet.getDouble("od.discount"),
                     resultSet.getString("f.finalProductName"),
                     resultSet.getString("f.finalProductType"),
-                    resultSet.getDouble("f.unitPrice")
+                    resultSet.getDouble("f.unitPrice"),
+                    resultSet.getDouble("od.itemTotal")
             ));
 
         }
@@ -125,52 +130,81 @@ public class OrderDetailsFormController {
 
     public void txtOrderIdsOnAction(ActionEvent actionEvent) throws SQLException {
 
-        PreparedStatement stm = DBConnection.getInstance().getConnection().prepareStatement("select * from `order` where orderId=?");
-        stm.setObject(1, txtOrderId.getText());
-        ResultSet rst = stm.executeQuery();
-        if (rst.next()) {
-            Order order = new Order(
-                    rst.getString(1),
-                    rst.getString(2),
-                    rst.getString(3),
-                    rst.getDouble(4)
-            );
-            setOrderData(order);
-        } else {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
-        }
+        String ord = txtOrderId.getText();
+        String concatSql = "where o.orderId = '" + ord + "'";
+        OderDetailsJoinModel oderDetailsJoinModel = searchOrderDetails(concatSql);
+        setOrderData(oderDetailsJoinModel.getOrder(), oderDetailsJoinModel.getCustomer());
+        setDataToGrid();
     }
 
-    private void setOrderData(Order orderData) {
+    private void setOrderData(Order orderData, Customer customer) {
         txtCustomerId.setText(orderData.getCustomerId());
+        txtOrderId.setText(orderData.getOrderId());
         txtOrderDate.setText(orderData.getOrderDate());
         txtOrderCost.setText(String.valueOf(orderData.getOrderCost()));
+        txtCustomerName.setText(customer.getCustomerName());
+        txtCustomerAddress.setText(customer.getCustomerAddress());
+        txtCustomerContact.setText(customer.getCustomerContact());
+    }
 
+
+    public void btnSearchOnAction(ActionEvent actionEvent) {
+        String ord = txtOrderId.getText();
+        OderDetailsJoinModel oderDetailsJoinModel = null;
         try {
-            Customer customer = new CustomerController().searchCustomer(txtCustomerId.getText());
-
-            txtCustomerName.setText(customer.getCustomerName());
-            txtCustomerAddress.setText(customer.getCustomerAddress());
-            txtCustomerContact.setText(customer.getCustomerContact());
-
+            oderDetailsJoinModel = searchOrderDetails(ord);
+            setOrderData(oderDetailsJoinModel.getOrder(), oderDetailsJoinModel.getCustomer());
+            setDataToGrid();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
 
-    private void setOrderDetailsToTable() throws SQLException {
+    public void setDataToGrid() {
+        observableList.clear();
+        for (OrderDetails orderDetails : orderDetails) {
+            if (null != orderDetails) {
+                OrderDetailsTM orderDetailsTM = new OrderDetailsTM();
+                orderDetailsTM.setDiscount(orderDetails.getDiscount());
+                orderDetailsTM.setFinalProductId(orderDetails.getFinalProductId());
+                orderDetailsTM.setFinalProductName(orderDetails.getFinalProductName());
+                orderDetailsTM.setFinalProductType(orderDetails.getFinalProductType());
+                orderDetailsTM.setOrderQty(orderDetails.getOrderQty());
+                orderDetailsTM.setUnitPrice(orderDetails.getUnitPrice());
+                orderDetailsTM.setItemTotal(orderDetails.getItemTotal());
+                observableList.add(orderDetailsTM);
+            }
+        }
+        if (null != observableList) {
+            tblOrderDetails.setItems(observableList);
+        }
+    }
+
+    public void txtCustomerIdOnAction(ActionEvent actionEvent) {
+        String text = txtCustomerId.getText();
+        String concatSql = "where c.customerId = '" + text + "'";
+        OderDetailsJoinModel oderDetailsJoinModel = null;
+        try {
+            oderDetailsJoinModel = searchOrderDetails(concatSql);
+            setOrderData(oderDetailsJoinModel.getOrder(), oderDetailsJoinModel.getCustomer());
+            setDataToGrid();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
 
     }
 
-    public void btnSearchOnAction(ActionEvent actionEvent) {
+    public void txtCustomerContactOnAction(ActionEvent actionEvent) {
+        String text = txtCustomerContact.getText();
+        String concatSql = "where c.customerContact = '" + text + "'";
+        OderDetailsJoinModel oderDetailsJoinModel = null;
+        try {
+            oderDetailsJoinModel = searchOrderDetails(concatSql);
+            setOrderData(oderDetailsJoinModel.getOrder(), oderDetailsJoinModel.getCustomer());
+            setDataToGrid();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
 
     }
 }

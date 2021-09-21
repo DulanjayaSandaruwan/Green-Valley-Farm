@@ -26,8 +26,6 @@ public class NotificationFormController {
     public void initialize() {
         showNotifications();
         loadNotification();
-        notificationCount();
-
     }
 
     public void loadNotification() {
@@ -82,6 +80,8 @@ public class NotificationFormController {
                         resultSet.getDouble("unitPrice"));
 
                 products.add(productsDetail);
+                notificationCount();
+//                System.out.println(products.size());
 
             }
         } catch (SQLException throwables) {

@@ -276,7 +276,8 @@ public class PlaceOrderFormController {
                             tempTm.getDiscount(),
                             "",
                             "",
-                            0.0
+                            0,
+                            tempTm.getTotal()
                     )
             );
         }

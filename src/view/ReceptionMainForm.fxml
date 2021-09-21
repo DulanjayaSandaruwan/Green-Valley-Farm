@@ -2,199 +2,252 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="root4" prefHeight="681.0" prefWidth="1250.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReceptionMainFormController">
-   <children>
-      <AnchorPane layoutX="-2.0" layoutY="-6.0" prefHeight="690.0" prefWidth="276.0" style="-fx-background-color: #002039;">
-         <children>
-            <Label layoutX="13.0" layoutY="102.0" prefHeight="55.0" prefWidth="250.0" text="Green Valley Farm" textFill="WHITE">
+    <children>
+        <AnchorPane layoutX="-2.0" layoutY="-6.0" prefHeight="690.0" prefWidth="276.0" style="-fx-background-color: #002039;">
+            <children>
+                <Label layoutX="13.0" layoutY="102.0" prefHeight="55.0" prefWidth="250.0" text="Green Valley Farm" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="23.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="117.0" fitWidth="157.0" layoutX="60.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/images/farming-vector-illustration-removebg-preview.png" />
+                    </image>
+                </ImageView>
+                <JFXButton layoutX="15.0" layoutY="185.0" onAction="#btnHomeOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Home" textAlignment="RIGHT" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton layoutX="17.0" layoutY="320.0" onAction="#btnFarmerOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Farmer" textAlignment="RIGHT" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton layoutX="16.0" layoutY="392.0" onAction="#btnProductsOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Products" textAlignment="RIGHT" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton layoutX="31.0" layoutY="464.0" onAction="#btnCollectProductsOnAction" prefHeight="46.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Collect Products" textAlignment="RIGHT" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton layoutX="17.0" layoutY="537.0" onAction="#btnCustomerOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Customer" textAlignment="RIGHT" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton layoutX="17.0" layoutY="611.0" onAction="#btnPlaceOrderOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Place Order" textAlignment="RIGHT" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <Separator layoutX="17.0" layoutY="157.0" opacity="0.24" prefHeight="1.0" prefWidth="237.0" />
+                <JFXButton layoutX="19.0" layoutY="252.0" onAction="#btnGardenOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Garden" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="19.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/images/icons8-home-24.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="16.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/images/icons8-garden-30.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="17.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/images/icons8-farmer-50.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="18.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/images/icons8-vegetables-bag-50.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="17.0" layoutY="471.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/images/icons8_add_shopping_cart_48px_1.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="18.0" layoutY="541.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/images/icons8-customer-30.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="18.0" layoutY="616.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/images/sell_large_outlined_grey.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="274.0" layoutY="-1.0" prefHeight="55.0" prefWidth="976.0" style="-fx-background-color: #002039;">
+            <children>
+                <Separator layoutX="-3.0" layoutY="6.0" opacity="0.23" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+                <Label fx:id="lblTitle" layoutX="45.0" layoutY="12.0" prefHeight="33.0" prefWidth="415.0" text="Hi &lt;Name&gt; Welcome To The Farm !" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblDate" layoutX="503.0" layoutY="6.0" prefHeight="42.0" prefWidth="120.0" text="2019.01.17" textFill="WHITE">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblTime" layoutX="687.0" layoutY="6.0" prefHeight="42.0" prefWidth="105.0" text="1:45:28" textFill="WHITE">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Separator layoutX="908.0" layoutY="6.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+                <ImageView fitHeight="42.0" fitWidth="44.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/images/icons8_human_head_48px.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="932.0" layoutY="10.0" onMouseClicked="#imgExitOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/images/icons8_logout_rounded_up_64px_1.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <Separator layoutX="623.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+                <Separator layoutX="453.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+                <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="457.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/images/icons8-2012-30.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="637.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/images/icons8-clock-50.png" />
+                    </image>
+                </ImageView>
+                <Separator layoutX="831.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
+                <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="840.0" layoutY="13.0" onMouseClicked="#imgNotification" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/images/icons8-notification-50.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <Label layoutX="872.0" layoutY="7.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: red;" text="0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="root5" layoutX="283.0" layoutY="61.0" prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;">
+            <children>
+                <PieChart layoutX="-6.0" layoutY="199.0" prefHeight="408.0" prefWidth="575.0" stylesheets="@../assests/styles/pieChart.css" />
+                <Label layoutX="91.0" layoutY="172.0" prefHeight="30.0" prefWidth="415.0" text="Products Contained In The Warehouse" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <PieChart fx:id="pieChrtProductDetails" layoutX="-14.0" layoutY="194.0" prefHeight="408.0" prefWidth="575.0" stylesheets="@../assests/styles/pieChart.css" />
+            <Label layoutX="19.0" layoutY="19.0" prefHeight="117.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right top, #ff3300, #ff5500, #ff6f00, #ff8500, #ff9900); -fx-background-radius: 1em;" />
+            <Label layoutX="204.0" layoutY="21.0" prefHeight="117.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right top, #8e44ad, #ab5abe, #c770cf, #e387e1, #ff9ff3); -fx-background-radius: 1em;" />
+            <Label layoutX="390.0" layoutY="17.0" prefHeight="117.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right top, #900c27, #aa2132, #c4333e, #df4449, #fa5555); -fx-background-radius: 1em;" />
+            <Label layoutX="574.0" layoutY="17.0" prefHeight="117.0" prefWidth="177.0" style="-fx-background-color: linear-gradient(to right top, #008000, #059e04, #0cbd0a, #13de12, #1aff1a); -fx-background-radius: 1em;" />
+            <Label layoutX="766.0" layoutY="17.0" prefHeight="117.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right top, #0652dd, #007cf1, #009ceb, #00b5d7, #12cbc4); -fx-background-radius: 1em;" />
+            <Label fx:id="lblProductCount" layoutX="77.0" layoutY="45.0" prefHeight="91.0" prefWidth="112.0" text="0" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="23.0" />
+                  <Font size="65.0" />
                </font>
             </Label>
-            <ImageView fitHeight="117.0" fitWidth="157.0" layoutX="60.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/images/farming-vector-illustration-removebg-preview.png" />
-               </image>
-            </ImageView>
-            <JFXButton layoutX="15.0" layoutY="185.0" onAction="#btnHomeOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Home" textAlignment="RIGHT" textFill="WHITE">
+            <Label fx:id="lblFarmerCount" layoutX="263.0" layoutY="45.0" prefHeight="91.0" prefWidth="112.0" text="0" textFill="WHITE">
                <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton layoutX="17.0" layoutY="320.0" onAction="#btnFarmerOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Farmer" textAlignment="RIGHT" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton layoutX="16.0" layoutY="392.0" onAction="#btnProductsOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Products" textAlignment="RIGHT" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton layoutX="31.0" layoutY="464.0" onAction="#btnCollectProductsOnAction" prefHeight="46.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Collect Products" textAlignment="RIGHT" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton layoutX="17.0" layoutY="537.0" onAction="#btnCustomerOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Customer" textAlignment="RIGHT" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton layoutX="17.0" layoutY="611.0" onAction="#btnPlaceOrderOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Place Order" textAlignment="RIGHT" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <Separator layoutX="17.0" layoutY="157.0" opacity="0.24" prefHeight="1.0" prefWidth="237.0" />
-            <JFXButton layoutX="19.0" layoutY="252.0" onAction="#btnGardenOnAction" prefHeight="42.0" prefWidth="237.0" style="-fx-background-color: #002039; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Garden" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="19.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/images/icons8-home-24.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="16.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/images/icons8-garden-30.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="17.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/images/icons8-farmer-50.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="18.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/images/icons8-vegetables-bag-50.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="17.0" layoutY="471.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/images/icons8_add_shopping_cart_48px_1.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="18.0" layoutY="541.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/images/icons8-customer-30.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="18.0" layoutY="616.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/images/sell_large_outlined_grey.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="274.0" layoutY="-1.0" prefHeight="55.0" prefWidth="976.0" style="-fx-background-color: #002039;">
-         <children>
-            <Separator layoutX="-3.0" layoutY="6.0" opacity="0.23" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
-            <Label fx:id="lblTitle" layoutX="45.0" layoutY="12.0" prefHeight="33.0" prefWidth="415.0" text="Hi &lt;Name&gt; Welcome To The Farm !" textFill="WHITE">
-               <font>
-                  <Font size="20.0" />
+                  <Font size="65.0" />
                </font>
             </Label>
-            <Label fx:id="lblDate" layoutX="503.0" layoutY="6.0" prefHeight="42.0" prefWidth="120.0" text="2019.01.17" textFill="WHITE">
+            <Label fx:id="lblMostMovableItem" layoutX="413.0" layoutY="43.0" prefHeight="91.0" prefWidth="149.0" text="&lt;O-000&gt;" textFill="WHITE">
                <font>
-                  <Font size="17.0" />
+                  <Font size="28.0" />
                </font>
             </Label>
-            <Label fx:id="lblTime" layoutX="687.0" layoutY="6.0" prefHeight="42.0" prefWidth="105.0" text="1:45:28" textFill="WHITE">
+            <Label fx:id="lblCustomerCount" layoutX="634.0" layoutY="43.0" prefHeight="91.0" prefWidth="112.0" text="0" textFill="#fcfcfc">
                <font>
-                  <Font size="17.0" />
+                  <Font size="65.0" />
                </font>
             </Label>
-            <Separator layoutX="908.0" layoutY="6.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
-            <ImageView fitHeight="42.0" fitWidth="44.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/images/icons8_human_head_48px.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="932.0" layoutY="10.0" onMouseClicked="#imgExitOnMouseClicked" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/images/icons8_logout_rounded_up_64px_1.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <Separator layoutX="623.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
-            <Separator layoutX="453.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
-            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="457.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/images/icons8-2012-30.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="637.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/images/icons8-clock-50.png" />
-               </image>
-            </ImageView>
-            <Separator layoutX="831.0" layoutY="7.0" opacity="0.22" orientation="VERTICAL" prefHeight="42.0" prefWidth="8.0" />
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="840.0" layoutY="13.0" onMouseClicked="#imgNotification" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/images/icons8-notification-50.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <Label layoutX="872.0" layoutY="7.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: red;" text="  3" textFill="WHITE">
+            <Label fx:id="lblOrderCount" layoutX="820.0" layoutY="43.0" prefHeight="91.0" prefWidth="112.0" text="0" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font size="65.0" />
                </font>
             </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="root5" layoutX="283.0" layoutY="61.0" prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;">
-         <children>
-            <Pane layoutX="20.0" layoutY="21.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #0652dd, #007cf1, #009ceb, #00b5d7, #12cbc4);; -fx-background-radius: 2em;" />
-            <Pane layoutX="213.0" layoutY="19.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #e60000, #ed1311, #f3201e, #f92a29, #ff3333);; -fx-background-radius: 2em;" />
-            <Pane layoutX="407.0" layoutY="19.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #008000, #059e04, #0cbd0a, #13de12, #1aff1a);; -fx-background-radius: 2em;" />
-            <Pane layoutX="597.0" layoutY="19.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #ff3300, #ff5500, #ff6f00, #ff8500, #ff9900);; -fx-background-radius: 2em;" />
-            <Pane layoutX="785.0" layoutY="21.0" prefHeight="149.0" prefWidth="156.0" style="-fx-background-color: linear-gradient(to right top, #660066, #8a0b8a, #af18af, #d726d6, #ff33ff);; -fx-background-radius: 2em;" />
-            <TableView layoutX="23.0" layoutY="204.0" prefHeight="397.0" prefWidth="592.0" style="-fx-background-color: #ffffff; -fx-background-radius: 1em;">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="C1" />
-                  <TableColumn prefWidth="75.0" text="C2" />
-               </columns>
-            </TableView>
-            <AnchorPane layoutX="655.0" layoutY="203.0" prefHeight="397.0" prefWidth="286.0" style="-fx-background-color: #004072; -fx-background-radius: 1em;" />
-         </children>
-      </AnchorPane>
-   </children>
+            <Label layoutX="26.0" layoutY="27.0" prefHeight="25.0" prefWidth="156.0" text="Product Count :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="209.0" layoutY="27.0" prefHeight="25.0" prefWidth="156.0" text="Farmers Count :" textFill="#fcfcfc">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="397.0" layoutY="24.0" prefHeight="25.0" prefWidth="156.0" text="Most Movable " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="580.0" layoutY="27.0" prefHeight="25.0" prefWidth="170.0" text="Customer Count :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="772.0" layoutY="27.0" prefHeight="25.0" prefWidth="156.0" text="Order Count : " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="399.0" layoutY="46.0" text="Item :" textFill="#fff6f6">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>
