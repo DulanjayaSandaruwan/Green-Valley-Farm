@@ -199,6 +199,7 @@ public class ManageProductsFormController {
                     notifications.darkStyle();
                     notifications.show();
 
+
                     clearForms();
                     tblProductsDetails.getItems().clear();
                     setItemValuesToTable(new ProductsController().selectAllProducts());

@@ -1,11 +1,16 @@
 package controller;
 
 import db.DBConnection;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 import model.Products;
+import org.controlsfx.control.Notifications;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,9 +24,10 @@ import java.util.ArrayList;
 
 public class NotificationFormController {
 
-    public static ArrayList<Products> products = new ArrayList<>();
     public AnchorPane root7;
     public VBox vBoxNotification;
+
+    public static ArrayList<Products> products = new ArrayList<>();
 
     public void initialize() {
         showNotifications();
@@ -31,7 +37,18 @@ public class NotificationFormController {
     public void loadNotification() {
         int index = 0;
         int row = 0;
-
+        if(null == products ||products.size()==0){
+            Image image = new Image("/assests/images/pass.png");
+            Notifications notifications = Notifications.create();
+            notifications.graphic(new ImageView(image));
+            notifications.text("empty!");
+            notifications.title("info");
+            notifications.hideAfter(Duration.seconds(5));
+            notifications.position(Pos.CENTER);
+            notifications.darkStyle();
+            notifications.show();
+            return;
+            }
         for (Products productsDetail : products) {
 
             Label label = new Label();
@@ -64,7 +81,7 @@ public class NotificationFormController {
         }
     }
 
-    private void showNotifications() {
+    public void showNotifications() {
         try {
             products.clear();
 
@@ -80,8 +97,6 @@ public class NotificationFormController {
                         resultSet.getDouble("unitPrice"));
 
                 products.add(productsDetail);
-                notificationCount();
-//                System.out.println(products.size());
 
             }
         } catch (SQLException throwables) {

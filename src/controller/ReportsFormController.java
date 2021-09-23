@@ -46,4 +46,11 @@ public class ReportsFormController {
         paneReportsView.getChildren().add(swingNode);
 
     }
+
+    public void btnCollectDetailsOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/CollectProductsDetailsForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        root8.getChildren().clear();
+        root8.getChildren().add(load);
+    }
 }

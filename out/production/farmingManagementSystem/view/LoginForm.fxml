@@ -16,7 +16,7 @@
          <children>
             <TextField fx:id="txtEnterUserName" layoutX="19.0" layoutY="216.0" prefHeight="43.0" prefWidth="378.0" promptText="Enter User Name" style="-fx-background-radius: 5em;" />
             <PasswordField fx:id="txtEnterPassword" layoutX="19.0" layoutY="304.0" prefHeight="43.0" prefWidth="378.0" promptText="Enter Password" style="-fx-background-radius: 5em;" />
-            <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="150.0" layoutY="380.0" onAction="#btnLoginOnAction" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: linear-gradient(to right top, #001319, #07212b, #06303e, #043f52, #004f67); -fx-background-radius: 2em;" text="Login" textFill="WHITE">
+            <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="150.0" layoutY="380.0" onAction="#btnLoginOnAction" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: linear-gradient(to right top, #001319, #07212b, #06303e, #043f52, #004f67); -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Login" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -28,7 +28,7 @@
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="165.0" layoutY="477.0" prefHeight="16.0" prefWidth="245.0" text="Designed By Dulanjaya Sandaruwan" />
+            <Label layoutX="328.0" layoutY="477.0" prefHeight="16.0" prefWidth="82.0" text="Version 1.0" />
             <Label layoutX="32.0" layoutY="184.0" prefHeight="25.0" prefWidth="202.0" text="Enter User Name :">
                <font>
                   <Font size="17.0" />

@@ -1,10 +1,7 @@
 package controller;
 
 import db.DBConnection;
-import model.Collect;
-import model.FinalProductDetails;
-import model.Order;
-import model.OrderDetails;
+import model.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,7 +14,6 @@ import java.util.ArrayList;
  * @Since : 2021-09-18
  **/
 public class CollectProductsController {
-
     public String getCollectId() throws SQLException {
         ResultSet rst = DBConnection.getInstance().getConnection().
                 prepareStatement("select collectId from collect order by collectId desc limit 1").executeQuery();
@@ -124,5 +120,6 @@ public class CollectProductsController {
         preparedStatement.setString(2, finalProductId);
         return preparedStatement.executeUpdate() > 0;
     }
+
 
 }

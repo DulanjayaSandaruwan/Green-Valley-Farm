@@ -64,6 +64,8 @@ public class ManagerMainFormController {
 
         checkLowestRemainingItem();
 
+        new NotificationFormController().showNotifications();
+
         loadDateAndTime();
 
         try {
@@ -348,7 +350,7 @@ public class ManagerMainFormController {
             }
 
             for (int i = 0; i < products.size() ; i++) {
-                new NotificationMessageUtil().errorMassage("The production" + " volume of " +products.get(i).getProductName()+
+                new NotificationMessageUtil().errorMessage("The production" + " volume of " +products.get(i).getProductName()+
                         " is declining in the warehouses.Be aware of that.");
             }
 

@@ -54,3 +54,12 @@
     -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
 }
 
+.search-btn:hover{
+    -fx-background-color: black;
+}
+
+.search-btn{
+    -fx-background-color:  #27aa80;
+    -fx-background-radius: 25 ;
+}
+

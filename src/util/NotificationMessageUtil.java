@@ -12,7 +12,7 @@ import org.controlsfx.control.Notifications;
  **/
 public class NotificationMessageUtil {
 
-    public void successMassage(String text) {
+    public void successMessage(String text) {
         Image image = new Image(("/assests/images/pass.png"));
         Notifications notifications = Notifications.create();
         notifications.graphic(new ImageView(image));
@@ -24,7 +24,19 @@ public class NotificationMessageUtil {
         notifications.show();
     }
 
-    public void errorMassage(String text) {
+    public void errorMessage(String text) {
+        Image image = new Image(("/assests/images/fail.png"));
+        Notifications notifications = Notifications.create();
+        notifications.graphic(new ImageView(image));
+        notifications.text(text);
+        notifications.title("Error Massage");
+        notifications.hideAfter(Duration.seconds(3));
+        notifications.position(Pos.TOP_CENTER);
+        notifications.darkStyle();
+        notifications.show();
+    }
+
+    public void infoMessage(String text) {
         Image image = new Image(("/assests/images/fail.png"));
         Notifications notifications = Notifications.create();
         notifications.graphic(new ImageView(image));

@@ -124,7 +124,7 @@ public class AddNewUserFormController {
 
                 if (preparedStatement.executeUpdate() != 0) {
 
-                    new NotificationMessageUtil().successMassage("Successfully Added !");
+                    new NotificationMessageUtil().successMessage("Successfully Added !");
 
                     clearForms();
 
@@ -139,7 +139,7 @@ public class AddNewUserFormController {
                     loadAllUsers();
 
                 } else {
-                    new NotificationMessageUtil().errorMassage("Something went wrong");
+                    new NotificationMessageUtil().errorMessage("Something went wrong");
                 }
 
             } catch (SQLException throwables) {
@@ -240,7 +240,7 @@ public class AddNewUserFormController {
                 TextField errorText = (TextField) response;
                 errorText.requestFocus();
             } else if (response instanceof Boolean) {
-                new NotificationMessageUtil().successMassage("Successfully Added !");
+                new NotificationMessageUtil().successMessage("Successfully Added !");
             }
         }
     }

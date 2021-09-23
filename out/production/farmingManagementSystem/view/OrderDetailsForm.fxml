@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderDetailsFormController">
+<AnchorPane fx:id="root9" prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderDetailsFormController">
    <children>
       <TableView fx:id="tblOrderDetails" layoutX="9.0" layoutY="246.0" prefHeight="306.0" prefWidth="939.0" stylesheets="@../assests/styles/Styles.css">
         <columns>
@@ -76,5 +76,10 @@
       </Label>
       <Separator layoutX="594.0" layoutY="11.0" opacity="0.28" orientation="VERTICAL" prefHeight="63.0" prefWidth="7.0" />
       <Separator layoutX="270.0" layoutY="11.0" opacity="0.28" orientation="VERTICAL" prefHeight="63.0" prefWidth="7.0" />
+      <Button layoutX="566.0" layoutY="562.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="33.0" prefWidth="187.0" style="-fx-background-color: #3498db; -fx-background-radius: 2em;" text="Back" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
