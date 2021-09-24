@@ -58,6 +58,8 @@ public class ReceptionMainFormController {
     public void initialize() {
         loadDateAndTime();
 
+        new NotificationFormController().showNotifications();
+
         try {
             productsCount();
             productCountLabel();

@@ -1,87 +1,27 @@
 package view.tm;
 
+import java.util.Objects;
+
 /**
  * @author : D.D.Sandaruwan <dulanjayasandaruwan1998@gmail.com>
  * @Since : 2021-09-20
  **/
 public class OrderDetailsTM {
-    private String finalProductId;
-    private int orderQty;
-    private double discount;
-    private String finalProductName;
-    private String  finalProductType;
-    private double unitPrice;
-    private double itemTotal;
     private String customerId;
+    private String customerName;
+    private String orderId;
+    private String oderDate;
+    private double totalCost;
 
     public OrderDetailsTM() {
     }
 
-    public OrderDetailsTM(String finalProductId, int orderQty, double discount, String finalProductName, String finalProductType, double unitPrice, double itemTotal, String customerId) {
-        this.finalProductId = finalProductId;
-        this.orderQty = orderQty;
-        this.discount = discount;
-        this.finalProductName = finalProductName;
-        this.finalProductType = finalProductType;
-        this.unitPrice = unitPrice;
-        this.itemTotal = itemTotal;
+    public OrderDetailsTM(String customerId, String customerName, String orderId, String oderDate, double totalCost) {
         this.customerId = customerId;
-    }
-
-    public String getFinalProductId() {
-        return finalProductId;
-    }
-
-    public void setFinalProductId(String finalProductId) {
-        this.finalProductId = finalProductId;
-    }
-
-    public int getOrderQty() {
-        return orderQty;
-    }
-
-    public void setOrderQty(int orderQty) {
-        this.orderQty = orderQty;
-    }
-
-    public double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
-
-    public String getFinalProductName() {
-        return finalProductName;
-    }
-
-    public void setFinalProductName(String finalProductName) {
-        this.finalProductName = finalProductName;
-    }
-
-    public String getFinalProductType() {
-        return finalProductType;
-    }
-
-    public void setFinalProductType(String finalProductType) {
-        this.finalProductType = finalProductType;
-    }
-
-    public double getUnitPrice() {
-        return unitPrice;
-    }
-
-    public void setUnitPrice(double unitPrice) {
-        this.unitPrice = unitPrice;
-    }
-
-    public double getItemTotal() {
-        return itemTotal;
-    }
-
-    public void setItemTotal(double itemTotal) {
-        this.itemTotal = itemTotal;
+        this.customerName = customerName;
+        this.orderId = orderId;
+        this.oderDate = oderDate;
+        this.totalCost = totalCost;
     }
 
     public String getCustomerId() {
@@ -90,5 +30,65 @@ public class OrderDetailsTM {
 
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getOderDate() {
+        return oderDate;
+    }
+
+    public void setOderDate(String oderDate) {
+        this.oderDate = oderDate;
+    }
+
+    public double getTotalCost() {
+        return totalCost;
+    }
+
+    public void setTotalCost(double totalCost) {
+        this.totalCost = totalCost;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderDetailsTM{" +
+                "customerId='" + customerId + '\'' +
+                ", customerName='" + customerName + '\'' +
+                ", orderId='" + orderId + '\'' +
+                ", oderDate='" + oderDate + '\'' +
+                ", totalCost=" + totalCost +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrderDetailsTM that = (OrderDetailsTM) o;
+        return Double.compare(that.totalCost, totalCost) == 0 &&
+                Objects.equals(customerId, that.customerId) &&
+                Objects.equals(customerName, that.customerName) &&
+                Objects.equals(orderId, that.orderId) &&
+                Objects.equals(oderDate, that.oderDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(customerId, customerName, orderId, oderDate, totalCost);
     }
 }

@@ -53,4 +53,24 @@ public class ReportsFormController {
         root8.getChildren().clear();
         root8.getChildren().add(load);
     }
+
+    public void btnCustomerDetailsOnAction(ActionEvent actionEvent) {
+
+    }
+
+    public void btnOrdersOnAction(ActionEvent actionEvent) {
+
+    }
+
+    public void btnIncomeReportsOnAction(ActionEvent actionEvent) {
+
+    }
+
+    public void btnMostMovableItemOnAction(ActionEvent actionEvent) {
+
+    }
+
+    public void btnPurchaseItemDetailsOnAction(ActionEvent actionEvent) {
+
+    }
 }
