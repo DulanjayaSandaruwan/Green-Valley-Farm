@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageProductsFormController">
    <children>
-      <JFXButton layoutX="7.0" layoutY="11.0" onAction="#btnProductIdOnAction" prefHeight="29.0" prefWidth="141.0" style="-fx-background-color: #27aa80#27aa80; -fx-background-radius: 2em;" text="Product ID" textFill="WHITE">
+      <JFXButton layoutX="7.0" layoutY="11.0" onAction="#btnProductIdOnAction" prefHeight="29.0" prefWidth="141.0" style="-fx-background-color: #27aa80#27aa80; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Product ID" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
@@ -20,7 +20,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="823.0" layoutY="12.0" onAction="#btnClearOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #ff4000; -fx-background-radius: 2em;" text="Clear" textFill="WHITE">
+      <JFXButton layoutX="823.0" layoutY="12.0" onAction="#btnClearOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #ff4000; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Clear" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
@@ -28,7 +28,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="820.0" layoutY="229.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #ff0000; -fx-background-radius: 2em;" text="Delete" textFill="WHITE">
+      <JFXButton layoutX="820.0" layoutY="229.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #ff0000; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Delete" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
@@ -36,7 +36,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="660.0" layoutY="230.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #0099ff; -fx-background-radius: 2em;" text="Update" textFill="WHITE">
+      <JFXButton layoutX="660.0" layoutY="230.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #0099ff; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Update" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
@@ -44,7 +44,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnSaveProducts" layoutX="502.0" layoutY="230.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #009933; -fx-background-radius: 2em;" text="Save" textFill="WHITE">
+      <JFXButton fx:id="btnSaveProducts" layoutX="502.0" layoutY="230.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #009933; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Save" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>

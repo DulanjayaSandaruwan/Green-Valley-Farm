@@ -3,83 +3,35 @@
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="root9" prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em; -fx-border-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderDetailsFormController">
    <children>
-      <TableView fx:id="tblOrderDetails" layoutX="9.0" layoutY="246.0" prefHeight="306.0" prefWidth="939.0" stylesheets="@../assests/styles/Styles.css">
+      <Button layoutX="831.0" layoutY="565.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="16.0" prefWidth="117.0" style="-fx-background-color: #ff3f34; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Back" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tblOrderDetails" layoutX="11.0" layoutY="68.0" prefHeight="485.0" prefWidth="936.0" stylesheets="@../assests/styles/Styles.css">
         <columns>
-          <TableColumn fx:id="colProductId" prefWidth="105.0" text="Product ID" />
-          <TableColumn fx:id="colProductName" prefWidth="213.0" text="Product Name" />
-            <TableColumn fx:id="colProductType" prefWidth="170.0" text="Product Type" />
-            <TableColumn fx:id="colUnitPrice" prefWidth="108.0" text="Unit Price" />
-            <TableColumn fx:id="colQuantity" prefWidth="125.0" text="Quantity" />
-            <TableColumn fx:id="colDiscount" prefWidth="125.0" text="Discount" />
-            <TableColumn fx:id="colTotal" prefWidth="93.0" text=" Total" />
+          <TableColumn fx:id="colCustomerId" prefWidth="151.0" text="Customer ID" />
+          <TableColumn fx:id="colCustomerName" prefWidth="247.0" text="Customer Name" />
+            <TableColumn fx:id="colOrderId" prefWidth="162.0" text="Order ID" />
+            <TableColumn fx:id="colOrderDate" prefWidth="187.0" text="Order Date" />
+            <TableColumn fx:id="colTotalCost" prefWidth="189.0" text="Total Cost" />
         </columns>
          <styleClass>
             <String fx:value="table-view" />
             <String fx:value="table-row-cell" />
          </styleClass>
       </TableView>
-      <TextField fx:id="txtOrderId" layoutX="42.0" layoutY="38.0" onAction="#txtOrderIdsOnAction" prefHeight="26.0" prefWidth="162.0" promptText="Order ID" />
-      <Label layoutX="45.0" layoutY="10.0" prefHeight="26.0" prefWidth="204.0" text="Enter Order ID :" textFill="#fcfcfc">
+      <Label layoutX="370.0" layoutY="11.0" prefHeight="40.0" prefWidth="203.0" text="Order Details" textFill="WHITE" underline="true">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCustomerId" layoutX="336.0" layoutY="38.0" onAction="#txtCustomerIdOnAction" prefHeight="26.0" prefWidth="193.0" promptText="Customer ID " />
-      <TextField fx:id="txtCustomerContact" layoutX="659.0" layoutY="38.0" onAction="#txtCustomerContactOnAction" prefHeight="26.0" prefWidth="255.0" promptText="Customer Contact" />
-      <TextField fx:id="txtCustomerName" layoutX="9.0" layoutY="87.0" prefHeight="32.0" prefWidth="437.0" promptText="Customer Name">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtCustomerAddress" layoutX="8.0" layoutY="141.0" prefHeight="32.0" prefWidth="437.0" promptText="Customer Address">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtOrderDate" layoutX="482.0" layoutY="87.0" prefHeight="32.0" prefWidth="466.0" promptText="Order Date">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtOrderCost" layoutX="482.0" layoutY="141.0" prefHeight="32.0" prefWidth="466.0" promptText="Order Cost">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </TextField>
-      <Button layoutX="757.0" layoutY="191.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="33.0" prefWidth="187.0" style="-fx-background-color: #27ae60; -fx-background-radius: 2em;" text="Search" textFill="WHITE">
-         <font>
-            <Font size="21.0" />
-         </font></Button>
-      <Button layoutX="760.0" layoutY="562.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="33.0" prefWidth="187.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 2em;" text="Clear" textFill="WHITE">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Button>
-      <Label layoutX="336.0" layoutY="10.0" prefHeight="26.0" prefWidth="243.0" text="Enter Customer ID :" textFill="#fcfcfc">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="659.0" layoutY="7.0" prefHeight="26.0" prefWidth="268.0" text="Enter Customer Contact :" textFill="#fcfcfc">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Separator layoutX="594.0" layoutY="11.0" opacity="0.28" orientation="VERTICAL" prefHeight="63.0" prefWidth="7.0" />
-      <Separator layoutX="270.0" layoutY="11.0" opacity="0.28" orientation="VERTICAL" prefHeight="63.0" prefWidth="7.0" />
-      <Button layoutX="566.0" layoutY="562.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="33.0" prefWidth="187.0" style="-fx-background-color: #3498db; -fx-background-radius: 2em;" text="Back" textFill="WHITE">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>
