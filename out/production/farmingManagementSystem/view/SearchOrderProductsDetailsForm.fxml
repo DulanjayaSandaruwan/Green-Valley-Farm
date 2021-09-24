@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root10" prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SearchOrderProductsDetailsFormController">
+   <children>
+      <TableView fx:id="tblSearchProductDetails" layoutX="11.0" layoutY="74.0" prefHeight="478.0" prefWidth="940.0" stylesheets="@../assests/styles/Styles.css">
+        <columns>
+          <TableColumn fx:id="colProductId" prefWidth="252.0" text="Product ID" />
+          <TableColumn fx:id="colQuantity" prefWidth="341.0" text="Quantity" />
+            <TableColumn fx:id="colTotalCost" prefWidth="347.0" text="Total Price" />
+        </columns>
+         <styleClass>
+            <String fx:value="table-view" />
+            <String fx:value="table-row-cell" />
+         </styleClass>
+      </TableView>
+      <Label layoutX="18.0" layoutY="15.0" prefHeight="34.0" prefWidth="144.0" text="Order ID : " textFill="#f8f5f5">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrderId" layoutX="162.0" layoutY="16.0" prefHeight="34.0" prefWidth="132.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font></Label>
+      <JFXButton layoutX="827.0" layoutY="563.0" prefHeight="26.0" prefWidth="121.0" style="-fx-background-color: #1B9CFC; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Print" textFill="#f8f8f8">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="680.0" layoutY="563.0" onAction="#btnBackOnAction" prefHeight="26.0" prefWidth="121.0" style="-fx-background-color: #ff3838; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Back" textFill="#f8f8f8">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
