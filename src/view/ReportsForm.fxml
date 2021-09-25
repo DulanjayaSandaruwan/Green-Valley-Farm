@@ -18,7 +18,7 @@
             <Font name="System Bold" size="19.0" />
          </font></JFXButton>
       <Separator layoutX="331.0" layoutY="14.0" opacity="0.16" orientation="VERTICAL" prefHeight="589.0" prefWidth="11.0" />
-      <AnchorPane fx:id="paneReportsView" layoutX="352.0" layoutY="12.0" prefHeight="595.0" prefWidth="598.0" />
+      <AnchorPane fx:id="root11" layoutX="356.0" layoutY="17.0" prefHeight="581.0" prefWidth="582.0" />
       <JFXButton layoutX="15.0" layoutY="157.0" onAction="#btnCustomerDetailsOnAction" prefHeight="33.0" prefWidth="300.0" style="-fx-background-color: #002f53; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Customer Details" textFill="#f5f4f4">
          <font>
             <Font name="System Bold" size="17.0" />
@@ -29,7 +29,7 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="14.0" layoutY="340.0" onAction="#btnIncomeReportsOnAction" prefHeight="33.0" prefWidth="300.0" style="-fx-background-color: #002f53; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Income Reports" textFill="#f5f4f4">
+      <JFXButton layoutX="14.0" layoutY="366.0" onAction="#btnIncomeReportsOnAction" prefHeight="33.0" prefWidth="300.0" style="-fx-background-color: #002f53; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Income Reports" textFill="#f5f4f4">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -54,6 +54,6 @@
             <Font name="System Bold" size="19.0" />
          </font>
       </JFXButton>
-      <Separator layoutX="14.0" layoutY="393.0" opacity="0.26" prefHeight="3.0" prefWidth="308.0" />
+      <Separator layoutX="14.0" layoutY="341.0" opacity="0.26" prefHeight="3.0" prefWidth="308.0" />
    </children>
 </AnchorPane>

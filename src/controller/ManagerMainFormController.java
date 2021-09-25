@@ -45,20 +45,19 @@ public class ManagerMainFormController {
     public JFXButton btnHome;
     public AnchorPane paneSettingPanal;
     public Label lblLogOut;
-    public PieChart pieChrtProductDetails;
+    public PieChart pieChartProductDetails;
     public Label lblNotificationCount;
     public Label lblOrderCount;
     public Label lblCustomerCount;
     public Label lblProductCount;
-    public Label lblFarmerCount;
     public Label lblMostMovableItem;
     public Label lblUserId;
     public Label lblUserNameText;
     public Label lblUserEmail;
     public Label lblUserRole;
-    private boolean isSettingPanelVisible;
     public int plants = 0;
     public int animal = 0;
+    private boolean isSettingPanelVisible;
 
     public void initialize() {
 
@@ -73,8 +72,7 @@ public class ManagerMainFormController {
             orderCount();
             customerCount();
             productCountLabel();
-            farmerCount();
-            mostMovebleItem();
+            mostMovableItem();
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
@@ -93,7 +91,8 @@ public class ManagerMainFormController {
         lblUserEmail.setText(LoginFormController.eMail);
         lblUserRole.setText(LoginFormController.role);
 
-}
+    }
+
     private void loadDateAndTime() {
         Date date = new Date();
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
@@ -165,7 +164,7 @@ public class ManagerMainFormController {
 
     public void imgSettingOnMouseClicked(MouseEvent mouseEvent) {
         FadeTransition fade = new FadeTransition();
-        if(!isSettingPanelVisible){
+        if (!isSettingPanelVisible) {
             paneSettingPanal.setVisible(true);
             fade.setNode(paneSettingPanal);
             fade.setDuration(Duration.millis(500));
@@ -174,7 +173,7 @@ public class ManagerMainFormController {
             fade.setToValue(1);
             fade.play();
             isSettingPanelVisible = true;
-        }else{
+        } else {
             paneSettingPanal.setVisible(false);
             isSettingPanelVisible = false;
         }
@@ -223,9 +222,9 @@ public class ManagerMainFormController {
     public void lblLogOutOnMouseClicked(MouseEvent mouseEvent) throws IOException {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to log out", ButtonType.YES, ButtonType.NO);
-        Optional <ButtonType> buttonType = alert.showAndWait();
+        Optional<ButtonType> buttonType = alert.showAndWait();
 
-        if(buttonType.get().equals(ButtonType.YES)) {
+        if (buttonType.get().equals(ButtonType.YES)) {
             Parent parent = FXMLLoader.load(this.getClass().getResource("../view/LoginForm.fxml"));
             Scene scene = new Scene(parent);
             Stage primaryStage = (Stage) this.root2.getScene().getWindow();
@@ -243,61 +242,51 @@ public class ManagerMainFormController {
     }
 
     public void productCountLabel() throws SQLException, ClassNotFoundException {
-        PreparedStatement stm= DBConnection.getInstance().getConnection().prepareStatement("select * from finalProduct");
-        ResultSet rst=stm.executeQuery();
-        int a=0;
-        while (rst.next()){
-            a++;
-            lblProductCount.setText(String.valueOf(a));
+        PreparedStatement stm = DBConnection.getInstance().getConnection().prepareStatement("select * from finalProduct");
+        ResultSet rst = stm.executeQuery();
+        int count = 0;
+        while (rst.next()) {
+            count++;
+            lblProductCount.setText(String.valueOf(count));
         }
     }
 
-    public void farmerCount() throws SQLException, ClassNotFoundException {
-        PreparedStatement stm= DBConnection.getInstance().getConnection().prepareStatement("select * from farmer");
-        ResultSet rst=stm.executeQuery();
-        int a=0;
-        while (rst.next()){
-            a++;
-            lblFarmerCount.setText(String.valueOf(a));
-        }
-    }
-
-    public void mostMovebleItem() throws SQLException, ClassNotFoundException {
-        PreparedStatement stm= DBConnection.getInstance().getConnection().
+    public void mostMovableItem() throws SQLException, ClassNotFoundException {
+        PreparedStatement stm = DBConnection.getInstance().getConnection().
                 prepareStatement("select finalProductId,sum(orderQty) as orderQty from orderDetails group by finalProductId order by orderQty desc limit 1;");
-        ResultSet rst=stm.executeQuery();
+        ResultSet rst = stm.executeQuery();
         String productId = null;
-        while (rst.next()){
+        while (rst.next()) {
             productId = rst.getString(1);
         }
 
-        PreparedStatement preparedStatement= DBConnection.getInstance().getConnection().
-                prepareStatement("select finalProductName from finalProduct where finalProductId = '"+productId+"'");
+        PreparedStatement preparedStatement = DBConnection.getInstance().getConnection().
+                prepareStatement("select finalProductName from finalProduct where finalProductId = '" + productId + "'");
         ResultSet resultSet = preparedStatement.executeQuery();
 
-        while (resultSet.next()){
+        while (resultSet.next()) {
             lblMostMovableItem.setText(resultSet.getString(1));
         }
 
     }
 
     public void orderCount() throws SQLException, ClassNotFoundException {
-        PreparedStatement stm= DBConnection.getInstance().getConnection().prepareStatement("select * from `order`");
-        ResultSet rst=stm.executeQuery();
-        int a=0;
-        while (rst.next()){
-            a++;
-            lblOrderCount.setText(String.valueOf(a));
+        PreparedStatement stm = DBConnection.getInstance().getConnection().prepareStatement("select * from `order`");
+        ResultSet rst = stm.executeQuery();
+        int count = 0;
+        while (rst.next()) {
+            count++;
+            lblOrderCount.setText(String.valueOf(count));
         }
     }
 
     public void customerCount() throws SQLException, ClassNotFoundException {
-        PreparedStatement stm= DBConnection.getInstance().getConnection().prepareStatement("select * from customer");
-        ResultSet rst=stm.executeQuery();
-        int a=0;
-        while (rst.next()){
-            a++;
-            lblCustomerCount.setText(String.valueOf(a));
+        PreparedStatement stm = DBConnection.getInstance().getConnection().prepareStatement("select * from customer");
+        ResultSet rst = stm.executeQuery();
+        int count = 0;
+        while (rst.next()) {
+            count++;
+            lblCustomerCount.setText(String.valueOf(count));
         }
     }
 
@@ -306,27 +295,29 @@ public class ManagerMainFormController {
                 .prepareStatement("select * from finalProduct");
         ResultSet resultSet = preparedStatement.executeQuery();
         int count = 0;
-        while (resultSet.next()){
+        while (resultSet.next()) {
             count++;
 
-            if (resultSet.getString(3).equals("Plants")){
+            if (resultSet.getString(3).equals("Plants")) {
                 plants++;
-            }else {
+            } else {
                 animal++;
             }
         }
     }
 
-    public void pieChart(){
-        ObservableList<PieChart.Data> pieChartData= FXCollections.observableArrayList(
-                new PieChart.Data("Plants",plants),
-                new PieChart.Data("Animal",animal)
+    public void pieChart() {
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+                new PieChart.Data("Plants", plants),
+                new PieChart.Data("Animal", animal)
         );
 
-        pieChartData.forEach(data -> {data.nameProperty().bind(Bindings.concat(data.getName()," Amount ",
-                data.pieValueProperty()));});
-        pieChrtProductDetails.getData().addAll(pieChartData);
-        pieChrtProductDetails.setStyle("-fx-font-weight:bolder");
+        pieChartData.forEach(data -> {
+            data.nameProperty().bind(Bindings.concat(data.getName(), " Amount ",
+                    data.pieValueProperty()));
+        });
+        pieChartProductDetails.getData().addAll(pieChartData);
+        pieChartProductDetails.setStyle("-fx-font-weight:bolder");
     }
 
     private void checkLowestRemainingItem() {
@@ -337,7 +328,7 @@ public class ManagerMainFormController {
             int qtyOnHand = 0;
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            ArrayList <Products> products = new ArrayList<>();
+            ArrayList<Products> products = new ArrayList<>();
 
             while (resultSet.next()) {
                 products.add(new Products(
@@ -349,8 +340,8 @@ public class ManagerMainFormController {
 
             }
 
-            for (int i = 0; i < products.size() ; i++) {
-                new NotificationMessageUtil().errorMessage("The production" + " volume of " +products.get(i).getProductName()+
+            for (int i = 0; i < products.size(); i++) {
+                new NotificationMessageUtil().errorMessage("The production" + " volume of " + products.get(i).getProductName() +
                         " is declining in the warehouses.Be aware of that.");
             }
 

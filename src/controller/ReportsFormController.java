@@ -22,7 +22,7 @@ import java.net.URL;
 
 public class ReportsFormController {
     public AnchorPane root8;
-    public AnchorPane paneReportsView;
+    public AnchorPane root11;
 
     public void btnOrderDetailsOnAction(ActionEvent actionEvent) throws IOException {
         URL resource = getClass().getResource("../view/OrderDetailsForm.fxml");
@@ -43,7 +43,7 @@ public class ReportsFormController {
         AnchorPane.setRightAnchor(swingNode, 0.0);
         JRViewer viewer = new JRViewer(jasperPrint);
         SwingUtilities.invokeLater(() -> swingNode.setContent(viewer));
-        paneReportsView.getChildren().add(swingNode);
+        root11.getChildren().add(swingNode);
 
     }
 
@@ -62,8 +62,11 @@ public class ReportsFormController {
 
     }
 
-    public void btnIncomeReportsOnAction(ActionEvent actionEvent) {
-
+    public void btnIncomeReportsOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/IncomeReportsForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        root11.getChildren().clear();
+        root11.getChildren().add(load);
     }
 
     public void btnMostMovableItemOnAction(ActionEvent actionEvent) {

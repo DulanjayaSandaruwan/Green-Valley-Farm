@@ -41,11 +41,10 @@ public class ReceptionMainFormController {
     public Label lblDate;
     public Label lblTime;
     public AnchorPane root5;
-    public PieChart pieChrtProductDetails;
+    public PieChart pieChartProductDetails;
     public int plants = 0;
     public int animal = 0;
     public Label lblProductCount;
-    public Label lblFarmerCount;
     public Label lblMostMovableItem;
     public Label lblCustomerCount;
     public Label lblOrderCount;
@@ -63,7 +62,6 @@ public class ReceptionMainFormController {
         try {
             productsCount();
             productCountLabel();
-            farmerCount();
             mostMovebleItem();
             customerCount();
             orderCount();
@@ -155,7 +153,7 @@ public class ReceptionMainFormController {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to log out", ButtonType.YES, ButtonType.NO);
         Optional<ButtonType> buttonType = alert.showAndWait();
 
-        if(buttonType.get().equals(ButtonType.YES)) {
+        if (buttonType.get().equals(ButtonType.YES)) {
             Parent parent = FXMLLoader.load(this.getClass().getResource("../view/LoginForm.fxml"));
             Scene scene = new Scene(parent);
             Stage primaryStage = (Stage) this.root5.getScene().getWindow();
@@ -173,59 +171,49 @@ public class ReceptionMainFormController {
     }
 
     public void productCountLabel() throws SQLException, ClassNotFoundException {
-        PreparedStatement stm= DBConnection.getInstance().getConnection().prepareStatement("select * from finalProduct");
-        ResultSet rst=stm.executeQuery();
-        int a=0;
-        while (rst.next()){
+        PreparedStatement stm = DBConnection.getInstance().getConnection().prepareStatement("select * from finalProduct");
+        ResultSet rst = stm.executeQuery();
+        int a = 0;
+        while (rst.next()) {
             a++;
             lblProductCount.setText(String.valueOf(a));
         }
     }
 
-    public void farmerCount() throws SQLException, ClassNotFoundException {
-        PreparedStatement stm= DBConnection.getInstance().getConnection().prepareStatement("select * from farmer");
-        ResultSet rst=stm.executeQuery();
-        int a=0;
-        while (rst.next()){
-            a++;
-            lblFarmerCount.setText(String.valueOf(a));
-        }
-    }
-
     public void mostMovebleItem() throws SQLException, ClassNotFoundException {
-        PreparedStatement stm= DBConnection.getInstance().getConnection().
+        PreparedStatement stm = DBConnection.getInstance().getConnection().
                 prepareStatement("select finalProductId,sum(orderQty) as orderQty from orderDetails group by finalProductId order by orderQty desc limit 1;");
-        ResultSet rst=stm.executeQuery();
+        ResultSet rst = stm.executeQuery();
         String productId = null;
-        while (rst.next()){
+        while (rst.next()) {
             productId = rst.getString(1);
         }
 
-        PreparedStatement preparedStatement= DBConnection.getInstance().getConnection().
-                prepareStatement("select finalProductName from finalProduct where finalProductId = '"+productId+"'");
+        PreparedStatement preparedStatement = DBConnection.getInstance().getConnection().
+                prepareStatement("select finalProductName from finalProduct where finalProductId = '" + productId + "'");
         ResultSet resultSet = preparedStatement.executeQuery();
 
-        while (resultSet.next()){
+        while (resultSet.next()) {
             lblMostMovableItem.setText(resultSet.getString(1));
         }
 
     }
 
     public void orderCount() throws SQLException, ClassNotFoundException {
-        PreparedStatement stm= DBConnection.getInstance().getConnection().prepareStatement("select * from `order`");
-        ResultSet rst=stm.executeQuery();
-        int a=0;
-        while (rst.next()){
+        PreparedStatement stm = DBConnection.getInstance().getConnection().prepareStatement("select * from `order`");
+        ResultSet rst = stm.executeQuery();
+        int a = 0;
+        while (rst.next()) {
             a++;
             lblOrderCount.setText(String.valueOf(a));
         }
     }
 
     public void customerCount() throws SQLException, ClassNotFoundException {
-        PreparedStatement stm= DBConnection.getInstance().getConnection().prepareStatement("select * from customer");
-        ResultSet rst=stm.executeQuery();
-        int a=0;
-        while (rst.next()){
+        PreparedStatement stm = DBConnection.getInstance().getConnection().prepareStatement("select * from customer");
+        ResultSet rst = stm.executeQuery();
+        int a = 0;
+        while (rst.next()) {
             a++;
             lblCustomerCount.setText(String.valueOf(a));
         }
@@ -236,27 +224,29 @@ public class ReceptionMainFormController {
                 .prepareStatement("select * from finalProduct");
         ResultSet resultSet = preparedStatement.executeQuery();
         int count = 0;
-        while (resultSet.next()){
+        while (resultSet.next()) {
             count++;
 
-            if (resultSet.getString(3).equals("Plants")){
+            if (resultSet.getString(3).equals("Plants")) {
                 plants++;
-            }else {
+            } else {
                 animal++;
             }
         }
     }
 
-    public void pieChart(){
-        ObservableList<PieChart.Data> pieChartData= FXCollections.observableArrayList(
-                new PieChart.Data("Plants",plants),
-                new PieChart.Data("Animal",animal)
+    public void pieChart() {
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+                new PieChart.Data("Plants", plants),
+                new PieChart.Data("Animal", animal)
         );
 
-        pieChartData.forEach(data -> {data.nameProperty().bind(Bindings.concat(data.getName()," Amount ",
-                data.pieValueProperty()));});
-        pieChrtProductDetails.getData().addAll(pieChartData);
-        pieChrtProductDetails.setStyle("-fx-font-weight:bolder");
+        pieChartData.forEach(data -> {
+            data.nameProperty().bind(Bindings.concat(data.getName(), " Amount ",
+                    data.pieValueProperty()));
+        });
+        pieChartProductDetails.getData().addAll(pieChartData);
+        pieChartProductDetails.setStyle("-fx-font-weight:bolder");
     }
 
 }

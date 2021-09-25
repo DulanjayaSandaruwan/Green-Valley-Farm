@@ -186,63 +186,47 @@
                         <Font name="System Bold" size="18.0" />
                     </font>
                 </Label>
-                <PieChart fx:id="pieChrtProductDetails" layoutX="-14.0" layoutY="194.0" prefHeight="408.0" prefWidth="575.0" stylesheets="@../assests/styles/pieChart.css" />
-            <Label layoutX="19.0" layoutY="19.0" prefHeight="117.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right top, #ff3300, #ff5500, #ff6f00, #ff8500, #ff9900); -fx-background-radius: 1em;" />
-            <Label layoutX="204.0" layoutY="21.0" prefHeight="117.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right top, #8e44ad, #ab5abe, #c770cf, #e387e1, #ff9ff3); -fx-background-radius: 1em;" />
-            <Label layoutX="390.0" layoutY="17.0" prefHeight="117.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right top, #900c27, #aa2132, #c4333e, #df4449, #fa5555); -fx-background-radius: 1em;" />
-            <Label layoutX="574.0" layoutY="17.0" prefHeight="117.0" prefWidth="177.0" style="-fx-background-color: linear-gradient(to right top, #008000, #059e04, #0cbd0a, #13de12, #1aff1a); -fx-background-radius: 1em;" />
-            <Label layoutX="766.0" layoutY="17.0" prefHeight="117.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right top, #0652dd, #007cf1, #009ceb, #00b5d7, #12cbc4); -fx-background-radius: 1em;" />
-            <Label fx:id="lblProductCount" layoutX="77.0" layoutY="45.0" prefHeight="91.0" prefWidth="112.0" text="0" textFill="WHITE">
+                <PieChart fx:id="pieChartProductDetails" layoutX="-14.0" layoutY="194.0" prefHeight="408.0" prefWidth="575.0" stylesheets="@../assests/styles/pieChart.css" />
+            <Label layoutX="22.0" layoutY="19.0" prefHeight="117.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to right top, #ff3300, #ff5500, #ff6f00, #ff8500, #ff9900); -fx-background-radius: 1em;" />
+            <Label layoutX="257.0" layoutY="17.0" prefHeight="117.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to right top, #900c27, #aa2132, #c4333e, #df4449, #fa5555); -fx-background-radius: 1em;" />
+            <Label layoutX="491.0" layoutY="17.0" prefHeight="117.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to right top, #008000, #059e04, #0cbd0a, #13de12, #1aff1a); -fx-background-radius: 1em;" />
+            <Label layoutX="725.0" layoutY="17.0" prefHeight="117.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to right top, #0652dd, #007cf1, #009ceb, #00b5d7, #12cbc4); -fx-background-radius: 1em;" />
+            <Label fx:id="lblProductCount" layoutX="93.0" layoutY="45.0" prefHeight="91.0" prefWidth="112.0" text="0" textFill="WHITE">
                <font>
                   <Font size="65.0" />
                </font>
             </Label>
-            <Label fx:id="lblFarmerCount" layoutX="263.0" layoutY="45.0" prefHeight="91.0" prefWidth="112.0" text="0" textFill="WHITE">
-               <font>
-                  <Font size="65.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblMostMovableItem" layoutX="413.0" layoutY="51.0" prefHeight="91.0" prefWidth="149.0" text="&lt;O-000&gt;" textFill="WHITE">
+            <Label fx:id="lblMostMovableItem" layoutX="291.0" layoutY="50.0" prefHeight="80.0" prefWidth="149.0" text="&lt;O-000&gt;" textFill="WHITE">
                <font>
                   <Font size="28.0" />
                </font>
             </Label>
-            <Label fx:id="lblCustomerCount" layoutX="634.0" layoutY="43.0" prefHeight="91.0" prefWidth="112.0" text="0" textFill="#fcfcfc">
+            <Label fx:id="lblCustomerCount" layoutX="565.0" layoutY="43.0" prefHeight="91.0" prefWidth="112.0" text="0" textFill="#fcfcfc">
                <font>
                   <Font size="65.0" />
                </font>
             </Label>
-            <Label fx:id="lblOrderCount" layoutX="820.0" layoutY="43.0" prefHeight="91.0" prefWidth="112.0" text="0" textFill="WHITE">
+            <Label fx:id="lblOrderCount" layoutX="797.0" layoutY="43.0" prefHeight="91.0" prefWidth="112.0" text="0" textFill="WHITE">
                <font>
                   <Font size="65.0" />
                </font>
             </Label>
-            <Label layoutX="26.0" layoutY="27.0" prefHeight="25.0" prefWidth="156.0" text="Product Count :" textFill="WHITE">
+            <Label layoutX="29.0" layoutY="24.0" prefHeight="25.0" prefWidth="156.0" text="Product Count :" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="209.0" layoutY="27.0" prefHeight="25.0" prefWidth="156.0" text="Farmers Count :" textFill="#fcfcfc">
+            <Label layoutX="260.0" layoutY="22.0" prefHeight="25.0" prefWidth="201.0" text="Most Movable Item :" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="397.0" layoutY="24.0" prefHeight="25.0" prefWidth="156.0" text="Most Movable " textFill="WHITE">
+            <Label layoutX="497.0" layoutY="21.0" prefHeight="25.0" prefWidth="170.0" text="Customer Count :" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="580.0" layoutY="27.0" prefHeight="25.0" prefWidth="170.0" text="Customer Count :" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="17.0" />
-               </font>
-            </Label>
-            <Label layoutX="772.0" layoutY="27.0" prefHeight="25.0" prefWidth="156.0" text="Order Count : " textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="17.0" />
-               </font>
-            </Label>
-            <Label layoutX="399.0" layoutY="46.0" text="Item :" textFill="#fff6f6">
+            <Label layoutX="730.0" layoutY="21.0" prefHeight="25.0" prefWidth="156.0" text="Order Count : " textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
