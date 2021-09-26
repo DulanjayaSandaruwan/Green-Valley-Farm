@@ -73,7 +73,10 @@ public class ReportsFormController {
 
     }
 
-    public void btnPurchaseItemDetailsOnAction(ActionEvent actionEvent) {
-
+    public void btnPurchaseItemDetailsOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/PurchaseDetailsForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        root8.getChildren().clear();
+        root8.getChildren().add(load);
     }
 }

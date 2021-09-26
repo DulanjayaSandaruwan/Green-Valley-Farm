@@ -16,19 +16,18 @@ public class IncomeReportsFormController {
     public Label lblTodayIncome;
     public Label lblThisMonthIncome;
     public Label lblThisYearIncome;
-    Date date;
-    SimpleDateFormat simpleDateFormat;
     public double todayIncome;
     public double thisMonthIncome;
     public double thisYearIncome;
 
-    public void initialize(){
+    public void initialize() {
         getIncome();
     }
 
     private void getIncome() {
         String year, month, day;
-        date = new Date();
+        SimpleDateFormat simpleDateFormat;
+        Date date = new Date();
         simpleDateFormat = new SimpleDateFormat("yyyy");
         year = simpleDateFormat.format(date);
         simpleDateFormat = new SimpleDateFormat("yyyy-MM");
