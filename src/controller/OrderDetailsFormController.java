@@ -6,16 +6,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-import model.Order;
-import model.OrderDetails;
 import model.SearchOrder;
-import view.tm.OrderDetailsTM;
 import view.tm.SearchOrderTM;
 
 import java.io.IOException;

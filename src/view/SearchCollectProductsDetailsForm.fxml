@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="root13" prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53; -fx-background-radius: 1em;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SearchCollectProductsDetailsFormController">
+   <children>
+      <TableView fx:id="tblSearchCollectProductDetails" layoutX="8.0" layoutY="64.0" prefHeight="478.0" prefWidth="940.0" stylesheets="@../assests/styles/Styles.css">
+         <columns>
+            <TableColumn fx:id="colProductId" prefWidth="471.0" text="Product ID" />
+            <TableColumn fx:id="colQuantity" prefWidth="469.0" text="Quantity" />
+         </columns>
+         <styleClass>
+            <String fx:value="table-view" />
+            <String fx:value="table-row-cell" />
+         </styleClass>
+      </TableView>
+      <Label layoutX="15.0" layoutY="5.0" prefHeight="34.0" prefWidth="160.0" text="Collect ID : " textFill="#f8f5f5">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCollectID" layoutX="194.0" layoutY="5.0" prefHeight="34.0" prefWidth="132.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="824.0" layoutY="553.0" prefHeight="26.0" prefWidth="121.0" style="-fx-background-color: #1B9CFC; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Print" textFill="#f8f8f8">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="677.0" layoutY="553.0" onAction="#btnBackOnAction" prefHeight="26.0" prefWidth="121.0" style="-fx-background-color: #ff3838; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Back" textFill="#f8f8f8">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
