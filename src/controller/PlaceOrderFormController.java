@@ -1,5 +1,6 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -11,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
@@ -19,6 +21,8 @@ import model.Order;
 import model.OrderDetails;
 import model.Products;
 import org.controlsfx.control.Notifications;
+import util.NotificationMessageUtil;
+import util.ValidationUtil;
 import view.tm.FarmerTM;
 import view.tm.OrderCartTM;
 import view.tm.OrderDetailsTM;
@@ -28,6 +32,8 @@ import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.regex.Pattern;
 
 /**
  * @author : D.D.Sandaruwan <dulanjayasandaruwan1998@gmail.com>
@@ -58,13 +64,26 @@ public class PlaceOrderFormController {
     public TextField txtDiscount;
     public TextField txtCustomerAddress;
     public int selectedRowInCartRemove = -1;
+    public JFXButton btnAddToCart;
+    public JFXButton btnPlaceOrder;
+    public JFXButton btnClear;
 
     ObservableList<OrderCartTM> observableList = FXCollections.observableArrayList();
+
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap<>();
+    Pattern qtyPattern = Pattern.compile("^[0-9]{1,20}$");
+    Pattern discountPattern = Pattern.compile("^[0-9]{0,20}$");
 
     public void initialize() {
         loadDateAndTime();
 
         setOrderId();
+
+        btnPlaceOrder.setDisable(true);
+
+        btnAddToCart.setDisable(true);
+
+        btnClear.setDisable(true);
 
         colProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
         colProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
@@ -104,6 +123,8 @@ public class PlaceOrderFormController {
         {
             selectedRowInCartRemove = (int) newValue;
         });
+
+        storeValidations();
 
     }
 
@@ -165,10 +186,17 @@ public class PlaceOrderFormController {
         String productName = txtProductName.getText();
         int qtyOnHand = Integer.parseInt(txtQtyOnHand.getText());
         double unitPrice = Double.parseDouble(txtUnitPrice.getText());
-        double discount = Double.parseDouble(txtDiscount.getText());
+        double discount = 0.0;
         int qtyForCustomer = Integer.parseInt(txtQty.getText());
         double total = (qtyForCustomer * unitPrice);
         double finalTotal = total - ((total / 100) * discount);
+
+        if (txtDiscount.getText().isEmpty()){
+            discount = 0.0;
+        }else {
+            discount = Double.parseDouble(txtDiscount.getText());
+
+        }
 
         if (qtyOnHand < qtyForCustomer) {
             Image image = new Image("/assests/images/fail.png");
@@ -226,6 +254,8 @@ public class PlaceOrderFormController {
         tblOrderDetailsCart.setItems(observableList);
 
         calculateNetPrice();
+        btnClear.setDisable(false);
+        btnPlaceOrder.setDisable(false);
 
     }
 
@@ -265,6 +295,7 @@ public class PlaceOrderFormController {
             calculateNetPrice();
             tblOrderDetailsCart.refresh();
         }
+
     }
 
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
@@ -306,6 +337,16 @@ public class PlaceOrderFormController {
 
                 setOrderId();
                 clearForms();
+                btnPlaceOrder.setDisable(true);
+                btnAddToCart.setDisable(true);
+                btnClear.setDisable(true);
+
+                txtCustomerName.clear();
+                txtCustomerAddress.clear();
+                txtCustomerContact.clear();
+                txtProductName.clear();
+                txtQtyOnHand.clear();
+                txtUnitPrice.clear();
 
             } else {
                 Image image = new Image("/assests/images/fail.png");
@@ -321,6 +362,7 @@ public class PlaceOrderFormController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     private void loadDateAndTime() {
@@ -348,7 +390,22 @@ public class PlaceOrderFormController {
         tblOrderDetailsCart.getItems().clear();
     }
 
-    public void textFields_Key_Released(KeyEvent keyEvent) {
+    private void storeValidations() {
+        map.put(txtQty, qtyPattern);
+        map.put(txtDiscount, discountPattern);
 
+    }
+
+    public void textFields_Key_Released(KeyEvent keyEvent) {
+        Object response = ValidationUtil.validate(map, btnAddToCart);
+
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            if (response instanceof TextField) {
+                TextField errorText = (TextField) response;
+                errorText.requestFocus();
+            } else if (response instanceof Boolean) {
+                new NotificationMessageUtil().successMessage("Successfully Added !");
+            }
+        }
     }
 }

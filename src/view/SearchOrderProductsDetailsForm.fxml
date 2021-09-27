@@ -30,12 +30,12 @@
          <font>
             <Font name="System Bold" size="26.0" />
          </font></Label>
-      <JFXButton layoutX="827.0" layoutY="563.0" prefHeight="26.0" prefWidth="121.0" style="-fx-background-color: #1B9CFC; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Print" textFill="#f8f8f8">
+      <JFXButton layoutX="827.0" layoutY="563.0" prefHeight="26.0" prefWidth="121.0" style="-fx-background-color: #1B9CFC; -fx-background-radius: 2em;" text="Print" textFill="#f8f8f8">
          <font>
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="680.0" layoutY="563.0" onAction="#btnBackOnAction" prefHeight="26.0" prefWidth="121.0" style="-fx-background-color: #ff3838; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Back" textFill="#f8f8f8">
+      <JFXButton layoutX="680.0" layoutY="563.0" onAction="#btnBackOnAction" prefHeight="26.0" prefWidth="121.0" style="-fx-background-color: #ff3838; -fx-background-radius: 2em;" text="Back" textFill="#f8f8f8">
          <font>
             <Font size="20.0" />
          </font>

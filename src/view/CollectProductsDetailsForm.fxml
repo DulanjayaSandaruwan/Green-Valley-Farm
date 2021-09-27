@@ -15,7 +15,7 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <Button layoutX="817.0" layoutY="565.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="16.0" prefWidth="117.0" style="-fx-background-color: #ff3f34; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Back" textFill="WHITE">
+      <Button layoutX="817.0" layoutY="565.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="16.0" prefWidth="117.0" style="-fx-background-color: #ff3f34; -fx-background-radius: 2em;" text="Back" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>

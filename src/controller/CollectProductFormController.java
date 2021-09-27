@@ -1,5 +1,6 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -11,18 +12,25 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.util.Duration;
-import model.*;
+import model.Collect;
+import model.FinalProductDetails;
+import model.Garden;
+import model.Products;
 import org.controlsfx.control.Notifications;
+import util.NotificationMessageUtil;
+import util.ValidationUtil;
 import view.tm.CollectCartTM;
-import view.tm.OrderCartTM;
 
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.regex.Pattern;
 
 /**
  * @author : D.D.Sandaruwan <dulanjayasandaruwan1998@gmail.com>
@@ -33,8 +41,8 @@ public class CollectProductFormController {
     public Label lblCollectID;
     public Label lblDate;
     public Label lblTime;
-    public ComboBox <String> cmbGardenIds;
-    public ComboBox <String> cmbProductIds;
+    public ComboBox<String> cmbGardenIds;
+    public ComboBox<String> cmbProductIds;
     public TextField txtGardenType;
     public TextField txtProductType;
     public TextField txtDescription;
@@ -48,13 +56,23 @@ public class CollectProductFormController {
     public TableColumn colProductType;
     public TableColumn colQuantity;
     public int selectedRowInCartRemove = -1;
+    public JFXButton btnAddToStore;
+    public JFXButton btnClearCart;
+    public JFXButton btnCollect;
 
     ObservableList<CollectCartTM> observableList = FXCollections.observableArrayList();
 
-    public void initialize(){
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap<>();
+    Pattern qtyPattern = Pattern.compile("^[0-9]{1,20}$");
+
+    public void initialize() {
         loadDateAndTime();
 
         setCollectId();
+
+        btnAddToStore.setDisable(true);
+        btnClearCart.setDisable(true);
+        btnCollect.setDisable(true);
 
         colProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
         colProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
@@ -196,6 +214,8 @@ public class CollectProductFormController {
             observableList.add(newTm);
         }
         tblCollectDetails.setItems(observableList);
+        btnCollect.setDisable(false);
+        btnClearCart.setDisable(false);
     }
 
     private int isExists(CollectCartTM collectCartTM) {
@@ -242,6 +262,17 @@ public class CollectProductFormController {
                 setCollectId();
                 clearForms();
 
+                btnCollect.setDisable(true);
+                btnClearCart.setDisable(true);
+                btnAddToStore.setDisable(true);
+
+                txtGardenLocation.clear();
+                txtGardenType.clear();
+                txtDescription.clear();
+                txtProductType.clear();
+                txtQtyOnHand.clear();
+                txtProductName.clear();
+
             } else {
                 Image image = new Image("/assests/images/fail.png");
                 Notifications notifications = Notifications.create();
@@ -258,8 +289,9 @@ public class CollectProductFormController {
         }
     }
 
-    public void clearForms(){
+    public void clearForms() {
         txtQty.setText("");
+        tblCollectDetails.getItems().clear();
     }
 
     private void loadDateAndTime() {
@@ -280,7 +312,21 @@ public class CollectProductFormController {
         time.play();
     }
 
-    public void textFields_Key_Released(KeyEvent keyEvent) {
+    private void storeValidations() {
+        map.put(txtQty, qtyPattern);
 
+    }
+
+    public void textFields_Key_Released(KeyEvent keyEvent) {
+        Object response = ValidationUtil.validate(map, btnAddToStore);
+
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            if (response instanceof TextField) {
+                TextField errorText = (TextField) response;
+                errorText.requestFocus();
+            } else if (response instanceof Boolean) {
+                new NotificationMessageUtil().successMessage("Successfully Added !");
+            }
+        }
     }
 }

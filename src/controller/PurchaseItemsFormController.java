@@ -1,5 +1,6 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -11,9 +12,13 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.util.Duration;
 import model.*;
 import org.controlsfx.control.Notifications;
+import util.NotificationMessageUtil;
+import util.ValidationUtil;
 import view.tm.PurchaseCartTM;
 
 import java.sql.SQLException;
@@ -21,6 +26,8 @@ import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.regex.Pattern;
 
 /**
  * @author : D.D.Sandaruwan <dulanjayasandaruwan1998@gmail.com>
@@ -47,13 +54,23 @@ public class PurchaseItemsFormController {
     public TableColumn colTotal;
     public Label lblNetPrice;
     public int selectedRowInCartRemove = -1;
+    public JFXButton btnAddToCart;
+    public JFXButton btnPurchase;
+    public JFXButton btnClear;
 
     ObservableList<PurchaseCartTM> observableList = FXCollections.observableArrayList();
+
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap<>();
+    Pattern qtyPattern = Pattern.compile("^[0-9]{1,20}$");
 
     public void initialize() {
         loadDateAndTime();
 
         setBuyId();
+
+        btnAddToCart.setDisable(true);
+        btnPurchase.setDisable(true);
+        btnClear.setDisable(true);
 
         colItemCode.setCellValueFactory(new PropertyValueFactory<>("itemCode"));
         colItemType.setCellValueFactory(new PropertyValueFactory<>("itemType"));
@@ -92,6 +109,12 @@ public class PurchaseItemsFormController {
         {
             selectedRowInCartRemove = (int) newValue;
         });
+
+
+        storeValidations();
+
+//        checkTextFields();
+//        checkQtyTextField();
 
     }
 
@@ -204,6 +227,8 @@ public class PurchaseItemsFormController {
 
         }
         tblBuyDetails.setItems(observableList);
+        btnClear.setDisable(false);
+        btnPurchase.setDisable(false);
         calculateNetPrice();
 
     }
@@ -263,6 +288,17 @@ public class PurchaseItemsFormController {
                 setBuyId();
                 clearForms();
 
+                txtSupName.clear();
+                txtSupAddress.clear();
+                txtSupContact.clear();
+                txtItemName.clear();
+                txtItemType.clear();
+                txtUnitPrice.clear();
+
+                btnPurchase.setDisable(true);
+                btnClear.setDisable(true);
+                btnAddToCart.setDisable(true);
+
             } else {
                 Image image = new Image("/assests/images/fail.png");
                 Notifications notifications = Notifications.create();
@@ -302,4 +338,23 @@ public class PurchaseItemsFormController {
         time.setCycleCount(Animation.INDEFINITE);
         time.play();
     }
+
+    private void storeValidations() {
+        map.put(txtQty, qtyPattern);
+
+    }
+
+    public void textFields_Key_Released(KeyEvent keyEvent) {
+        Object response = ValidationUtil.validate(map, btnAddToCart);
+
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            if (response instanceof TextField) {
+                TextField errorText = (TextField) response;
+                errorText.requestFocus();
+            } else if (response instanceof Boolean) {
+                new NotificationMessageUtil().successMessage("Successfully Added !");
+            }
+        }
+    }
+
 }

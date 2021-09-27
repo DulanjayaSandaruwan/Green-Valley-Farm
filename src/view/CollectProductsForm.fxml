@@ -63,7 +63,7 @@
          </font>
       </Label>
       <TextField fx:id="txtQty" layoutX="449.0" layoutY="173.0" onKeyReleased="#textFields_Key_Released" prefHeight="26.0" prefWidth="143.0" promptText="Qty" style="-fx-background-radius: 2em;" />
-      <JFXButton layoutX="638.0" layoutY="165.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="117.0" style="-fx-background-color: #ff0000; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Clear" textFill="WHITE">
+      <JFXButton fx:id="btnClearCart" layoutX="638.0" layoutY="165.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="117.0" style="-fx-background-color: #ff0000; -fx-background-radius: 2em;" text="Clear" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
@@ -71,7 +71,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="778.0" layoutY="164.0" onAction="#btnAddToCartOnAction" prefHeight="30.0" prefWidth="171.0" style="-fx-background-color: #008000; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Add To Store" textFill="WHITE">
+      <JFXButton fx:id="btnAddToStore" layoutX="778.0" layoutY="164.0" onAction="#btnAddToCartOnAction" prefHeight="30.0" prefWidth="171.0" style="-fx-background-color: #008000; -fx-background-radius: 2em;" text="Add To Store" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
@@ -91,7 +91,7 @@
             <String fx:value="table-row-cell" />
          </styleClass>
       </TableView>
-      <JFXButton layoutX="814.0" layoutY="566.0" onAction="#btnCollectOnAction" prefHeight="38.0" prefWidth="132.0" style="-fx-background-color: #ff3300; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Collect" textFill="WHITE">
+      <JFXButton fx:id="btnCollect" layoutX="814.0" layoutY="566.0" onAction="#btnCollectOnAction" prefHeight="38.0" prefWidth="132.0" style="-fx-background-color: #ff3300; -fx-background-radius: 2em;" text="Collect" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>

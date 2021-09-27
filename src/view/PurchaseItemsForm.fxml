@@ -57,8 +57,8 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtQty" layoutX="406.0" layoutY="184.0" promptText="Qty" style="-fx-background-radius: 2em;" />
-      <JFXButton layoutX="638.0" layoutY="172.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="117.0" style="-fx-background-color: #ff0000; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Clear" textFill="WHITE">
+      <TextField fx:id="txtQty" layoutX="406.0" layoutY="184.0" onKeyReleased="#textFields_Key_Released" promptText="Qty" style="-fx-background-radius: 2em;" />
+      <JFXButton fx:id="btnClear" layoutX="638.0" layoutY="172.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="117.0" style="-fx-background-color: #ff0000; -fx-background-radius: 2em;" text="Clear" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
@@ -66,7 +66,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="778.0" layoutY="171.0" onAction="#btnAddToCartOnAction" prefHeight="30.0" prefWidth="171.0" style="-fx-background-color: #008000; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Add To Cart" textFill="WHITE">
+      <JFXButton fx:id="btnAddToCart" layoutX="778.0" layoutY="171.0" onAction="#btnAddToCartOnAction" prefHeight="30.0" prefWidth="171.0" style="-fx-background-color: #008000; -fx-background-radius: 2em;" text="Add To Cart" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
@@ -97,7 +97,7 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <JFXButton layoutX="813.0" layoutY="568.0" onAction="#btnPurchaseOnAction" prefHeight="38.0" prefWidth="132.0" style="-fx-background-color: #ff3300; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Purchase" textFill="WHITE">
+      <JFXButton fx:id="btnPurchase" layoutX="813.0" layoutY="568.0" onAction="#btnPurchaseOnAction" prefHeight="38.0" prefWidth="132.0" style="-fx-background-color: #ff3300; -fx-background-radius: 2em;" text="Purchase" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
