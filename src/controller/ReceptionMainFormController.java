@@ -1,9 +1,7 @@
 package controller;
 
 import db.DBConnection;
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
+import javafx.animation.*;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -53,6 +51,8 @@ public class ReceptionMainFormController {
     public Label lblUserRole;
     public Label lblUserId;
     public Label lblNotificationCount;
+    public AnchorPane paneSettingPanal;
+    private boolean isSettingPanelVisible;
 
     public void initialize() {
         loadDateAndTime();
@@ -69,6 +69,9 @@ public class ReceptionMainFormController {
             throwables.printStackTrace();
         }
         pieChart();
+
+        paneSettingPanal.setVisible(false);
+        isSettingPanelVisible = false;
 
         lblNotificationCount.setText(String.valueOf(new NotificationFormController().notificationCount()));
 
@@ -147,20 +150,6 @@ public class ReceptionMainFormController {
         Parent load = FXMLLoader.load(resource);
         root5.getChildren().clear();
         root5.getChildren().add(load);
-    }
-
-    public void imgExitOnMouseClicked(MouseEvent mouseEvent) throws IOException {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to log out", ButtonType.YES, ButtonType.NO);
-        Optional<ButtonType> buttonType = alert.showAndWait();
-
-        if (buttonType.get().equals(ButtonType.YES)) {
-            Parent parent = FXMLLoader.load(this.getClass().getResource("../view/LoginForm.fxml"));
-            Scene scene = new Scene(parent);
-            Stage primaryStage = (Stage) this.root5.getScene().getWindow();
-            primaryStage.setScene(scene);
-            primaryStage.setTitle("Login Form");
-            primaryStage.centerOnScreen();
-        }
     }
 
     public void imgNotification(MouseEvent mouseEvent) throws IOException {
@@ -249,4 +238,42 @@ public class ReceptionMainFormController {
         pieChartProductDetails.setStyle("-fx-font-weight:bolder");
     }
 
+    public void imgSettingOnMouseClicked(MouseEvent mouseEvent) {
+        FadeTransition fade = new FadeTransition();
+        if (!isSettingPanelVisible) {
+            paneSettingPanal.setVisible(true);
+            fade.setNode(paneSettingPanal);
+            fade.setDuration(Duration.millis(500));
+            fade.setInterpolator(Interpolator.LINEAR);
+            fade.setFromValue(0);
+            fade.setToValue(1);
+            fade.play();
+            isSettingPanelVisible = true;
+        } else {
+            paneSettingPanal.setVisible(false);
+            isSettingPanelVisible = false;
+        }
+
+    }
+
+    public void lblChangePasswordOnMouseClicked(MouseEvent mouseEvent) throws IOException {
+        URL resource = getClass().getResource("../view/ChangePasswordForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        root5.getChildren().clear();
+        root5.getChildren().add(load);
+    }
+
+    public void lblLogOutOnMouseClicked(MouseEvent mouseEvent) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to log out", ButtonType.YES, ButtonType.NO);
+        Optional<ButtonType> buttonType = alert.showAndWait();
+
+        if (buttonType.get().equals(ButtonType.YES)) {
+            Parent parent = FXMLLoader.load(this.getClass().getResource("../view/LoginForm.fxml"));
+            Scene scene = new Scene(parent);
+            Stage primaryStage = (Stage) this.root5.getScene().getWindow();
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Login Form");
+            primaryStage.centerOnScreen();
+        }
+    }
 }

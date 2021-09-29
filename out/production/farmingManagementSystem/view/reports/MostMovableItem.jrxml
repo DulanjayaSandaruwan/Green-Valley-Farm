@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MostMovableItem" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8ad89a82-9a05-423a-b562-9cf221dc1c82">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[select finalProductId ,sum(orderQty) as orderQty from orderDetails group by finalProductId order by orderQty desc]]>
+	</queryString>
+	<field name="finalProductId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="finalProductId"/>
+		<property name="com.jaspersoft.studio.field.label" value="finalProductId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderDetails"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="orderQty" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="orderQty"/>
+		<property name="com.jaspersoft.studio.field.label" value="orderQty"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="97" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-10" y="-1" width="575" height="90" forecolor="#1BD6F7" backcolor="#36D2F5" uuid="36232918-dbae-4719-bdaa-446c3d59155f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="493" y="69" width="70" height="20" uuid="caeca1f0-5d67-4fa9-8a59-c2855cf0969a"/>
+				<text><![CDATA[076-9654764]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="40" width="116" height="27" uuid="621a8c95-bc57-4338-b8b3-be58d63420b3"/>
+				<textElement textAlignment="Right">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[No.125/A, Pimbura, Rathnapura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="174" y="48" width="200" height="30" uuid="ae8608e0-f0cf-4704-ab0c-38ceddfe1c5a"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Most Movable Item]]></text>
+			</staticText>
+			<textField pattern="HH:mm">
+				<reportElement x="1" y="77" width="100" height="20" uuid="74c9d13e-7e87-4146-87ea-732053c52a01"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="2" y="60" width="140" height="30" uuid="e2ef6a26-0d61-4001-a16f-5775971bfd50"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="4" width="560" height="44" forecolor="#050505" uuid="a1500de3-3ba5-4160-b383-26df0df5bbc3"/>
+				<textElement textAlignment="Center">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[-GREEN VALLEY FARM-]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="2" width="90" height="58" uuid="5bb5e74a-5c48-4345-913e-d895d2a2d051"/>
+				<imageExpression><![CDATA["/home/dulanjaya/Documents/IJSE Official Projects/1st Semester/FinalProject/farming_management/src/assests/images/WhatsApp_Image_2021-09-17_at_00.48.55-removebg-preview.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<summary>
+		<band height="381" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-6" y="356" width="573" height="24" backcolor="#36D2F5" uuid="44d5fb74-3c6d-4a44-8ab0-e1082e710a4a"/>
+			</rectangle>
+			<textField>
+				<reportElement x="551" y="362" width="10" height="13" uuid="858b8c40-c889-45bb-9bbd-d2bfa653bcbc"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<pie3DChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="0" width="555" height="328" uuid="d958696f-c9fe-4e01-83d6-6ec232d7248e"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset resetType="Report"/>
+					<keyExpression><![CDATA[$F{finalProductId}]]></keyExpression>
+					<valueExpression><![CDATA[$F{orderQty}]]></valueExpression>
+					<labelExpression><![CDATA[$F{finalProductId}]]></labelExpression>
+				</pieDataset>
+				<pie3DPlot>
+					<plot/>
+					<itemLabel/>
+				</pie3DPlot>
+			</pie3DChart>
+		</band>
+	</summary>
+</jasperReport>

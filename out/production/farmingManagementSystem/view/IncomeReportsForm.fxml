@@ -55,7 +55,7 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <JFXButton layoutX="335.0" layoutY="520.0" prefHeight="42.0" prefWidth="228.0" style="-fx-background-color: #2980b9; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Print Income" textFill="WHITE">
+      <JFXButton layoutX="335.0" layoutY="520.0" prefHeight="42.0" prefWidth="228.0" style="-fx-background-color: #2980b9; -fx-background-radius: 2em;" text="Print Income" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>

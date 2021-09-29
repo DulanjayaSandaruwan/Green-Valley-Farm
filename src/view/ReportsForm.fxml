@@ -19,7 +19,7 @@
          </font></JFXButton>
       <Separator layoutX="331.0" layoutY="14.0" opacity="0.16" orientation="VERTICAL" prefHeight="589.0" prefWidth="11.0" />
       <AnchorPane fx:id="root11" layoutX="356.0" layoutY="17.0" prefHeight="581.0" prefWidth="582.0" />
-      <JFXButton layoutX="15.0" layoutY="157.0" onAction="#btnCustomerDetailsOnAction" prefHeight="33.0" prefWidth="300.0" style="-fx-background-color: #002f53; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Customer Details" textFill="#f5f4f4">
+      <JFXButton layoutX="15.0" layoutY="157.0" onAction="#btnPurchaseDetailsOnAction" prefHeight="33.0" prefWidth="300.0" style="-fx-background-color: #002f53; -fx-background-radius: 2em;" styleClass="btn" stylesheets="@../assests/styles/Styles.css" text="Purchase Details" textFill="#f5f4f4">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>

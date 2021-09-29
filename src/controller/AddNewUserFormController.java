@@ -42,6 +42,7 @@ public class AddNewUserFormController {
     public TableColumn colUserEmail;
 
     LinkedHashMap<TextField, Pattern> map = new LinkedHashMap<>();
+
     Pattern namePattern = Pattern.compile("^[A-z ]{5,20}$");
     Pattern eMailPattern = Pattern.compile("^[A-z0-9]{3,40}[@][a-z]{2,}[.](com|lk|uk|[a-z]{2,})$");
     Pattern newPasswordPattern = Pattern.compile("^[A-z0-9]{8,}(@|#|$|%|^|&|!)$");

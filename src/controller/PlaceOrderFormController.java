@@ -14,18 +14,20 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import model.Customer;
 import model.Order;
 import model.OrderDetails;
 import model.Products;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import org.controlsfx.control.Notifications;
 import util.NotificationMessageUtil;
 import util.ValidationUtil;
-import view.tm.FarmerTM;
 import view.tm.OrderCartTM;
-import view.tm.OrderDetailsTM;
 
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -188,21 +190,20 @@ public class PlaceOrderFormController {
         double unitPrice = Double.parseDouble(txtUnitPrice.getText());
         double discount = 0.0;
         int qtyForCustomer = Integer.parseInt(txtQty.getText());
+
+        if (txtDiscount.getText().isEmpty()) {
+            discount = 0.0;
+        } else {
+            discount = Double.parseDouble(txtDiscount.getText());
+        }
         double total = (qtyForCustomer * unitPrice);
         double finalTotal = total - ((total / 100) * discount);
-
-        if (txtDiscount.getText().isEmpty()){
-            discount = 0.0;
-        }else {
-            discount = Double.parseDouble(txtDiscount.getText());
-
-        }
 
         if (qtyOnHand < qtyForCustomer) {
             Image image = new Image("/assests/images/fail.png");
             Notifications notifications = Notifications.create();
             notifications.graphic(new ImageView(image));
-            notifications.text("Item count has exceed limit of "+qtyOnHand+" Plz select correct one");
+            notifications.text("Item count has exceed limit of " + qtyOnHand + " Plz select correct one");
             notifications.title("Failed Message");
             notifications.hideAfter(Duration.seconds(5));
             notifications.position(Pos.TOP_CENTER);
@@ -335,6 +336,8 @@ public class PlaceOrderFormController {
                 notifications.darkStyle();
                 notifications.show();
 
+                salesInvoice();
+
                 setOrderId();
                 clearForms();
                 btnPlaceOrder.setDisable(true);
@@ -383,7 +386,7 @@ public class PlaceOrderFormController {
         time.play();
     }
 
-    public void clearForms(){
+    public void clearForms() {
         txtQty.setText("");
         txtDiscount.setText("");
         lblNetPrice.setText("0");
@@ -407,5 +410,24 @@ public class PlaceOrderFormController {
                 new NotificationMessageUtil().successMessage("Successfully Added !");
             }
         }
+    }
+
+    public void salesInvoice() throws SQLException {
+        JasperDesign jasperDesign = null;
+
+        String orderId = lblOrderID.getText();
+
+        LinkedHashMap map = new LinkedHashMap();
+        map.put("OrderId", orderId);
+
+        try {
+            jasperDesign = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/reports/SalesInvoice.jrxml"));
+            JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, map, new JRBeanArrayDataSource(observableList.toArray()));
+            JasperViewer.viewReport(jasperPrint);
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
+
     }
 }

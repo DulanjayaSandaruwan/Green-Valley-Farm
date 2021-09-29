@@ -142,9 +142,9 @@
                         <Image url="@../assests/images/icons8_human_head_48px.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="932.0" layoutY="10.0" onMouseClicked="#imgExitOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="922.0" layoutY="6.0" onMouseClicked="#imgSettingOnMouseClicked" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../assests/images/icons8_logout_rounded_up_64px_1.png" />
+                        <Image url="@../assests/images/icons8_settings_48px.png" />
                     </image>
                     <cursor>
                         <Cursor fx:constant="HAND" />
@@ -278,6 +278,27 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="paneSettingPanal" layoutX="816.0" layoutY="-7.0" prefHeight="95.0" prefWidth="142.0" style="-fx-background-color: #a7a9ac;">
+               <children>
+                  <Label layoutX="5.0" layoutY="2.0" onMouseClicked="#lblChangePasswordOnMouseClicked" prefHeight="33.0" prefWidth="131.0" text="Change Password">
+                     <font>
+                        <Font name="Ubuntu" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label layoutX="7.0" layoutY="43.0" onMouseClicked="#lblLogOutOnMouseClicked" prefHeight="25.0" prefWidth="120.0" text="Log Out">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <AnchorPane layoutX="1.0" layoutY="78.0" prefHeight="17.0" prefWidth="142.0" style="-fx-background-color: #59626a;" />
                </children>
             </AnchorPane>
             </children>

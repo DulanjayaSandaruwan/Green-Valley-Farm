@@ -32,7 +32,7 @@ public class ReportsFormController {
     }
 
     public void btnProductDetails(ActionEvent actionEvent) throws JRException {
-        JasperDesign jasperDesign = JRXmlLoader.load(this.getClass().getResourceAsStream(""));
+        JasperDesign jasperDesign = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/reports/ProductDetails.jrxml"));
         JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
 
@@ -44,7 +44,6 @@ public class ReportsFormController {
         JRViewer viewer = new JRViewer(jasperPrint);
         SwingUtilities.invokeLater(() -> swingNode.setContent(viewer));
         root11.getChildren().add(swingNode);
-
     }
 
     public void btnCollectDetailsOnAction(ActionEvent actionEvent) throws IOException {
@@ -54,12 +53,19 @@ public class ReportsFormController {
         root8.getChildren().add(load);
     }
 
-    public void btnCustomerDetailsOnAction(ActionEvent actionEvent) {
+    public void btnOrdersOnAction(ActionEvent actionEvent) throws JRException {
+        JasperDesign jasperDesign = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/reports/OrderDetailsReport.jrxml"));
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
 
-    }
-
-    public void btnOrdersOnAction(ActionEvent actionEvent) {
-
+        SwingNode swingNode = new SwingNode();
+        AnchorPane.setTopAnchor(swingNode, 0.0);
+        AnchorPane.setBottomAnchor(swingNode, 0.0);
+        AnchorPane.setLeftAnchor(swingNode, 0.0);
+        AnchorPane.setRightAnchor(swingNode, 0.0);
+        JRViewer viewer = new JRViewer(jasperPrint);
+        SwingUtilities.invokeLater(() -> swingNode.setContent(viewer));
+        root11.getChildren().add(swingNode);
     }
 
     public void btnIncomeReportsOnAction(ActionEvent actionEvent) throws IOException {
@@ -69,8 +75,19 @@ public class ReportsFormController {
         root11.getChildren().add(load);
     }
 
-    public void btnMostMovableItemOnAction(ActionEvent actionEvent) {
+    public void btnMostMovableItemOnAction(ActionEvent actionEvent) throws JRException {
+        JasperDesign jasperDesign = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/reports/MostMovableItem.jrxml"));
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
 
+        SwingNode swingNode = new SwingNode();
+        AnchorPane.setTopAnchor(swingNode, 0.0);
+        AnchorPane.setBottomAnchor(swingNode, 0.0);
+        AnchorPane.setLeftAnchor(swingNode, 0.0);
+        AnchorPane.setRightAnchor(swingNode, 0.0);
+        JRViewer viewer = new JRViewer(jasperPrint);
+        SwingUtilities.invokeLater(() -> swingNode.setContent(viewer));
+        root11.getChildren().add(swingNode);
     }
 
     public void btnPurchaseItemDetailsOnAction(ActionEvent actionEvent) throws IOException {
@@ -78,5 +95,20 @@ public class ReportsFormController {
         Parent load = FXMLLoader.load(resource);
         root8.getChildren().clear();
         root8.getChildren().add(load);
+    }
+
+    public void btnPurchaseDetailsOnAction(ActionEvent actionEvent) throws JRException {
+        JasperDesign jasperDesign = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/reports/PurchaseDetails.jrxml"));
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
+
+        SwingNode swingNode = new SwingNode();
+        AnchorPane.setTopAnchor(swingNode, 0.0);
+        AnchorPane.setBottomAnchor(swingNode, 0.0);
+        AnchorPane.setLeftAnchor(swingNode, 0.0);
+        AnchorPane.setRightAnchor(swingNode, 0.0);
+        JRViewer viewer = new JRViewer(jasperPrint);
+        SwingUtilities.invokeLater(() -> swingNode.setContent(viewer));
+        root11.getChildren().add(swingNode);
     }
 }

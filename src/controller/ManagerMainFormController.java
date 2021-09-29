@@ -215,8 +215,11 @@ public class ManagerMainFormController {
         root3.getChildren().add(load);
     }
 
-    public void lblChangePasswordOnMouseClicked(MouseEvent mouseEvent) {
-
+    public void lblChangePasswordOnMouseClicked(MouseEvent mouseEvent) throws IOException {
+        URL resource = getClass().getResource("../view/ChangePasswordForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        root3.getChildren().clear();
+        root3.getChildren().add(load);
     }
 
     public void lblLogOutOnMouseClicked(MouseEvent mouseEvent) throws IOException {
