@@ -110,11 +110,7 @@ public class PurchaseItemsFormController {
             selectedRowInCartRemove = (int) newValue;
         });
 
-
         storeValidations();
-
-//        checkTextFields();
-//        checkQtyTextField();
 
     }
 
@@ -130,15 +126,7 @@ public class PurchaseItemsFormController {
     private void setItemData(String itemCode) throws SQLException {
         Item item = new ItemController().searchItem(itemCode);
         if (item == null) {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Empty Results Set , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Empty Results Set , Try Again !");
         } else {
             txtItemName.setText(item.getItemName());
             txtItemType.setText(item.getItemType());
@@ -150,15 +138,7 @@ public class PurchaseItemsFormController {
     private void setSupplierData(String supplierId) throws SQLException {
         Supplier supplier = new SupplierController().searchSupplier(supplierId);
         if (supplier == null) {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Empty Results Set , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Empty Results Set , Try Again !");
         } else {
             txtSupName.setText(supplier.getSupName());
             txtSupAddress.setText(supplier.getSupAddress());
@@ -174,19 +154,9 @@ public class PurchaseItemsFormController {
         }
     }
 
-
-
     public void btnClearOnAction(ActionEvent actionEvent) {
         if (selectedRowInCartRemove == -1) {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
         } else {
             observableList.remove(selectedRowInCartRemove);
             calculateNetPrice();
@@ -275,15 +245,7 @@ public class PurchaseItemsFormController {
 
         try {
             if (new PurchaseController().purchase(purchase)) {
-                Image image = new Image("/assests/images/pass.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Successfully Saved !");
-                notifications.title("Success Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().successMessage("Successfully Saved !");
 
                 setBuyId();
                 clearForms();
@@ -300,15 +262,7 @@ public class PurchaseItemsFormController {
                 btnAddToCart.setDisable(true);
 
             } else {
-                Image image = new Image("/assests/images/fail.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Something Went Wrong , Try Again !");
-                notifications.title("Failed Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().successMessage("Something Went Wrong , Try Again !");
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -19,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import model.Farmer;
 import org.controlsfx.control.Notifications;
+import util.NotificationMessageUtil;
 import util.ValidationUtil;
 import view.tm.FarmerTM;
 
@@ -114,15 +115,8 @@ public class ManageFarmerDetailsFormController {
 
         Farmer farmer = new FarmerController().searchFarmer(farmerId);
         if (farmer == null) {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Empty Results Set , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Empty Results Set , Try Again !");
+
         } else {
             setData(farmer);
         }
@@ -163,43 +157,18 @@ public class ManageFarmerDetailsFormController {
         if (!farmer.getFarmerId().isEmpty() && !farmer.getFarmerName().isEmpty() &&
                 !farmer.getFarmerAddress().isEmpty() && !farmer.getFarmerContact().isEmpty()) {
             if (new FarmerController().saveFarmer(farmer)) {
-
-                Image image = new Image("/assests/images/pass.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Successfully Saved !");
-                notifications.title("Success Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().successMessage("Successfully Saved !");
 
                 clearForms();
 
                 tblFarmerDetails.getItems().clear();
                 setFarmerValuesToTable(new FarmerController().selectAllFarmers());
-            }else {
-                Image image = new Image("/assests/images/fail.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Duplicate Entry, Try Again !");
-                notifications.title("Failed Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+            } else {
+                new NotificationMessageUtil().errorMessage("Duplicate Entry, Try Again !");
             }
 
         } else {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
         }
     }
 
@@ -215,16 +184,7 @@ public class ManageFarmerDetailsFormController {
         if (!farmer.getFarmerId().isEmpty()) {
             if (new FarmerController().updateFarmer(farmer)) {
                 try {
-
-                    Image image = new Image("/assests/images/pass.png");
-                    Notifications notifications = Notifications.create();
-                    notifications.graphic(new ImageView(image));
-                    notifications.text("Successfully Updated !");
-                    notifications.title("Success Message");
-                    notifications.hideAfter(Duration.seconds(5));
-                    notifications.position(Pos.TOP_CENTER);
-                    notifications.darkStyle();
-                    notifications.show();
+                    new NotificationMessageUtil().successMessage("Successfully Updated !");
 
                     clearForms();
                     tblFarmerDetails.getItems().clear();
@@ -232,57 +192,25 @@ public class ManageFarmerDetailsFormController {
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
-            }else {
-                Image image = new Image("/assests/images/fail.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Something Went Wrong , Try Again !");
-                notifications.title("Failed Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+            } else {
+                new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
             }
 
         } else {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
         }
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) throws SQLException {
         if (new FarmerController().deleteFarmer(txtFarmerId.getText())) {
-            Image image = new Image("/assests/images/pass.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Successfully Deleted !");
-            notifications.title("Success Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().successMessage("Successfully Deleted !");
 
             clearForms();
             tblFarmerDetails.getItems().clear();
             setFarmerValuesToTable(new FarmerController().selectAllFarmers());
 
         } else {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
         }
     }
 
@@ -325,15 +253,7 @@ public class ManageFarmerDetailsFormController {
                 TextField errorText = (TextField) response;
                 errorText.requestFocus();
             } else if (response instanceof Boolean) {
-                Image image = new Image("/assests/images/pass.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Successfully Saved !");
-                notifications.title("Success Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().successMessage("Successfully Saved !");
             }
         }
     }

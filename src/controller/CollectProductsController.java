@@ -1,7 +1,8 @@
 package controller;
 
 import db.DBConnection;
-import model.*;
+import model.Collect;
+import model.FinalProductDetails;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

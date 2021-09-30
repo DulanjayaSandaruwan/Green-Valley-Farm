@@ -16,11 +16,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
+import util.NotificationMessageUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 /**
  * @author : D.D.Sandaruwan <dulanjayasandaruwan1998@gmail.com>
@@ -63,37 +63,28 @@ public class LoginFormController {
             preparedStatement.setObject(2, password);
 
             ResultSet resultSet = preparedStatement.executeQuery();
-                if (resultSet.next()) {
+            if (resultSet.next()) {
 
-                    userID = resultSet.getString(1);
-                    name = resultSet.getString(2);
-                    eMail = resultSet.getString(4);
-                    role = resultSet.getString(5);
+                userID = resultSet.getString(1);
+                name = resultSet.getString(2);
+                eMail = resultSet.getString(4);
+                role = resultSet.getString(5);
 
-                    Parent parent = FXMLLoader.load(this.getClass().getResource(role.equals("Manager")
-                            ? "../view/ManagerMainForm.fxml" : "../view/ReceptionMainForm.fxml"));
-                    Scene scene = new Scene(parent);
-                    Stage primaryStage = (Stage) this.root1.getScene().getWindow();
-                    primaryStage.setScene(scene);
-                    primaryStage.setTitle("Main Form");
-                    primaryStage.centerOnScreen();
+                Parent parent = FXMLLoader.load(this.getClass().getResource(role.equals("Manager")
+                        ? "../view/ManagerMainForm.fxml" : "../view/ReceptionMainForm.fxml"));
+                Scene scene = new Scene(parent);
+                Stage primaryStage = (Stage) this.root1.getScene().getWindow();
+                primaryStage.setScene(scene);
+                primaryStage.setTitle("Main Form");
+                primaryStage.centerOnScreen();
 
-                } else {
+            } else {
+                new NotificationMessageUtil().errorMessage(" Wrong User Name Or Password , Try Again !");
 
-                    Image image = new Image("/assests/images/fail.png");
-                    Notifications notifications = Notifications.create();
-                    notifications.graphic(new ImageView(image));
-                    notifications.text("Something Went Wrong , Wrong User Name Or Password , Try Again !");
-                    notifications.title("Failed Message");
-                    notifications.hideAfter(Duration.seconds(10));
-                    notifications.position(Pos.TOP_CENTER);
-                    notifications.darkStyle();
-                    notifications.show();
-
-                    txtEnterUserName.clear();
-                    txtEnterPassword.clear();
-                    txtEnterUserName.requestFocus();
-                }
+                txtEnterUserName.clear();
+                txtEnterPassword.clear();
+                txtEnterUserName.requestFocus();
+            }
 
         } catch (Exception e) {
             e.printStackTrace();

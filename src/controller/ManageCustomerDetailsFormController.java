@@ -18,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import model.Customer;
 import org.controlsfx.control.Notifications;
+import util.NotificationMessageUtil;
 import util.ValidationUtil;
 import view.tm.CustomerTM;
 
@@ -74,15 +75,8 @@ public class ManageCustomerDetailsFormController {
 
         Customer customer = new CustomerController().searchCustomer(customerId);
         if (customer == null) {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Empty Results Set , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Empty Results Set , Try Again !");
+
         } else {
             setData(customer);
         }
@@ -143,31 +137,15 @@ public class ManageCustomerDetailsFormController {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) throws SQLException {
-            if (new CustomerController().deleteCustomer(txtCustomerID.getText())) {
-                Image image = new Image("/assests/images/pass.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Successfully Deleted !");
-                notifications.title("Success Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+        if (new CustomerController().deleteCustomer(txtCustomerID.getText())) {
+            new NotificationMessageUtil().successMessage("Successfully Deleted !");
 
-                clearForms();
-                tblCustomerDetails.getItems().clear();
-                setCustomerValuesToTable(new CustomerController().selectAllCustomers());
-            } else {
-                Image image = new Image("/assests/images/fail.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Something Went Wrong , Try Again !");
-                notifications.title("Failed Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
-            }
+            clearForms();
+            tblCustomerDetails.getItems().clear();
+            setCustomerValuesToTable(new CustomerController().selectAllCustomers());
+        } else {
+           new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
+        }
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) throws SQLException {
@@ -177,45 +155,22 @@ public class ManageCustomerDetailsFormController {
                 txtCustomerAddress.getText(),
                 txtCustomerContact.getText()
         );
-            if (!customer.getCustomerId().isEmpty()) {
-                if (new CustomerController().updateCustomer(customer)) {
+        if (!customer.getCustomerId().isEmpty()) {
+            if (new CustomerController().updateCustomer(customer)) {
+                new NotificationMessageUtil().successMessage("Successfully Updated !");
 
-                    Image image = new Image("/assests/images/pass.png");
-                    Notifications notifications = Notifications.create();
-                    notifications.graphic(new ImageView(image));
-                    notifications.text("Successfully Updated !");
-                    notifications.title("Success Message");
-                    notifications.hideAfter(Duration.seconds(5));
-                    notifications.position(Pos.TOP_CENTER);
-                    notifications.darkStyle();
-                    notifications.show();
+                clearForms();
+                tblCustomerDetails.getItems().clear();
+                setCustomerValuesToTable(new CustomerController().selectAllCustomers());
 
-                    clearForms();
-                    tblCustomerDetails.getItems().clear();
-                    setCustomerValuesToTable(new CustomerController().selectAllCustomers());
+            } else {
+                new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
 
-                } else {
-                    Image image = new Image("/assests/images/fail.png");
-                    Notifications notifications = Notifications.create();
-                    notifications.graphic(new ImageView(image));
-                    notifications.text("Something Went Wrong , Try Again !");
-                    notifications.title("Failed Message");
-                    notifications.hideAfter(Duration.seconds(5));
-                    notifications.position(Pos.TOP_CENTER);
-                    notifications.darkStyle();
-                    notifications.show();
-                }
-            }else {
-                Image image = new Image("/assests/images/fail.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Something Went Wrong , Try Again !");
-                notifications.title("Failed Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
             }
+        } else {
+            new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
+
+        }
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) throws SQLException {
@@ -227,43 +182,18 @@ public class ManageCustomerDetailsFormController {
         if (!customer.getCustomerId().isEmpty() && !customer.getCustomerName().isEmpty() &&
                 !customer.getCustomerAddress().isEmpty() && !customer.getCustomerContact().isEmpty()) {
 
-                if (new CustomerController().saveCustomer(customer)) {
+            if (new CustomerController().saveCustomer(customer)) {
+                new NotificationMessageUtil().successMessage("Successfully Saved !");
 
-                    Image image = new Image("/assests/images/pass.png");
-                    Notifications notifications = Notifications.create();
-                    notifications.graphic(new ImageView(image));
-                    notifications.text("Successfully Saved !");
-                    notifications.title("Success Message");
-                    notifications.hideAfter(Duration.seconds(5));
-                    notifications.position(Pos.TOP_CENTER);
-                    notifications.darkStyle();
-                    notifications.show();
+                clearForms();
 
-                    clearForms();
-
-                    tblCustomerDetails.getItems().clear();
-                    setCustomerValuesToTable(new CustomerController().selectAllCustomers());
-                } else {
-                    Image image = new Image("/assests/images/fail.png");
-                    Notifications notifications = Notifications.create();
-                    notifications.graphic(new ImageView(image));
-                    notifications.text("Duplicate Entry, Try Again !");
-                    notifications.title("Failed Message");
-                    notifications.hideAfter(Duration.seconds(5));
-                    notifications.position(Pos.TOP_CENTER);
-                    notifications.darkStyle();
-                    notifications.show();
-                }
+                tblCustomerDetails.getItems().clear();
+                setCustomerValuesToTable(new CustomerController().selectAllCustomers());
+            } else {
+                new NotificationMessageUtil().errorMessage("Duplicate Entry, Try Again !");
+            }
         } else {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
         }
     }
 
@@ -300,15 +230,7 @@ public class ManageCustomerDetailsFormController {
                 TextField errorText = (TextField) response;
                 errorText.requestFocus();
             } else if (response instanceof Boolean) {
-                Image image = new Image("/assests/images/pass.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Successfully Saved !");
-                notifications.title("Success Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().successMessage("Successfully Saved !");
             }
         }
     }

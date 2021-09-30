@@ -141,15 +141,8 @@ public class PlaceOrderFormController {
     private void setProductData(String productId) throws SQLException {
         Products products = new ProductsController().searchProducts(productId);
         if (products == null) {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Empty Results Set , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Empty Results Set , Try Again !");
+
         } else {
             txtProductName.setText(products.getProductName());
             txtUnitPrice.setText(String.valueOf(products.getUnitPrice()));
@@ -160,15 +153,7 @@ public class PlaceOrderFormController {
     private void setCustomerData(String customerId) throws SQLException {
         Customer customer = new CustomerController().searchCustomer(customerId);
         if (customer == null) {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Empty Results Set , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Empty Results Set , Try Again !");
         } else {
             txtCustomerName.setText(customer.getCustomerName());
             txtCustomerAddress.setText(customer.getCustomerAddress());
@@ -200,15 +185,7 @@ public class PlaceOrderFormController {
         double finalTotal = total - ((total / 100) * discount);
 
         if (qtyOnHand < qtyForCustomer) {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Item count has exceed limit of " + qtyOnHand + " Plz select correct one");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Item count has exceed limit of " + qtyOnHand + " Plz select correct one");
             return;
         }
 
@@ -237,15 +214,7 @@ public class PlaceOrderFormController {
             );
 
             if (qtyOnHand < tempTm.getQty()) {
-                Image image = new Image("/assests/images/fail.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Something Went Wrong , Try Again !");
-                notifications.title("Failed Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
             }
 
             observableList.remove(rowNumber);
@@ -282,15 +251,8 @@ public class PlaceOrderFormController {
 
     public void btnClearOnAction(ActionEvent actionEvent) {
         if (selectedRowInCartRemove == -1) {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
+
         } else {
             observableList.remove(selectedRowInCartRemove);
             calculateNetPrice();
@@ -326,15 +288,7 @@ public class PlaceOrderFormController {
 
         try {
             if (new OrderController().placeOrder(order)) {
-                Image image = new Image("/assests/images/pass.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Successfully Saved !");
-                notifications.title("Success Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().successMessage("The Order Is Complete !");
 
                 salesInvoice();
 
@@ -352,15 +306,7 @@ public class PlaceOrderFormController {
                 txtUnitPrice.clear();
 
             } else {
-                Image image = new Image("/assests/images/fail.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Something Went Wrong , Try Again !");
-                notifications.title("Failed Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+               new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
             }
         } catch (Exception e) {
             e.printStackTrace();

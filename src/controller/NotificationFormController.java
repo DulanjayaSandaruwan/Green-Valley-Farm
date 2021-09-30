@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 import model.Products;
 import org.controlsfx.control.Notifications;
+import util.NotificationMessageUtil;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,15 +39,7 @@ public class NotificationFormController {
         int index = 0;
         int row = 0;
         if(null == products ||products.size()==0){
-            Image image = new Image("/assests/images/pass.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("empty!");
-            notifications.title("info");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().infoMessage("Empty Notifications");
             return;
             }
         for (Products productsDetail : products) {

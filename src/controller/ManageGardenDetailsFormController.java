@@ -17,11 +17,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import model.Garden;
-import model.Supplier;
 import org.controlsfx.control.Notifications;
+import util.NotificationMessageUtil;
 import util.ValidationUtil;
 import view.tm.GardenTM;
-import view.tm.SupplierTM;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -37,7 +36,7 @@ import java.util.regex.Pattern;
  **/
 public class ManageGardenDetailsFormController {
     public JFXButton btnSaveGarden;
-    public TableView <GardenTM> tblGardenDetails;
+    public TableView<GardenTM> tblGardenDetails;
     public TableColumn colGardenId;
     public TableColumn colGardenType;
     public TableColumn colGardenLocation;
@@ -80,15 +79,7 @@ public class ManageGardenDetailsFormController {
 
         Garden garden = new GardenController().searchGarden(gardenId);
         if (garden == null) {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Empty Results Set , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Empty Results Set , Try Again !");
         } else {
             setData(garden);
         }
@@ -156,42 +147,17 @@ public class ManageGardenDetailsFormController {
 
         if (!garden.getGardenId().isEmpty() && !garden.getGardenType().isEmpty() && !garden.getGardenLocation().isEmpty() && !garden.getExtendOfLand().isEmpty() && !garden.getDescription().isEmpty()) {
             if (new GardenController().saveGarden(garden)) {
-
-                Image image = new Image("/assests/images/pass.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Successfully Saved !");
-                notifications.title("Success Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().successMessage("Successfully Saved !");
 
                 clearForms();
 
                 tblGardenDetails.getItems().clear();
                 setGardenValuesToTable(new GardenController().selectAllGardens());
-            }else{
-                Image image = new Image("/assests/images/fail.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Duplicate Entry, Try Again !");
-                notifications.title("Failed Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+            } else {
+                new NotificationMessageUtil().errorMessage("Duplicate Entry, Try Again !");
             }
         } else {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
         }
     }
 
@@ -206,16 +172,7 @@ public class ManageGardenDetailsFormController {
         if (!garden.getGardenId().isEmpty()) {
             if (new GardenController().updateGarden(garden)) {
                 try {
-
-                    Image image = new Image("/assests/images/pass.png");
-                    Notifications notifications = Notifications.create();
-                    notifications.graphic(new ImageView(image));
-                    notifications.text("Successfully Updated !");
-                    notifications.title("Success Message");
-                    notifications.hideAfter(Duration.seconds(5));
-                    notifications.position(Pos.TOP_CENTER);
-                    notifications.darkStyle();
-                    notifications.show();
+                    new NotificationMessageUtil().successMessage("Successfully Updated !");
 
                     clearForms();
                     tblGardenDetails.getItems().clear();
@@ -224,55 +181,23 @@ public class ManageGardenDetailsFormController {
                     throwables.printStackTrace();
                 }
 
-            }else {
-                Image image = new Image("/assests/images/fail.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Something Went Wrong , Try Again !");
-                notifications.title("Failed Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+            } else {
+                new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
             }
         } else {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
         }
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) throws SQLException {
         if (new GardenController().deleteGarden(txtGardenId.getText())) {
-            Image image = new Image("/assests/images/pass.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Successfully Deleted !");
-            notifications.title("Success Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().successMessage("Successfully Deleted !");
 
             clearForms();
             tblGardenDetails.getItems().clear();
             setGardenValuesToTable(new GardenController().selectAllGardens());
         } else {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
         }
     }
 
@@ -317,15 +242,7 @@ public class ManageGardenDetailsFormController {
                 TextField errorText = (TextField) response;
                 errorText.requestFocus();
             } else if (response instanceof Boolean) {
-                Image image = new Image("/assests/images/pass.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Successfully Saved !");
-                notifications.title("Success Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().successMessage("Successfully Saved !");
             }
         }
     }

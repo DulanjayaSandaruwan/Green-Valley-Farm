@@ -7,11 +7,8 @@ import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.util.Duration;
@@ -19,7 +16,6 @@ import model.Collect;
 import model.FinalProductDetails;
 import model.Garden;
 import model.Products;
-import org.controlsfx.control.Notifications;
 import util.NotificationMessageUtil;
 import util.ValidationUtil;
 import view.tm.CollectCartTM;
@@ -50,7 +46,7 @@ public class CollectProductFormController {
     public TextField txtGardenLocation;
     public TextField txtQtyOnHand;
     public TextField txtQty;
-    public TableView tblCollectDetails;
+    public TableView<CollectCartTM> tblCollectDetails;
     public TableColumn colProductId;
     public TableColumn colProductName;
     public TableColumn colProductType;
@@ -111,20 +107,15 @@ public class CollectProductFormController {
             selectedRowInCartRemove = (int) newValue;
         });
 
+        storeValidations();
+
     }
 
     private void setProductData(String productId) throws SQLException {
         Products products = new ProductsController().searchProducts(productId);
         if (products == null) {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Empty Results Set , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Empty Results Set , Try Again !");
+
         } else {
             txtProductName.setText(products.getProductName());
             txtProductType.setText(products.getProductType());
@@ -135,15 +126,8 @@ public class CollectProductFormController {
     private void setGardenData(String gardenId) throws SQLException {
         Garden garden = new GardenController().searchGarden(gardenId);
         if (garden == null) {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Empty Results Set , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Empty Results Set , Try Again !");
+
         } else {
             txtGardenType.setText(garden.getGardenType());
             txtGardenLocation.setText(garden.getGardenLocation());
@@ -169,15 +153,7 @@ public class CollectProductFormController {
 
     public void btnClearOnAction(ActionEvent actionEvent) {
         if (selectedRowInCartRemove == -1) {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Please Select A Row In The Table ! ");
         } else {
             observableList.remove(selectedRowInCartRemove);
             tblCollectDetails.refresh();
@@ -249,15 +225,7 @@ public class CollectProductFormController {
 
         try {
             if (new CollectProductsController().collectProducts(collect)) {
-                Image image = new Image("/assests/images/pass.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Successfully Saved !");
-                notifications.title("Success Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().successMessage("Products Were Added To The Warehouse ! ");
 
                 setCollectId();
                 clearForms();
@@ -274,15 +242,7 @@ public class CollectProductFormController {
                 txtProductName.clear();
 
             } else {
-                Image image = new Image("/assests/images/fail.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Something Went Wrong , Try Again !");
-                notifications.title("Failed Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().errorMessage("Something Went Wrong ,Please Try Again !");
             }
         } catch (Exception e) {
             e.printStackTrace();

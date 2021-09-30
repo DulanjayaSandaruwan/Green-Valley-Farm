@@ -18,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import model.Supplier;
 import org.controlsfx.control.Notifications;
+import util.NotificationMessageUtil;
 import util.ValidationUtil;
 import view.tm.SupplierTM;
 
@@ -78,15 +79,8 @@ public class ManageSupplierDetailsController {
 
         Supplier supplier1 = new SupplierController().searchSupplier(supId);
         if (supplier1 == null) {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Empty Results Set , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Empty Results Set , Try Again !");
+
         } else {
             setData(supplier1);
         }
@@ -152,41 +146,16 @@ public class ManageSupplierDetailsController {
         if (!supplier2.getSupID().isEmpty() && !supplier2.getSupName().isEmpty() &&
                 !supplier2.getSupAddress().isEmpty() && !supplier2.getSupContact().isEmpty()) {
             if (new SupplierController().saveSupplier(supplier2)) {
-
-                Image image = new Image("/assests/images/pass.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Successfully Saved !");
-                notifications.title("Success Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().successMessage("Successfully Saved !");
 
                 clearForms();
                 tblSupplierDetails.getItems().clear();
                 setSupplierValuesToTable(new SupplierController().selectAllSuppliers());
             }else {
-                Image image = new Image("/assests/images/fail.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Duplicate Entry, Try Again !");
-                notifications.title("Failed Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().errorMessage("Duplicate Entry, Try Again !");
             }
         } else {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
         }
     }
 
@@ -200,16 +169,7 @@ public class ManageSupplierDetailsController {
         if (!supplier3.getSupID().isEmpty()) {
             if (new SupplierController().updateSupplier(supplier3)) {
                 try {
-
-                    Image image = new Image("/assests/images/pass.png");
-                    Notifications notifications = Notifications.create();
-                    notifications.graphic(new ImageView(image));
-                    notifications.text("Successfully Updated !");
-                    notifications.title("Success Message");
-                    notifications.hideAfter(Duration.seconds(5));
-                    notifications.position(Pos.TOP_CENTER);
-                    notifications.darkStyle();
-                    notifications.show();
+                    new NotificationMessageUtil().successMessage("Successfully Updated !");
 
                     clearForms();
                     tblSupplierDetails.getItems().clear();
@@ -219,54 +179,22 @@ public class ManageSupplierDetailsController {
                 }
 
             }else {
-                Image image = new Image("/assests/images/fail.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Something Went Wrong , Try Again !");
-                notifications.title("Failed Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
             }
         } else {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
         }
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) throws SQLException {
         if (new SupplierController().deleteSupplier(txtSupID.getText())) {
-            Image image = new Image("/assests/images/pass.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Successfully Deleted !");
-            notifications.title("Success Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().successMessage("Successfully Deleted !");
 
             clearForms();
             tblSupplierDetails.getItems().clear();
             setSupplierValuesToTable(new SupplierController().selectAllSuppliers());
         } else {
-            Image image = new Image("/assests/images/fail.png");
-            Notifications notifications = Notifications.create();
-            notifications.graphic(new ImageView(image));
-            notifications.text("Something Went Wrong , Try Again !");
-            notifications.title("Failed Message");
-            notifications.hideAfter(Duration.seconds(5));
-            notifications.position(Pos.TOP_CENTER);
-            notifications.darkStyle();
-            notifications.show();
+            new NotificationMessageUtil().errorMessage("Something Went Wrong , Try Again !");
         }
     }
 
@@ -309,15 +237,7 @@ public class ManageSupplierDetailsController {
                 TextField errorText = (TextField) response;
                 errorText.requestFocus();
             } else if (response instanceof Boolean) {
-                Image image = new Image("/assests/images/pass.png");
-                Notifications notifications = Notifications.create();
-                notifications.graphic(new ImageView(image));
-                notifications.text("Successfully Saved !");
-                notifications.title("Success Message");
-                notifications.hideAfter(Duration.seconds(5));
-                notifications.position(Pos.TOP_CENTER);
-                notifications.darkStyle();
-                notifications.show();
+                new NotificationMessageUtil().successMessage("Successfully Saved !");
             }
         }
     }

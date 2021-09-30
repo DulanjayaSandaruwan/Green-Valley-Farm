@@ -36,7 +36,7 @@ public class AddNewUserFormController {
     public Label lblID;
     public JFXButton btnManager;
     public Label lblPasswordNotMatch;
-    public TableView<UserTM> tblUserDetails;
+    public TableView <UserTM> tblUserDetails;
     public TableColumn colUserID;
     public TableColumn colUserName;
     public TableColumn colUserEmail;

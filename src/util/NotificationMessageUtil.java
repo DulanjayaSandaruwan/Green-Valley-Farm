@@ -37,7 +37,7 @@ public class NotificationMessageUtil {
     }
 
     public void infoMessage(String text) {
-        Image image = new Image(("/assests/images/fail.png"));
+        Image image = new Image(("/assests/images/info.png"));
         Notifications notifications = Notifications.create();
         notifications.graphic(new ImageView(image));
         notifications.text(text);

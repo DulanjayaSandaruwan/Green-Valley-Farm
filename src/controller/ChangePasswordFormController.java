@@ -8,7 +8,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import model.Login;
 import util.NotificationMessageUtil;
 import util.ValidationUtil;
 
@@ -37,7 +36,7 @@ public class ChangePasswordFormController {
     Pattern newPasswordPattern = Pattern.compile("^[A-z0-9]{8,}(@|#|$|%|^|&|!)$");
     Pattern confirmPasswordPattern = Pattern.compile("^[A-z0-9]{8,}$");
 
-    public void initialize(){
+    public void initialize() {
 
         btnUpdate.setDisable(true);
 
@@ -57,7 +56,7 @@ public class ChangePasswordFormController {
         String newPassword = txtNewPassword.getText();
         String confirmPassword = txtConfirmPassword.getText();
 
-        if (newPassword.equals(confirmPassword)){
+        if (newPassword.equals(confirmPassword)) {
             PreparedStatement preparedStatement = DBConnection.getInstance().getConnection()
                     .prepareStatement("update login set password = md5(?)");
             preparedStatement.setObject(1, confirmPassword);
@@ -69,12 +68,13 @@ public class ChangePasswordFormController {
             lblPasswordNotMatch.setVisible(false);
             btnUpdate.setDisable(true);
 
-            new NotificationMessageUtil().successMessage("Password Change Is Successful !");
-        }else {
-                txtNewPassword.setStyle("-fx-border-color: red");
-                txtConfirmPassword.setStyle("-fx-border-color: red");
-                txtNewPassword.requestFocus();
-                lblPasswordNotMatch.setVisible(true);
+            new NotificationMessageUtil().successMessage("Changing Your Password Is Successful !");
+
+        } else {
+            txtNewPassword.setStyle("-fx-border-color: red");
+            txtConfirmPassword.setStyle("-fx-border-color: red");
+            txtNewPassword.requestFocus();
+            lblPasswordNotMatch.setVisible(true);
         }
     }
 
@@ -92,7 +92,7 @@ public class ChangePasswordFormController {
                 TextField errorText = (TextField) response;
                 errorText.requestFocus();
             } else if (response instanceof Boolean) {
-                new NotificationMessageUtil().successMessage("Successfully Added !");
+                new NotificationMessageUtil().successMessage("Changing Your Password Is Successful !");
             }
         }
     }
