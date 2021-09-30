@@ -10,10 +10,10 @@
 
 <AnchorPane fx:id="root15" prefHeight="615.0" prefWidth="958.0" style="-fx-background-color: #002f53;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SearchPurchaseDetailsFormController">
    <children>
-      <TableView fx:id="tblSearchPurchaseDetails" layoutX="8.0" layoutY="67.0" prefHeight="478.0" prefWidth="940.0" stylesheets="@../assests/styles/Styles.css">
+      <TableView fx:id="tblSearchPurchaseDetails" layoutX="8.0" layoutY="67.0" prefHeight="478.0" prefWidth="940.0" style="-fx-alignment: center;" stylesheets="@../assests/styles/Styles.css">
          <columns>
-            <TableColumn fx:id="colItemCode" prefWidth="457.0" text="Item Code" />
-            <TableColumn fx:id="colQuantity" prefWidth="483.0" text="Quantity" />
+            <TableColumn fx:id="colItemCode" prefWidth="457.0" style="-fx-alignment: CENTER;" text="Item Code" />
+            <TableColumn fx:id="colQuantity" prefWidth="483.0" style="-fx-alignment: CENTER;" text="Quantity" />
          </columns>
          <styleClass>
             <String fx:value="table-view" />
