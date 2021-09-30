@@ -46,7 +46,7 @@ public class AddNewUserFormController {
     Pattern namePattern = Pattern.compile("^[A-z ]{5,20}$");
     Pattern eMailPattern = Pattern.compile("^[A-z0-9]{3,40}[@][a-z]{2,}[.](com|lk|uk|[a-z]{2,})$");
     Pattern newPasswordPattern = Pattern.compile("^[A-z0-9]{8,}(@|#|$|%|^|&|!)$");
-    Pattern confirmPasswordPattern = Pattern.compile("^[A-z0-9]{8,}$");
+    Pattern confirmPasswordPattern = Pattern.compile("^[A-z0-9]{8,}(@|#|$|%|^|&|!)$");
     Pattern rolePattern = Pattern.compile("^(Manager|Reception)$");
 
     ObservableList<UserTM> obList = FXCollections.observableArrayList();

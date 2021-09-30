@@ -344,7 +344,7 @@ public class ManagerMainFormController {
             }
 
             for (int i = 0; i < products.size(); i++) {
-                new NotificationMessageUtil().errorMessage("The production" + " volume of " + products.get(i).getProductName() +
+                new NotificationMessageUtil().infoMessage("The production" + " volume of " + products.get(i).getProductName() +
                         " is declining in the warehouses.Be aware of that.");
             }
 

@@ -18,7 +18,7 @@ public class NotificationMessageUtil {
         notifications.graphic(new ImageView(image));
         notifications.text(text);
         notifications.title("Confirmation Massage");
-        notifications.hideAfter(Duration.seconds(3));
+        notifications.hideAfter(Duration.seconds(2));
         notifications.position(Pos.TOP_CENTER);
         notifications.darkStyle();
         notifications.show();
@@ -30,7 +30,7 @@ public class NotificationMessageUtil {
         notifications.graphic(new ImageView(image));
         notifications.text(text);
         notifications.title("Error Massage");
-        notifications.hideAfter(Duration.seconds(3));
+        notifications.hideAfter(Duration.seconds(2));
         notifications.position(Pos.TOP_CENTER);
         notifications.darkStyle();
         notifications.show();
@@ -41,8 +41,8 @@ public class NotificationMessageUtil {
         Notifications notifications = Notifications.create();
         notifications.graphic(new ImageView(image));
         notifications.text(text);
-        notifications.title("Error Massage");
-        notifications.hideAfter(Duration.seconds(3));
+        notifications.title("Information Massage");
+        notifications.hideAfter(Duration.seconds(2));
         notifications.position(Pos.TOP_CENTER);
         notifications.darkStyle();
         notifications.show();
