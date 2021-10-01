@@ -374,6 +374,5 @@ public class PlaceOrderFormController {
         } catch (JRException e) {
             e.printStackTrace();
         }
-
     }
 }
